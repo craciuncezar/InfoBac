@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">InfoBac</string>
+    <string name="bottom_navigation_home">Home</string>
+    <string name="bottom_navigation_invata">Invata</string>
+    <string name="bottom_navigation_exerseaza">Exerseaza</string>
+    <string name="bottom_navigation_discuta">Discuta</string>
+
+    <string-array name="bac_subjects">
+        <item>Toamna 2018</item>
+        <item>Vara 2018</item>
+        <item>Model 2018</item>
+        <item>Toamna 2017</item>
+        <item>Vara 2017</item>
+        <item>Model 2017</item>
+        <item>Simulare 2017</item>
+        <item>Model 2016</item>
+        <item>Simulare 2016</item>
+        <item>Olimpici 2016</item>
+        <item>Vara 2016</item>
+        <item>Toamna 2016</item>
+        <item>Model 2015</item>
+        <item>Simulare 2015</item>
+        <item>Vara 2015</item>
+        <item>Toamna 2015</item>
+        <item>Model 2014</item>
+        <item>Simulare 2014</item>
+        <item>Vara 2014</item>
+        <item>Toamna 2014</item>
+        <item>Vara 2013</item>
+        <item>Toamna 2013</item>
+        <item>Vara 2012</item>
+        <item>Toamna 2012</item>
+        <item>Vara 2011</item>
+        <item>Toamna 2011</item>
+    </string-array>
+
+    <string name="popular_tab">POPULAR</string>
+    <string name="new_tab">RECENT</string>
+
+</resources>

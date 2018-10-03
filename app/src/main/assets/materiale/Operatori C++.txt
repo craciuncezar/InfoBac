@@ -1,0 +1,81 @@
+﻿<b>Operatori Aritmetici</b>
+1)Adunare +
+2)Scadere -
+3)Inmultire *
+4)Impartire / 
+5)Mod % (restul impartirii)
+
+<b>Observatie!</b>
+Rezultatul impartirii folosind operatorul / depinde de tipul operanzilor. Daca unul sau ambi operanzi sunt numere reale, impartirea va fi reala. In caz contrar rezultatul va fi catul impartirii.
+
+<b>Exemplu</b>
+int a = 10 / 3; //a=3
+float b = 10; //b=10
+float c = b / a; //c=3.33333
+
+<b>Observatie!</b>
+Mod % poate fi folosit doar pe operanzi intregi, rezultatul fiind restul impartirii a doi intregi.
+
+<b>Operatori de atribuire, incrementare si decrementare</b>
+
+Pe langa operatorul de atribuire = ce atribuie partea dreapta partii stangi, C++ are operatori compusi ce performa o operatie si o atribuire.
+
+<b>Exemplu:</b>
+int x = 10;
+x += 4; //echivalent cu x = x + 4
+x -= 4; //echivalent cu x = x - 4
+x *= 4; //echivalent cu x = x * 4
+x /= 4; //echivalent cu x = x / 4
+x %= 4; // echivalent cu x = x % 4
+
+<b>Incrementare si decrementare</b>
+
+Operatorul de incrementare este folosit pentru a mari valoarea unei variabile cu 1, in timp ce decrementarea scade valoarea cu 1.
+
+<b>Exemplu:</b>
+x++;//echivalent cu x = x + 1
+x--;//echivalent cu x = x - 1
+
+Operatorii de incrementare si decrementare au doua forme, pre si post.
+
+<b>Exemplu:</b>
+x++;//post incrementare
+++x;//pre incrementare
+x--;//post decrementare
+--x;//pre decrementare
+
+Pre incrementeaza/decrementeaza valoarea apoi continua evaluarea expresiei.
+Post evalueaza expresia apoi incrementeaza/decrementeaza valoarea.
+
+<b>Exemplu:</b>
+int j = i++; /* j va fi egal cu i, i va deveni i+1 */
+int j = ++i; /* i va deveni i+1, j va contine noua valoare i+1 */
+
+<b>Operatori relaționali</b> ( < , > , < =, > =,!=) se aplică datelor de tip standard şi returnează un rezultat de tip logic.
+
+<b>Observație!</b>
+Negarea lui > este < =, negarea lui < este > =, negarea lui < = este > , negarea lui > = este < .
+
+<b>Exemplu:</b>
+int a=5,b=3;
+if(a > b)  
+// a < b   sau  a > = b   sau  a < = b   sau a != b
+&emsp;cout << a;   //5
+else
+&emsp;cout << b;
+
+<b>Operatorul de egalitate</b> (==)
+
+<b>Exemplu:</b>
+int a=5,b=5;
+if(a==b)     
+&emsp;cout << ”Da”;   // Da
+else
+&emsp;cout << ”Nu”;
+
+<b>Observație:</b> 
+Operatorul ’==’ apare doar în expresii logice.
+
+<b>Operatori logici</b> se aplică datelor de tip standard şi returnează un rezultat de tip logic.
+1) Operator si (&&) returneaza adevarat daca ambele expresii sunt adevarate.
+2) Operator sau (||) returneaza adevarat daca cel putin 1 expresie este adevarata.

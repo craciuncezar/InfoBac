@@ -1,0 +1,97 @@
+﻿O constanta de tip sir de caractere se declara intre doua caractere “. In memoria interna, o constanta de acest tip este retinuta sub forma unui vector de caractere. Fiecare componenta a sirului (incepand cu cea de indice 0) retine codul ASCII al caracterului pe care il memoreaza.
+
+Conventia este ca ultimul octet sa retina 0 (codul caracterului nul). Caracterul nul este memorat automat. Trebuie rezervate lungimea_sirului+1 caractere char (+1 pentru caracterul nul).
+
+Limbajul C/C++ permite initializarea unui tablou de caractere printr-o constanta sir, care include automat caracterul null.
+
+<b>Exemplu:</b>
+char vect[11]=”calculator”;
+char vect[]=”calculator”; (compilatorul face calculul numarului de octeti necesari)
+char vect[100]=”calculator”; (s-au rezervat mai multi octeti decat era necesar)
+
+<b>Sirurile de caractere sunt de fapt tablou de caractere, care au ca ultim element un terminator de sir, caracterul null.</b>
+
+<b>Exemplu:</b>
+char tc[5] = {’a’, ’b’, ’c’, ’d’, ’e’};
+// tablou de caractere
+char sc[5] = {’a’, ’b’, ’c’, ’d’, ’\0’};
+// sir de caractere cu elementele abcd
+
+Ultima initializare este echivalenta cu:
+char sc[5] = ”abcd”; //sau char sc[] = ”abcd”;
+char sc1[5] = ”abcd”;
+char s[10];
+cout << sc << endln;
+//afiseaza abcd
+cout << tc << endl;
+/*eroare: tabloul de caractere nu contine terminatorul de sir, deci nu poate fi afisat ca sir*/
+cout << s << endl;
+/* eroare: tablou neinitializat*/
+cout << sc1[0]; /* afiseaza primul caracter din sirul sc1*/
+cout << sc1[2]; /* afiseaza al treilea element din sirul sc1*/
+sc1[1]=’K’; /* elementului din sir de indice 1 i se atribuie valoarea „K‟;*/
+
+<b>CITIREA / AFISAREA SIRURILOR DE CARACTERE</b>
+Sirurile de caractere pot fi initializate inca de la declarare sau citite pe parcursul programului.
+
+a. Citirea unui sir de caractere se poate face ca citirea oricarui tablou, intr-un for, caracter cu caracter (desi nu este recomandata). In acest caz, terminatorul de sir nu este memorat automat, el trebuie pus explicit dupa ultimul caracter din sir.
+
+<b>Exemplu:</b>
+char c[20];
+for(int i=0;i < =5;i++)
+&emsp;cin >> c[i];
+cout << c << endl; 
+/*se va afisa sirul format din cele 6 caractere, urmat de caractere „reziduale” initializate implicit la compilare, din cauza ca n-a fost pus terminatorul de sir*/
+c[6]=0;
+cout << c << endl; 
+/*a fost pus terminatorul de sir, deci sirul va fi afisat corect*/
+
+b. Se poate face pur si simplu, folosind cin >>. Caracterul nul este adaugat automat. Dezavantajul este ca in acest fel nu se pot citi siruri care contin mai multe cuvinte separate prin spatii. Citirea sirului se sfarseste la intalnirea primului caracter blank (de ex, daca se citeste “ora de informatica”, variabila c va retine numai “ora”).
+
+<b>Exemplu:</b>
+char c[30];
+cin >> c;
+cout << c;
+
+c. Se poate folosi o functie speciala pentru citirea sirurilor de caractere, inclusa in biblioteca string.h (varianta recomandata). 
+
+<b>Exemplu:</b>
+
+char a[30],x;int nr;
+cin.get(a,nr,x);
+
+Functia cin.get citeste un sir de caractere sau pana cand au fost citite nr-1 caractere, sau daca s-a intalnit caracterul x. Al treilea parametru poate lipsi, caz in care el este implicit caracterul ‟\n‟ (new line). Sunt citite si caracterele albe, caracterul nul este inserat automat iar caracterul transmis ca ultim parametru nu este inserat in sir.
+
+<b>Exemplu:</b>
+char a[30];
+cin.get(a,5,’s’); 
+/*daca se citeste sirul “maimuta, variabila a va retine “maim”*/
+cin.get(a,15,’s’); 
+/*daca se citeste sirul “maimuta, variabila a va retine “maimuta”*/
+cin.get(a,15,’t’); 
+/*daca se citeste sirul “maimuta, variabila a va retine “maimu”*/
+cin.get(a,4,’t’); 
+/*daca se citeste sirul “maimuta, variabila a va retine “mai”*/
+cin.get(a,10); 
+/*daca se citeste sirul “maimuta, variabila a va retine “maimuta”*/
+
+Functia cin.get( ) fara parametri are rolul de a citi un caracter (alb sau nu).
+Functia cin.get(char c) are rolul de a citi un caracter (alb sau nu) pe care il incarca in variabila c.
+
+<b>Observatie!</b>
+In cazul utilizarii repetate a functiei cin.get(a,nr,x), dupa fiecare folosire trebuie citit caracterul de la sfarsitul fiecarui sir , adica ‟\n‟ (in caz contrar, acest caracter va fi incarcat la inceputul urmatorului sir, a carui citire se termina la caracterul Enter, deci citirea celui de-al doilea sir se termina inainte de a incepe, iar al doilea sir va fi sirul vid). Aceasta citire a caracterului ‟\n‟ se realizeaza folosind cin.get() fara parametri.
+
+<b>Exemplu:</b>
+char a[30],b[30];
+cin.get(a,15);
+cin.get(b,10);
+
+Daca se incearca citirea sirurilor „sarbatoare” si „vacanta”, se observa ca a=”sarbatoare”, b=”” (nici nu apucam sa citim sirul b) . Varianta corecta este:
+
+cin.get(a,15);
+cin.get();
+cin.get(b,10);
+
+Afisarea unui sir de caractere se face folosind cout.
+cout << a;
+Se poate afisa si caracter cu caracter, ca in cazul tablourilor, dar aceasta varianta nu este recomandata.

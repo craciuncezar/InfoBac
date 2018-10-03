@@ -1,0 +1,24 @@
+﻿<b>Fisier text = succesiune de caractere ASCII ce se incheie cu caracterul EOF.</b>
+
+Accesul la caracterele scrise intr-un fisier text se poate face doar secvential, si poate fi :
+-Acces pentru citire
+-Acces pentru scriere
+
+Toate utilitarele necesare pentru accesarea fisierelor text din programe C++ se afla in biblioteca fstream
+
+Pentru a putea accesa un fişier text dintr-un program C++ trebuie declarata o variabila, astfel :
+Pentru a avea acces la afisare in fişier : ofstream g;
+Pentru a avea acces la citirea din fişier : ifstream f;
+
+Cand ne hotarâm sa accesam fisierul, mai intai trebuie sa-l "deschidem". De fapt, creem legatura logica intre variabila declarata pentru accesarea fisierului si zona de pe disc unde se gaseste fisierul. Dupa crearea acestei legaturi, ori de cate ori dorim sa accesam fisierul vom accesa de fapt variabila asociata lui.
+
+<b>Exemplu:</b>
+ifstream f("intrare.txt");
+initializare variabila de acces, la declarare
+ofstream g("iesire.txt");
+
+Cand ne hotarâm sa nu mai accesam fisierul va trebui sa-l "inchidem". De fapt, distrugem legatura logica intre variabila declarata pentru accesarea fisierului si zona de pe disc unde se gaseste fisierul.
+
+<b>Exemplu:</b> 
+f.close();
+g.close();

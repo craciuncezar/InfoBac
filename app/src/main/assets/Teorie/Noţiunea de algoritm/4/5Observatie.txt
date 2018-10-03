@@ -1,0 +1,1 @@
+﻿ - Finitudine rezultatele problemei se obţin după un număr ﬁnit de paşi

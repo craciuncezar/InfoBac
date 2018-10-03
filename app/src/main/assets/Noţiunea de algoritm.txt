@@ -1,0 +1,64 @@
+﻿Un <b>algoritm</b> reprezintă o metodă de rezolvare a problemelor de un anumit tip. A rezolva o problemă înseamnă a obţine, pentru anumite date de intrare, rezultatul problemei (date de ieşire).
+
+Algoritmul este constituit dintr-o succesiune de operaţii care descriu, pas cu pas, modul de obţinere a datelor de ieşire, plecând de la datele de intrare. Se pot descrie algoritmi pentru rezolvarea problemelor din orice domeniu de activitate.
+
+Scopul elaborării algoritmului unei probleme este acela de a scrie un program într-un anumit Iimbaj de programare. Dar dacă avem de-a face cu o problemă mai complexă, înainte de a scrie programul este bine să scriem paşii algoritmului; în acest scop avem la dispoziţie o formă foarte accesibilă de reprezentare a algoritmilor, şi anume pseudocodul.
+
+De exemplu, orice reţetă de bucătărie poate fi considerată un algoritm prin care, plecând de la materiile prime, obţinem printr-o succesiune finită de operaţii produsul finit. 
+
+<b>Exemplul 1</b>
+	
+Presupunând că dispunem de un aragaz, o tigaie, 2 ouă, sare şi 200 ml ulei, să pregătim ochiuri. 
+
+Date de intrare: ouă, ulei, sare. 
+Date de ieşire: ochiuri.
+Pas 1: Se pune tigaia pe foc.
+Pas 2: Se toarnă uleiul în tigaie.
+Pas 3: Aşteptăm până când se încinge uleiul.
+Pas 4: Spargem cu îndemânare ouăle în tigaie.
+Pas 5: Aşteptăm până când ouăle se rumenesc.
+Pas 6: Dacă nu ţinem regim, adăugăm sare.
+	
+Observăm că am descris o succesiune de paşi, prin care, pentru orice ,,date” de intrare (ulei, sare, ouă), obţinem rezultatul dorit (ochiuri). Fiecare pas constă din operații culinare speciﬁce, care se execută în ordinea în care sunt speciﬁcate.
+
+<b>Exemplul 2</b>
+	
+Să analizăm un alt exemplu, cu care suntem familiarizaţi de la matematică: rezolvarea ecuaţie de gradul I de forma : ax+b=0, cu a,b є R.
+
+Date de intrare: a, b є R
+Date de ieşire: x є R, soluţia ecuaţiei, sau un mesaj adecvat
+Pas 1: citeşte datele de intrare a şi b numere reale
+Pas 2: 
+dacă a=/= 0 atunci
+&emsp;scrie ”soluţia ecuaţiei este ”, x  ←  -b/a
+altfel
+dacă b=0 atunci
+&emsp;scrie ”infinitate de soluţii”
+altfel
+&emsp;scrie ”relaţie matematică imposibilă” 
+	
+Această succesiune de paşi rezolvă ecuaţia de forma specificată pentru orice valori ale datelor de intrare, prin urmare este un algoritm. 
+
+<b>Proprietăţi caracteristice ale algoritmilor</b> 
+	
+Exemplele precedente generează în mod ﬁresc două întrebări: 
+
+1.Pentru orice problemă există un algoritm de rezolvare? 
+Răspunsul este NU! Există probleme pentru care se poate demonstra că nu există algoritmi de rezolvare, dar şi probleme pentru care nici nu s-a demonstrat că nu admit o metodă de rezolvare algoritmică, dar nici nu s-a descoperit soluţia algoritmică. 
+
+2.Orice succesiune de paşi reprezintă un algoritm?
+Din nou, răspunsul este NU! Pentru a ﬁ un algoritm, secvenţa trebuie să îndeplinească condiţiile: 
+
+<b>Rezolvabilitate</b> ~ algoritmul să aibă cel puţin o soluţie;
+
+<b>Claritate</b> ~ la ﬁecare moment, operaţia care urmează a ﬁ executată este unic determinată deﬁnită şi realizabilă (adică poate ﬁ efectuată la momentul respectiv, cu mijloacele disponibile); 
+
+<b>Generalitate (universalitate)</b> ~ o secvenţă de paşi reprezintă un algoritm de rezolvare a unei probleme dacă obţine date de ieşire (rezultate) pentru orice date de intrare speciﬁce problemei (adică să rezolve o întreagă clasă de probleme, nu una particulară );  
+
+<b>Finitudine</b> ~ rezultatele problemei se obţin după un număr ﬁnit de paşi; 
+
+<b>Eficienţa</b> ~ algoritmul să rezolve problema într-un număr cât mai mic de paşi pentru a se obţine un timp de execuţie cât mai mic alături de un consum mic de memorie.
+
+În concluzie, deşi nu putem deﬁni cu rigurozitate noţiunea de algoritm, putem descrie mai detaliat această noţiune astfel: 
+
+Un algoritm este constituit dintr-o succesiune clară şi finită de operaţii realizabile, efectuate mecanic, care pornind de la un set de date de intrare conduc în timp finit la obţinerea unui set de date de ieşire ( rezultate ).

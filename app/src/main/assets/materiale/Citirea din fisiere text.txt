@@ -1,0 +1,46 @@
+﻿<b>Citirea din fisier</b>
+Operatorul >> permite citirea datelor in variabila de orice tip, fara insa a trata caracterele albe ( spatii, salturi la linie noua ). 
+
+Citirea se face similar celei de la tastatura numai ca se inlocuieste metoda cin cu variabila de acces la fisier. 
+
+<b>Exemplu:</b>
+Se considera fisierul text cifre.txt care contine pe o singura linie si separate prin spatii 10 numere intregi de maxim 4 cifre fiecare. Sa se afiseze pe ecran suma acestor numere.
+
+#include < fstream >
+#include < iostream >
+using namespace std;
+
+int main() 
+{
+&emsp;int x; long s=0;
+&emsp;ifstream f("cifre.txt");
+&emsp;int i;
+&emsp;for(i=1;i < =10;i++) {
+&emsp;f >> x; s=s+x; }
+&emsp;f.close();
+&emsp;cout << "suma este:" << s;
+&emsp;return 0;
+}
+
+<b>Exemplu:</b> 
+Se considera fisierul text cifre2.txt care contine: pe prima linie numarul natural nenul n (n£50) iar pe linia a doua, separate prin spatiu, n numere naturale cu maxim 9 cifre fiecare. Sa se afiseze pe ecran cel mai mare dintre cele n numere. 
+
+#include < iostream >
+#include < fstream >
+using namespace std;
+
+int main() {
+&emsp;long x, max;
+&emsp;int n,i;
+&emsp;ifstream f("cifre2.txt");
+&emsp;f >> n >> max;
+&emsp;for(i=2;i < =n;i++) 
+&emsp;{
+&emsp;&emsp;f >> x;
+&emsp;&emsp;if (x > max) 
+&emsp;&emsp;&emsp;max=x; 
+&emsp;}
+&emsp;f.close();
+&emsp;cout << "Maximul este: " << max;
+&emsp;return 0;
+}

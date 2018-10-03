@@ -1,0 +1,35 @@
+Afisarea pe ecran se face utilizand cout << .
+<b>Se pot adauga mai multe afisari in acelasi cout folosind operatorul << .</b>
+
+<b>Exemplu:</b>
+
+cout << "Acesta " << "este " << "o afisare!";
+Instructiunea va afisa pe ecran mesajul:
+Aceasta este o afisare!
+
+<b>Afisarea pe mai multe linii se face folosind endl .</b>
+
+<b>Exemplu:</b>
+
+cout << "Aceasta " << <b>endl</b>;
+cout << "este " << <b>endl</b> << <b>endl</b> ;
+cout << "o afisare!";
+Instructiunile de mai sus vor afisa pe ecran mesajul:
+Aceasta
+este
+
+o afisare!
+
+<b>O alternativa pentru endl este utilizaea caracterului \n .</b>
+
+<b>Exemplu:</b>
+
+cout << "Aceasta <b>\n</b>" << "este " << "<b>\n</b>o <b>\n</b>afisare!";
+Instructiunea de mai sus va afisa pe ecran mesajul:
+Aceasta
+este 
+o
+afisare!
+
+<b>Observatie</b>
+Spatiile libere din interiorul ghilimelelor sunt luate in considerare la afisare!

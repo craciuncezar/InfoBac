@@ -1,0 +1,24 @@
+Pentru a citi valoarea variabilelor de la tastatura se foloseste cin >> .
+
+<b>Exemplu</b>
+
+int variabila1;
+cin >> variabila1;
+
+Ca si in cazul lui cout mai multe citiri se pot face in aceasi instructiune folosind operatorul >> .
+
+<b>Exemplu</b>
+
+int variabila1, variabila2;
+cin >> variabila1 >> variabila2;
+
+<b>Observatie!</b>
+Programul va astepta atata timp cat utilizatorul trebuie sa introduca o valoare de la tastatura.
+
+<b>Exemplu</b>
+
+int v;
+cin >> v;
+cout << v;
+
+Afisarea variabilei v cout << v; va fi executata doar dupa ce utilizatorul introduce o valoare de la tastatura.

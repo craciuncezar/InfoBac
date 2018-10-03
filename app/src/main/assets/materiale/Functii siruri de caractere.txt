@@ -1,0 +1,110 @@
+﻿Functiile pentru operatii cu siruri se gasesc in header-ul < string.h > .
+ 
+<b>Functia strlen</b> 
+int strlen(nume_sir); – returneaza lungimea efectiva a unui sir (fara a numara terminatorul de sir).
+
+<b>Exemplu:</b>
+char a[50]=”ora de informatica”;strlen(a) = 18
+ 
+<b>Functia strcpy</b> 
+strcpy(sir_destinatie,sir_sursa); – copiaza sirul sir_ sursa in sir_destinatie (se simuleaza atribuirea a=b). 
+
+<b>ATENTIE!!</b> Nu este permisa atribuirea intre doua siruri de caractere folosind operatorul =. Atribuirea se face folosind functia strcpy.
+
+<b>Exemplu:</b>
+char a[50]=”primul sir”,b[40]=”al doilea sir”; 
+a=b;  //eroare
+strcpy(a,b); a = ”al doilea sir”; b=”al doilea sir”;
+ 
+<b>Functia strcat</b> 
+strcat(dest,sursa); – adauga sirului dest sirul sursa. Sirul sursa ramane nemodificat. Operatia se numeste concatenare si nu este comutativa. 
+
+<b>Exemplu:</b>
+char *a=”vine ”,*b=”vacanta?”;
+strcat(a,b); a = ”vine vacanta?”;
+ 
+<b>Functia strncat</b> 
+strncat(dest,sursa,nr); – adauga dest primele nr caractere din sirul sursa. Sirul sursa ramane nemodificat.
+
+<b>Exemplu:</b>
+char *a=”vine ”,*b=”vacanta?”;
+strncat(a,b,4); a = ”vine vaca”;
+ 
+<b>Functia strchr</b>
+strchr(sir,c); – are rolul de a cauta caracterul c in sirul sir. Cautarea se face de la stanga la dreapta, iar functia intoarce adresa subsirului care incepe cu prima aparitie a caracterului c. Daca nu este gasit caracterul, functia returneaza 0. Diferenta dintre adresa sirului initial si cea a subsirului returnat reprezinta chiar pozitia caracterului cautat in sirul dat.
+
+<b>Exemplu:</b>
+char *a=”acesta este un sir”,b=’t’,c=’x’,d;
+cout << strchr(a,b);  se tipareste ”ta este un sir”;
+cout << strchr(a,c);  nu se tipareste nimic (se tipareste 0 daca se face o conversie la int a lui strchr(a,c) ;
+d= strchr(a,b);
+cout << ”Caracterul apare prima data la pozitia ” << d-a;
+ 
+<b>Functia strrchr</b> 
+strrchr(sir,c); – are acelasi rol cu strchr, cu deosebirea ca returneaza adresa ultimei aparitii a caracterului (cautarea se face de la dreapta spre stanga; r = right)
+ 
+<b>Functia strcmp</b>
+int strcmp(sir1,sir2); – are rolul de a compara doua siruri de caractere. Valoarea returnata este <0 (daca sir1<sir2), =0 (daca sir1=sir2) si >0 (daca sir1>sir2). Functia strcmp face distinctie intre literele mari si cele mici ale alfabetului.
+<b>Observatie!</b>
+Functia strcmp returneaza diferenta dintre codurile ASCII ale primelor caractere care nu coincid
+ 
+<b>Functia stricmp</b> 
+int stricmp(sir1,sir2); – are acelasi rol cu strcmp, cu deosebirea ca nu face distinctie intre literele mari si cele mici ale alfabetului (i = ignore).
+ 
+<b>Functia strstr</b> 
+strstr(sir1,sir2); – are rolul de a identifica daca sirul sir2 este subsir al sirului sir1. Daca este, functia returneaza adresa de inceput a subsirului sir2 in sirul sir1, altfel returneaza adresa 0. In cazul in care sir2 apare de mai multe ori in sir1, se returneaza adresa de inceput a primei aparitii. Cautarea se face de la stanga la dreapta
+ 
+<b>Functia strtok</b>  
+strtok(sir1,sir2); – are rolul de a separa sirul sir1 in mai multe siruri (cuvinte) separate intre ele prin unul sau mai multe caractere cu rol de separator. Sirul sir2 este alcatuit din unul sau mai multe caractere cu rol de separator.
+
+Functia strtok actioneaza in felul urmator:
+-Primul apel trebuie sa fie de forma strtok(sir1,sir2); Functia intoarce adresa primului caracter al primei entitati. Dupa prima entitate, separatorul este inlocuit automat prin caracterul nul.
+-Urmatoarele apeluri sunt de forma strtok(NULL,sir2); De fiecare data, functia intoarce adresa de inceput a urmatoarei entitati, adaugand automat dupa ea caracterul nul.
+-Cand sirul nu mai contine entitati, functia returneaza adresa nula.
+
+<b>Functia strspn cu forma generala</b>
+int strspn(sir1,sir2); – are rolul de a returna numarul de caractere ale sirului sir1 (caractere consecutive care incep obligatoriu cu primul caracter) care se gasesc in sirul sir2.
+
+<b>Exemplu:</b>
+strspn(“AB2def”,”1B3AQW”); returneaza 2, pentru ca primele 2 caractere ‘A’ si ‘B’ din sir1 se gasesc in sir2.
+strspn(“FAB2def”,”16A32BF”);  returneaza 0, deoarece caracterul ‘F’ cu care incepe sir1 nu se gaseste in sir2.
+ 
+<b>Functia strcspn cu forma generala</b>
+int strspn(sir1,sir2); – are rolul de a returna numarul de caractere ale sirului sir1 (caractere consecutive care incep obligatoriu cu primul caracter) care nu se gasesc in sirul sir2.
+
+<b>Exemplu:</b>
+strspn(“AB2def”,”123”);  returneaza 2, pentru ca primele 2 caractere din sir1 nu se gasesc in sir2.
+
+<b>Functia strlwr cu forma generala</b>
+strlwr(sir); – are rolul de a converti toate literele mari din sir in litere mici. Restul caracterelor raman neschimbate.
+ 
+<b>Functia strupr cu forma generala</b>
+strupr(sir); – are rolul de a converti toate literele mici din sir in litere mari. Restul caracterelor raman neschimbate
+
+<b>Functia strbrk cu forma generala</b>
+strpbrk(sir1,sir2); – actioneaza in felul urmator:
+-Cauta primul caracter al sirului sir1 in sir2. Daca este gasit, returneaza adresa sa din cadrul sirului sir1 si executia se termina. Altfel, se trece la pasul urmator.
+-Cauta al doilea caracter al sirului sir1 in sir2. Daca este gasit, returneaza adresa sa din cadrul sirului sir1 si executia se termina. Altfel, se trece la pasul urmator.
+-  …
+-Daca nici un caracter al sirului sir1 nu apartine sirului sir2, functia returneaza adresa nula.
+
+<b>Functia atof cu forma generala</b>
+double atof(sir); – converteste un sir catre tipul double. Daca aceasta conversie esueaza (se intalneste un caracter nenumeric), valoarea intoarsa este 0. Aceasta functie (ca si cele similare) necesita includerea librariei stdlib.h.
+
+<b>Functia _atold cu forma generala</b>
+long double _atold(sir); – converteste un sir catre tipul long double. Daca aceasta conversie esueaza, valoarea intoarsa este 0.
+ 
+<b>Functia atoi cu forma generala</b>
+int atoi(sir); – converteste un sir catre tipul int. Daca aceasta conversie esueaza (se intalneste un caracter nenumeric), valoarea intoarsa este 0.
+ 
+<b>Functia atol cu forma generala</b>
+long atol(sir); – converteste un sir catre tipul long. Daca aceasta conversie esueaza (se intalneste un caracter nenumeric), valoarea intoarsa este 0.
+ 
+<b>Functia itoa cu forma generala</b>
+itoa(int valoare,sir,int baza); – converteste o valoare de tip int in sir, care este memorat in variabila sir. Baza retine baza de numeratie catre care sa se faca conversia. In cazul bazei 10, sirul retine si eventualul semn -.
+ 
+<b>Functia ltoa cu forma generala</b>
+ltoa(long valoare,sir,int baza); – converteste o valoare de tip long int in sir, care este memorat in variabila sir.
+ 
+<b>Functia ultoa cu forma generala</b>
+ultoa(unsigned long valoare,sir,int baza); – converteste o valoare de tip unsigned long in sir, care este memorat in variabila sir.

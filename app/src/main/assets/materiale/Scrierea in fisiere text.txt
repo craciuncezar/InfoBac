@@ -1,0 +1,25 @@
+﻿Afisarea in fisier se face la fel ca si afisarea pe ecran numai ca metoda cout se inlocuieste cu numele variabilei de acces la fisier.
+
+<b>Exemplu:</b>
+g << 17 << ’’ ’’;
+g << "ana are mere" << endl;
+
+<b>Exemplu:</b>
+Sa se afiseze in fisierul text rezultat.out, toate literele mari, in ordine invers alfabetica si separate prin cate un spatiu. 
+
+#include < iostream >
+#include < fstream >
+using namespace std;
+
+int main()
+{ 
+&emsp;char L;
+&emsp;ofstream g("rezultat.out");
+&emsp;for (L='Z'; L > ='A'; L--)
+&emsp;g << L << ' ';
+&emsp;g.close();
+&emsp;return 0;
+}
+
+<b>Observatie!</b>
+Nu este nevoie sa creati fisierul “rezult.out”. Acesta va fi creat automat de program.

@@ -1,0 +1,57 @@
+<b>Operatori aritmetici</b>
+
+Operatorii aritmetici definesc o operatie aritmetica si pot fi clasificati astfel:
+1.Operatori aritmetici multiplicativi: 
+- * (inmultire)
+-/(impartire)
+- % (mod sau restul impartirii intregi)
+
+Operatorul de impartire (/) are un efect diferit, in functie de tipul operanzilor. 
+<b>Daca ambii operanzi sunt intregi, se face impartire intreaga (se obtine ca rezultat un numar intreg, care este catul impartirii primului operand la cel de-al doilea). </b>
+
+<b>Exemplu:</b>
+
+<b>intreg</b> a,b
+a < - 7 ; b < - 2
+scrie a/b  =>  expresia a/b are <b>valoarea 3.</b>
+
+<b>Daca cel putin unul dintre operanzi este real, se face impartire reala (se obtine ca rezultat un numar real).</b>
+
+<b>Exemplu:</b>
+
+<b>real</b> a,b
+a < - 7 ; b < - 2
+scrie a/b  => expresia a/b are <b>valoarea 3.5.</b>
+
+<b>Observatie</b>
+
+Operatorul % se poate aplica numai asupra operanzilor intregi.
+
+2.Operatori aritmetici aditivi: + (adunare) si -(scadere).
+Operatorii aritmetici aditivi si multiplicativi sunt binari (actioneaza asupra a doi operanzi). Operatorii aritmetici se pot aplica numai operanzilor numerici.
+Rezultatul evaluarii unei expresii aritmetice este numeric (intreg sau real, in functie de operanzi si operatori).
+
+<b>Operatori relationali</b>
+
+Operatorii relationali descriu relatia de ordine sau de egalitate dintre cei doi operanzi: < (mai mic), > (mai mare), < = (mai mic sau egal), > = (mai mare sau egal), = (egal), =/= (diferit).
+Operatorii relationali sunt operatori binari si se pot aplica numai operanzilor numerici, logici ( fals < adevarat ) si de tip caracter ( ordinea caracterelor fiind determinata de codurile lor ASCII ).
+<b>Valoarea unei expresii relationale este intotdeauna de tip logic (deci poate fi adevarat sau fals).</b>
+
+<b>Operatori logici</b>
+
+Operatorii logici se pot aplica operanzilor logici. Valoarea unei expresii logice este de tip logic.
+Operatorii logici definesc o operatie logica: negatie logica - !; conjunctie Iogica - si; disjunctie logica - sau. 
+
+<b>Evaluarea unei expresii</b>
+
+In procesul de evaluare a unei expresii se respecta regulile de baza, invatate la matematica ( in primul rand se evalueaza expresiile dintre parantezele rotunde; apoi se executa operatiile in ordinea prioritatii lor; daca exista mai multe operatii cu aceeasi prioritate, se executa in ordine, in functie de asociativitatea lor).
+
+Prioritatea operatorilor este: (1 fiind considerata prioritatea maxima):
+
+1.Negatia logica   (!)  de la dreapta la stanga
+2.Aritmetici multiplicativi   (*, /, %)   de la stanga la dreapta
+3.Aritmetici aditivi   (+, -)   de la stanga la dreapta
+4.Relationali   ( < , > , < =, > =, =, =/=)   de la stanga la dreapta
+5.Conjunctie logica   (si)   de la stanga la dreapta
+6.Disjunctie logica   (sau)   de la stanga la dreapta
+

@@ -1,0 +1,17 @@
+﻿<b>Rezolvarea unei probleme</b> constituie un proces complex, care comportă mai multe etape.
+
+1.Analiza problemei în scopul stabilirii datelor de intrare, precum şi a rezultatelor pe care trebuie să le obţinem prin rezolvarea problemei.
+
+2.Elaborarea unui algoritm de rezolvare a problemei.
+
+3.Implementarea algoritmului într-un limbaj de programare.
+
+4.Veriﬁcarea corectitudinii algoritmului propus.
+Un prim pas constă în testarea programului pe diverse seturi de date de test. Seturile de date de test trebuie elaborate cu atenţie, astfel încât să acopere, pe cât posibil, toate variantele de execuţie a algoritmului, inclusiv situaţii de excepţie, şi să veriﬁce dacă fiecare subproblemă a problemei date este rezolvată corect (dacă este posibil, se va testa separat fiecare modul de program).
+
+5.Analiza complexităţii algoritmului.
+	
+În general, există mai mulţi algoritmi de rezolvare a unei probleme date. Pentru a alege cel mai bun algoritm, trebuie să analizăm aceşti algoritmi în scopul determinării eficienţei lor şi, pe cât posibil, a optimalităţii lor.
+Eficienţa unui algoritm se evaluează din două puncte de vedere:
+a.Din punctul de vedere al spaţiului de memorie necesar pentru memorarea valorilor variabilelor care intervin în algoritm (complexitate spaţiu);
+b.Din punctul de vedere al timpului de execuţie (complexitate timp).

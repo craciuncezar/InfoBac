@@ -1,0 +1,10 @@
+﻿Date de intrare: a, b є R
+Date de ieşire: x є R, soluţia ecuaţiei, sau un mesaj adecvat
+Pas 1: citeşte datele de intrare a şi b numere reale
+Pas 2: 
+dacă a ≠ 0 atunci
+    scrie ”soluţia ecuaţiei este ”, x = -b/a
+altfel dacă b = 0 atunci
+    scrie ”infinitate de soluţii”
+altfel
+    scrie ”relaţie matematică imposibilă” 

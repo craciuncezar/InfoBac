@@ -1,0 +1,7 @@
+﻿Din punctul de vedere al vizibilităţii variabilelor avem:
+
+<b>Variabile locale</b>
+La fel cum se declară variabilele în cadrul funcţiei main, la fel se pot declara varibile în cadrul celorlalte funcţii. Aceste variabile se numesc locale şi sunt accesibile doar de funcţia care le-a declarat. La fel în cadrul unei funcţii se pot apela şi alte funcţii, ca şi în main, dacă acestea au fost definite înaintea eventualului apel sau dacă este prezent un prototip de funcţie înaintea funcţiei apelante şi o definiţie de funcţie în cadrul programului respectiv sau în fişierele incluse în programului respectiv.
+
+<b>Variabile globale</b>
+Variabilele globale sunt declarate înafara oricărei funcţii şi sunt vizibile (pot fi utilizate) în tot programul (în programul principal şi în subprograme) din momentul declarării lor.

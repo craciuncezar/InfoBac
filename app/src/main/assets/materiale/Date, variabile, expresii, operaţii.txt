@@ -1,0 +1,18 @@
+<b>Orice algoritm lucreaza cu date</b>: date de intrare (datele pe care trebuie sa le primeasca un algoritm din exterior), date de iesire (datele pe care trebuie sa le furnizeze algoritmul in exterior), precum si date de manevra (date temporare, necesare algoritmului pentru a obtine datele de iesire pe baza datelor de intrare).
+
+<b>Variabile</b> sunt date care isi modifica valoarea. O variabila poate fi referita printr-un nume (o succesiune de litere, cifre si liniuta de subliniere, primul caracter fiind obligatoriu litera sau liniuta de subliniere) si are asociata o valoare. Numele unei variabile nu se schimba pe parcursul algoritmului, dar valoarea acesteia se poate modifica.
+
+<b>Pentru a cunoaste natura valorilor care pot fi asociate variabilelor precum si a operatiilor permise cu acestea, variabilele trebuie declarate inainte de a fi utilizate.</b>
+
+In functie de valoarea lor, datele pot fi clasificate astfel:
+
+1)Date numerice - au ca valori numere ( naturale, intregi sau reale );
+2)Date alfabetice - au ca valori caractere sau siruri de caractere;
+3)Date logice - au valoarea adevarat sau fals (1 sau 0).
+
+O <b>expresie</b> este constituita dintr-o succesiune de operanzi, conectati prin operatori. Un operand poate fi o constanta, o variabila, sau o expresie incadrata intre paranteze rotunde.
+
+<b>Operatorii</b> desemneaza operatiile care se executa asupra operanzilor. Operatorii care pot fi utilizati intr-o expresie depind de tipul operanzilor (numerici intregi, numerici reali, caractere, siruri de caractere sau logici).
+
+Evaluarea unei expresii presupune calculul valorii expresiei, prin inlocuirea valorilor variabilelor care intervin ca operanzi in expresie si efectuarea operatiilor specificate de operatori.
+

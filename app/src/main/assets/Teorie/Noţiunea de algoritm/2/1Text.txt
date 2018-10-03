@@ -1,0 +1,2 @@
+﻿         Se pot descrie algoritmi pentru rezolvarea problemelor din orice domeniu. De exemplu, o reţetă de bucătărie poate fi considerată un algoritm.
+         Presupunând că dispunem de un aragaz, o tigaie, 2 ouă, sare şi 200 ml ulei, să pregătim ochiuri.

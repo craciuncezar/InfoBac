@@ -1,0 +1,38 @@
+﻿În C++ există un tip de date, numit struct, care permite mai multe campuri de tipuri diferite numite înregistrari.
+
+<b>Forma generală este:</b>
+struct [nume structura]
+{
+ //camp1
+ [< tip > < nume variabila [, nume variabila, ……] > ]; 
+ //camp2
+ [< tip > < nume variabila [, nume variabila, ……] > ]; 
+ … ….
+} [nume_variabila de tip struct];
+
+<b>Accesul la o valoare a unui camp:</b>
+nume_variabila.nume_camp
+//se ajunge la camp prin separatorul “.” 
+
+<b>Exemplu:</b>
+Dacă dorim să prelucrăm date referitoare la mai mulţi elevi, pentru fiecare elev trebuie să cunoaştem:
+
+Numele – char[20]
+Prenumele – char[20]
+Nota matematică - float
+Vârsta - int
+
+<b>Structura corespunzatoare unui elev va fi:</b>
+struct elev
+{
+&emsp;char nume[20];
+&emsp;char prenume[20];
+&emsp;float nota;
+&emsp;int varsta
+};
+
+<b>Declararea unui elev e1:</b>
+elev e1;
+
+<b>Initializarea elevului e1 de la tastatura:</b>
+cin >> e1.nume >> e1.prenume >> e1.nota >> e1.varsta;

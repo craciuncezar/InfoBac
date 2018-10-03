@@ -1,0 +1,40 @@
+﻿<b>Structura secvenţială</b>
+Declararea datelor
+Sintaxa: variabila tip;
+
+La începutul oricărui algoritm, vom preciza datele de intrare, datele de ieşire, eventualele date de manevră precum şi tipul acestora. Înainte de a utiliza orice variabilă, după cum am precizat şi anterior, o vom declara, precizând numele şi tipul ei. O variabilă nu poate fi declarată de mai multe ori în acelaşi algoritm.
+
+<b>Exemple</b>
+x real;
+c caracter;
+i  întreg;
+
+<b>Operaţia de citire</b>
+Sintaxa:  citeşte variabila1, variabila2, ..., variabilan;
+Efect: Prin operaţia de citire (denumită şi operaţie de intrare) se preiau succesiv valori de la tastatură şi se asociază, în ordine, variabilelor speciﬁcate.
+
+<b>Operaţia de scriere</b>
+Sintaxa: scrie expresie1, expresie2, ..., expresien;
+Efect: Operaţia de scriere (denumită şi operație de ieșire) presupune evaluarea în ordine a expresiilor speciﬁcate şi aﬁşarea pe ecran a valorilor lor pe aceeaşi linie.
+
+<b>Operaţia de atribuire</b>
+Sintaxa: variabila ← expresie;
+Efect: se evaluează expresia, apoi se atribuie valoarea expresiei variabilei din membrul stâng.
+
+<b>Observaţii</b>
+1.Pentru claritate, putem insera într-un algoritm comentarii, mici texte explicative. Începutul unui comentariu este marcat de succesiunea de caractere /* iar sfârşitul comentariului este marcat de */.
+Parcurgerea instrucţiunilor în secvenţă, în ordinea specificării lor, reprezintă o structură liniară ( secvenţială ). 
+
+<b>Structura alternativă</b>
+dacă expresie atunci
+&emsp;instrucţiune_1
+[altfel                            
+&emsp;instrucţiune_2]
+sf. dacă
+(parantezele drepte indică faptul că ramura de altfel e opţională)
+Efect:
+Se evaluează expresia.
+Dacă valoarea expresiei este adevărat, atunci se execută instrucţiune_1. Dacă valoarea expresiei este fals, se execută instrucţiune_2 dacă ramura de altfel există iar în caz contrar nu se execută nimic.
+
+<b>Observaţii</b>
+Atât pe ramura atunci, cât şi pe ramura altfel este permisă executarea unei singure instrucţiuni. În cazul in care este necesară efectuarea mai multor operaţii, acestea se grupează într-o singură instrucţiune compusă.

@@ -1,0 +1,18 @@
+﻿Un graf (neorientat sau orientat) este o pereche ordonată de mulţimi G = (V, E).
+Mulţimea V este o mulţime nevidă şi finită de elemente denumite vârfurile grafului.
+Mulţimea E este o mulţime de perechi de vârfuri din graf.
+
+În cazul grafurilor neorientate, perechile de vârfuri din mulţimea E sunt neordonate şi sunt denumite muchii. Perechea neordonată formată din vârfurile x şi y se notează [x,y]; vârfurile x şi y se numesc extremităţile muchiei [x,y].
+
+În cazul grafurilor orientate, perechile de vârfuri din mulţimea E sunt ordonate şi sunt denumite arce. Perechea ordonată formată din vârfurile x şi y se notează (x,y); vârful x se numeşte extremitate iniţială a arcului (x,y), iar vârful y se numeşte extremitate finală a arcului (x,y).
+
+Dacă există un arc sau o muchie cu extremităţile x şi y, atunci vârfurile x şi y sunt adiacente; fiecare extremitate a unei muchii/unui arc este considerată incidentă cu muchia/arcul respectiv.
+
+Vom considera că extremităţile unei muchii, respectiv ale unui arc, sunt distincte (adică graful nu conţine bucle).
+
+<b>Observaţii!</b>
+
+1. Cu ajutorul unui graf neorientat putem modela o relaţie simetrică între elementele unei mulţimi, în timp ce cu ajutorul unui graf orientat modelăm o relaţie care nu este simetrică.
+2. Între oricare două vârfuri ale unui graf poate exista cel mult o muchie/arc. Dacă între două vârfuri există mai multe muchii/arce atunci structura se numeşte multigraf. Nu vom lucra cu structuri multigraf.
+3. În practică, informaţiile asociate unui graf pot fi oricât de complexe, dar, pentru a simplifica, vom considera că vârfurile grafului sunt etichetate cu numere naturale de la 1 la n (unde cu n vom nota numărul de vârfuri din graf). Această numerotare nu este o restrângere a generalităţii (de exemplu, numărul vârfului poate fi considerat poziţia pe care sunt memorate într-un vector informaţiile asociate vârfului).
+4. În unele lucrări de specialitate, un vârf al grafului se numeşte nod.

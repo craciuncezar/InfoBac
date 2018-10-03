@@ -1,0 +1,3 @@
+﻿
+        Un algoritm reprezinta o metoda de rezolvare a problemelor de un anumit tip. A rezolva o problema înseamna a obtine, pentru anumite date de intrare, rezultatul problemei (date de iesire).
+        Algoritmul este constituit dintr-o succesiune de operatii care descriu, pas cu pas, modul de obtinere a datelor de iesire, plecând de la datele de intrare.

@@ -1,0 +1,1 @@
+﻿ - Generalitate o secvenţă de paşi reprezintă un algoritm de rezolvare a unei probleme dacă obţine date de ieşire pentru orice date de intrare

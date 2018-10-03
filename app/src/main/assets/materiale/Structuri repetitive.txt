@@ -1,0 +1,67 @@
+﻿În funcţie de numărul de paşi executaţi există 2 tipuri de structuri repetitive:
+
+-cu număr necunoscut de paşi; care în funcţie de locul în care apare condiţia de repetiţie se clasifică în: instrucţiune repetitivă condiţionată anterior si instrucţiune repetitivă condiţionată posterior
+
+-cu număr cunoscut de paşi
+
+<b>Structură repetitivă cu număr necunoscut de paşi:</b>
+<b>Instrucţiunea repetitivă condiţionată anterior</b>
+
+cât timp expresie execută
+&emsp;instrucţiune
+sf. cât timp
+
+Efect:
+Pas 1: se evaluează expresia;
+Pas 2: dacă valoarea expresiei este fals(0), se iese din instrucţiunea cât timp…execută;
+daca valoarea expresiei este adevărat, se execută instrucţiunea, apoi se revine la Pas 1.
+
+<b>Observaţii</b>
+Instrucţiunea se execută repetat, cât timp valoarea expresiei este adevărat (1). Pentru ca ciclul să nu fie inﬁnit, este obligatoriu ca instrucţiunea care se execută să modifice cel puţin una dintre variabilele care intervin în expresie, astfel încât aceasta să poată lua valoarea fals(0).
+Dacă expresia are de la început valoarea fals(0), instrucţiunea nu se execută nici măcar o dată.
+
+<b>Instrucţiunile repetitive condiţionate posterior</b>
+
+1)
+execută
+&emsp;instrucţiune
+cât timp expresie;
+
+Efect:
+Pas 1: se execută instrucţiunea;
+Pas 2: se evaluează expresia;
+Pas 3:dacă valoarea expresiei este fals(0) se iese din instrucţiunea repetitivă;  dacă valoarea expresiei este adevărat(1), se revine la Pas 1.
+
+2)
+repetă
+&emsp;instrucţiune
+până când expresie;
+
+Efect:
+Pas 1: se execută instrucţiunea;
+Pas 2: se evaluează expresia;
+Pas 3:dacă valoarea expresiei este adevărat(1) se iese din instrucţiunea repetitivă;  dacă valoarea expresiei este fals(0), se revine la Pas 1.
+
+<b>Observații:</b>
+1.Instrucțiunea execută...cât timp se execută repetat, cât timp valoarea expresiei este adevărat(1). Pentru ca ciclul să nu fie infinit, este obligatoriu ca instrucţiunea care se execută să modifice cel puţin una dintre variabilele care intervin în expresie, astfel încât aceasta să poată lua valoarea fals(0).
+2.Instrucțiunea repetă...până când se execută repetat, cât timp valoarea expresiei este fals(0). Pentru ca ciclul să nu fie infinit, este obligatoriu ca instrucţiunea care se execută să modifice cel puţin una dintre variabilele care intervin în expresie, astfel încât aceasta să poată lua valoarea adevărat(1).
+3.Deoarece evaluarea expresiei în ambele repetitive se face după execuţia instrucţiunii, instrucţiunea se execută cel puţin o dată.
+
+<b>Structură repetitivă cu număr cunoscut de paşi:</b>
+<b>Instrucţiunea repetitivă cu număr cunoscut de paşi</b>
+
+Pentru contor←expresie1, expresie2 ,[pas] execută
+Instrucţiune
+Sf. pentru
+
+Efect:
+Pas 1: Se evaluează expresie1.
+Pas 2: Se atribuie variabilei contor valoarea expresiei expresie1.
+Pas 3. Se evaluează expresie2.
+Pas 4: Dacă valoarea variabilei contor este mai mare/mică (în funcție de valoarea pas, adică pozitivă sau negativă) decât valoarea expresiei expresie2, atunci se iese din instrucțiunea repetitivă. Dacă valoarea variabilei contor este mai mică/mare sau egală cu valoarea expresiei expresie2, atunci se execută instrucțiune şi apoi se incrementează/decrementează (se modifică valoarea contorului cu pas) valoarea variabilei contor, după care se revine la Pas 3.
+
+<b>Observații</b>
+1.Dacă variabila pas lipsește se consideră implicit 1.
+2.Instrucțiunea repetitivă cu număr cunoscut de pași poate ﬁ simulată cu ajutorul celorlalte două instrucţiuni repetitive.
+
+Executarea repetată a unei instrucţiuni, controlată de valoarea unei expresii, reprezintă o structură repetitivă.

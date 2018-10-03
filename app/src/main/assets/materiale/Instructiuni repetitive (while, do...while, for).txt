@@ -1,0 +1,42 @@
+﻿<b>Instrucţiunea while</b>
+
+Sintaxa:
+while(condiţie)
+[  { ]               
+&emsp;&emsp;instrucţiuni;
+[  } ]
+Execuţie:  Se verifică la fiecare pas condiţia şi dacă dacă rezultatul logic este 1 (TRUE) se vor executa în ordinea în care apar instrucţiunile iar în caz contrar se iese din repetitivă.
+
+<b>Observaţii!</b>
+-instrucţiunea while poate să nu se execute niciodată dacă valoarea de adevăr a condiţiei este 0.
+-dacă în corpul instrucţiunii while avem mai mult de o instrucţiune, aceste se grupează într-o instrucţiune compusă (se folosesc acolade).
+
+<b>Instrucţiunea do…while</b>
+
+Sintaxă:
+do
+{
+&emsp;instrucţiuni;
+} while(condiţie);
+Execuţie: Se vor executa în ordinea în care apar instrucţiunile apoi se verifică  condiţia şi dacă rezultatul logic este 1 (TRUE) se continuă cu execuţia instrucţiunilor iar în caz contrar se iese din repetitivă.
+
+<b>Observaţie!</b>
+Diferenţa între repetitive cu test iniţial şi cea cu test final este aceea că  repetitiva cu test final se execută întotdeauna cel puţin o dată.
+
+<b>Instrucţiune repetitivă cu număr cunoscut de paşi (for)</b>
+
+Sintaxa:
+for(expresie1;expresie2;expresie3)
+[ { ]
+&emsp;instrucţiuni;
+[ } ]
+Efect:
+-se va evalua o singură dată la intrarea în repetitivă expresie 1
+-expresie2 constituie condiţia de ieşire din repetitivă (este o expresie logică)
+-expresie3 modifică valoarea contorului pentru a asigura ieşirea din repetitivă (de obicei)
+
+<b>Observaţii!</b> 
+Expresiile din for pot lipsi, în schimb caracterul “;” e obligatoriu
+
+<b>Exemplu:</b>
+for(;;);   // ciclează la infinit

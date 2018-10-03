@@ -1,0 +1,102 @@
+{
+  "pages": [
+    {
+      "widgets": [
+        {
+          "type": "title",
+          "text": "Bun venit!"
+        },
+        {
+          "type": "image",
+          "drawable": "img_introduction",
+          "height": "150",
+          "scale": "center-crop"
+        },
+        {
+          "type": "text",
+          "text": "Inainte de a incepe lectiile propriu zise, vreau sa incerci un exercitiu. Incearca sa formulezi o explicatie a ce este informatica intr-un mod prin care poate fi inteles de orice persoana."
+        },
+        {
+          "type": "text",
+          "text": "Daca nu ai reusit sa gasesti un raspuns, nu e o problema, de fapt asta este scopul acestui capitol, ca la final sa ii poti explica bunicii ce e informatica."
+        }
+      ]
+    },
+    {
+      "widgets": [
+        {
+          "type": "title",
+          "text": "Computer science"
+        },
+        {
+          "type": "text",
+          "text": "Cand a fost ultima data cand ai instalat o aplicatie? Probabil astazi, cand ai cautat 'informatica' in playstore. Pentru a ajunge sa citesti asta a trebuit sa folosesti mai multe aplicatii software, dezvoltate de catre programatori."
+        },
+        {
+          "type": "text",
+          "text": "Ce este programarea exact? Programarea este actul de a spune unui computer ce sa faca. Un program poate varia ca si complexitate de la simpla afisare pe ecran al unui mesaj, la site-uri de socializare precum Facebook sau chiar sisteme de operare precum Android."
+        },
+        {
+          "type": "text",
+          "text": "Informatica insa nu se rezuma doar la programare, programarea este intradevar o unealta folosita, dar informatica (computer science in engleza) este despre rezolvarea problemelor."
+        }
+      ]
+    },
+    {
+      "widgets": [
+        {
+          "type": "title",
+          "text": "Algoritmi"
+        },
+        {
+          "type": "text",
+          "text": "Un algoritm este o solutie pas-cu-pas la un tip general de probleme. A rezolva o problema inseamna a obtine, pentru anumite date de intrare, rezultatul problemei (date de iesire)."
+        },
+        {
+          "type": "image",
+          "drawable": "img_input_output",
+          "height": "50",
+          "scale": "center-inside"
+        },
+        {
+          "type": "text",
+          "text": "Studiul informaticii va ofera instrumentele de care aveti nevoie pentru a aplica gandirea algoritmica la problemele din lumea reala si pentru a finaliza rapid sarcinile, astfel optimizand procesele care altfel ar fi fost o povara de abordat."
+        }
+      ]
+    },
+    {
+      "widgets": [
+        {
+          "type": "title",
+          "text": "Importanta algoritmilor"
+        },
+        {
+          "type": "text",
+          "text": "Aproape fiecare tehnologie din lume utilizeaza astazi o forma de algoritmi pentru a sorta, stoca si accesa datele în mod eficient si precis."
+        },
+        {
+          "type": "image",
+          "drawable": "img_algorithms",
+          "height": "130",
+          "scale": "center-crop"
+        },
+        {
+          "type": "text",
+          "text": "Cand cautati un raspuns pe Google sistemele de pozitionare Google sorteaza sute de miliarde de pagini web indexate pentru a oferi rezultate utile si relevante intr-o fractiune de secunda. O sarcina care ar fi durat o vesnicie astfel a devenit o treaba usoara pentru calculator. Aceasta este puterea algoritmilor!"
+        }
+      ]
+    },
+    {
+      "widgets": [
+        {
+          "type": "title",
+          "text": "Importanta algoritmilor"
+        },
+        {
+          "type": "text",
+          "text": "Aproape fiecare tehnologie din lume utilizeaza astazi o forma de algoritmi pentru a sorta, stoca si accesa datele în mod eficient si precis."
+        }
+      ]
+    }
+  ]
+}

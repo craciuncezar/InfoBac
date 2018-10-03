@@ -1,0 +1,31 @@
+<b>Un vector este un sir de mai multe valori care au acelasi tip</b>, componentele acestuia putand fi identificate prin numele vectorului urmat (intre paranteze drepte) de pozitia acestora in cadrul vectorului.
+Declaratia unui vector se realizeaza prin specificarea tipului componentelor vectorului, identificatorul vectorului urmat apoi de dimensiunea acestuia intre paranteze drepte.
+
+<b>Exemplu:</b>
+int a[5];    - declara un sir de 5 de numere intregi
+float f[10]; - declara un sir de 10 numere reale
+char c[20];  - declara un sir de 20 caractere alfanumerice
+
+<b>Observatie!</b> 
+Primul element al vectorului are coordonata 0 (a[0]), al doilea are coordonata 1 (a[1]), s.a.m.d. .
+
+Initializarea vectorilor se poate face din faza declaratiei, astfel:
+
+int a[5]={6,2,9,3,4};
+
+Introducerea/afisarea componentelor unui vector sunt de regula operatii realizate cu ajutorul structurilor repetitive, in principal folosindu-se structura FOR:
+
+<b>Exemplu:</b>
+int i, n, a[10];
+/* citire vector cu n numere citite de la tastatura */
+cout << "Cate numere sunt in sir? n=";
+cin >> n;
+cout << "Introduceti numerele:" << endl;
+for (i=0;i < n;i++)
+{
+&emsp;cout << "a[" << i << "]=";
+&emsp;cin >> a[i];
+}
+/* afisarea vectorului */
+for (i=0;i < n;i++)
+&emsp;cout << "a[ " << i << "]= " << a[i] <<endl;

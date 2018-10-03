@@ -1,0 +1,1 @@
+﻿        Să analizăm un alt exemplu, cu care suntem familiarizaţi de la matematică: rezolvarea ecuaţie de gradul I de forma : ax+b=0, cu a,b є R.

@@ -1,0 +1,8 @@
+﻿Date de intrare: ouă, ulei, sare. 
+Date de ieşire: ochiuri.
+Pas 1: Se pune tigaia pe foc.
+Pas 2: Se toarnă uleiul în tigaie.
+Pas 3: Aşteptăm până când se încinge uleiul.
+Pas 4: Spargem cu îndemânare ouăle în tigaie.
+Pas 5: Aşteptăm până când ouăle se rumenesc.
+Pas 6: Dacă nu ţinem regim, adăugăm sare.

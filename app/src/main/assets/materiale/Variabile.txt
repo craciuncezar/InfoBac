@@ -1,0 +1,34 @@
+Declararea unei variabile rezerva spatiu in memorie unde va fi salvata valoarea acesteia. Pentru a fi folosita o variabila trebuie declarata . Declararea se face prin specificarea tipului si denumirea variabilei. Odata declarata variabila utilizarea ei se face fara a specifica tipul acesteia.
+
+<b>Exemplu:</b>
+
+int a; 
+//variabila denumita a de tip numar intreg
+unsigned b = 2;
+unsigned c = 4;
+//declararea variabilelor b si c de tip numar natural
+unsigned sumaBC = b + c;
+//atribuire la declarare
+float d; 
+//tip numar real
+char e; 
+//tip caracter
+e = 'A';
+d = 2.03;
+a = -10;
+a = - 5;
+cout << "Numar intreg : " << a << endl;
+cout << "Numerele naturale: " << b << " si " << c << " au suma egala cu " << sumaBC << endl;
+cout << "Numar real: " << d << endl;
+cout << "Caracter: " << e;
+
+Programul va afisa:
+Numar intreg : -5
+Numerele naturale: 2 si 4 au suma egala cu 6
+Numar real: 2.03
+Carater: A
+
+<b>Observatii!</b>
+Declararea mai multor variabile de acelasi tip pe acelasi rand se face separand prin virgula.
+C/C++ este un limbaj case sensitive ceea ce inseamna ca variabilele sumaBC si sumabc nu sunt egale.
+

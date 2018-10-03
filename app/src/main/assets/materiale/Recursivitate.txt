@@ -1,0 +1,30 @@
+﻿<b>O funcţie care se autoapelează se numeşte recursivă.</b> Aveţi grijă ca funcţia să aibă o condiţie de terminare, altfel puteţi crea o repetiţie infinită. 
+
+Parametrii funcţiilor şi variabilele locale sunt încărcate, stocate, pe Stivă (o regiune din memorie structurată pe principiul stivei, LIFO), iar în cazul unei funcţii recursive infinite, Stiva se poate umple repede (stack overflow) cauzând un crash al programului. 
+
+Factorialul unui număr poate fi calculat cu o funcţie recursivă (deşi se poate face acelaşi lucru şi cu un loop).
+
+<b>Exemplu</b>
+#include < iostream >
+using namespace std;
+
+int fact(int n)
+{
+&emsp;if (n == 0) // Conditia de terminare
+&emsp;&emsp;return 1;
+&emsp;else
+&emsp;&emsp;return n * fact(n - 1);
+}
+
+int main()
+{
+&emsp;cout << fact(0) << endl;
+&emsp;cout << fact(3) << endl;
+&emsp;cout << fact(8) << endl;
+&emsp;return 0;
+}
+
+Se va afisa:
+1
+6
+40320

@@ -1,0 +1,7 @@
+﻿<b>Un limbaj de tip pseudocod este un ansamblu de convenţii, respectate în mod sistematic, care deﬁnesc operațiile permise (denumite şi instrucţiuni) pentru reprezentarea algoritmilor.</b>
+
+Un Iimbaj pseudocod se prezintă sub formă de text şi se bazează pe nişte aşa-numite cuvinte cheie. Fiecare cuvânt cheie identiﬁcă în mod unic un anumit tip de acţiune.
+
+Acţiunile algoritmului se reprezintă în pseudocod prin ceea ce numim instrucţiuni. Ansamblul cuvintelor cheie împreună cu regulile care trebuie respectate în folosirea lor, alcătuiesc ceea ce numim sintaxa Iimbajului pseudocod.
+
+Există o mare diversitate de Iimbaje pseudocod. Practic, fiecare programator îşi poate proiecta propriul pseudocod, deﬁnind cuvintele cheie ale acestuia şi impunând nişte reguli de sintaxă. 

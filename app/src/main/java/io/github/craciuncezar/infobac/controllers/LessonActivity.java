@@ -8,6 +8,7 @@ import butterknife.OnClick;
 import io.github.craciuncezar.infobac.DataManager;
 import io.github.craciuncezar.infobac.R;
 import io.github.craciuncezar.infobac.models.LessonPage;
+import io.github.craciuncezar.infobac.views.LessonCongratsDialog;
 import io.github.craciuncezar.infobac.views.LessonViews;
 
 import android.animation.ObjectAnimator;
@@ -19,6 +20,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
+import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -29,9 +31,13 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Locale;
 
 
@@ -43,9 +49,13 @@ public class LessonActivity extends AppCompatActivity {
     @BindView(R.id.progress_lesson) TextView progressLesson;
     @BindView(R.id.lesson_content) LinearLayout lessonContent;
     @BindView(R.id.progress_bar_lesson) ProgressBar progressBar;
+    @BindView(R.id.back_lesson) View back_button;
+
+//    @BindView(R.id.webtest) WebView webView;
 
     private String lessonName;
     private ArrayList<LessonPage> lessonPages;
+    private DataManager dataManager;
 
     private int currentPage = 0;
     private int lessonProgress = 0;
@@ -54,19 +64,27 @@ public class LessonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
+
         ButterKnife.bind(this);
+
         initToolBar();
 
         lessonName = getIntent().getStringExtra(NAME_FOR_LESSON);
         lessonPages = getLessonData();
+        dataManager = DataManager.getInstance();
 
         if(DataManager.getInstance().getLessonsProgress().get(lessonName)!= null){
-            lessonProgress = DataManager.getInstance().getLessonsProgress().get(lessonName);
-            currentPage = lessonProgress == lessonPages.size() ? 0 : lessonProgress;
+            lessonProgress = dataManager.getLessonsProgress().get(lessonName);
+            currentPage = (lessonProgress+1) == lessonPages.size() ? 0 : lessonProgress;
         } else {
-            DataManager.getInstance().getLessonsProgress().put(lessonName,0);
-            DataManager.getInstance().setCurrentLesson(lessonName);
+            dataManager.getLessonsProgress().put(lessonName,0);
+            dataManager.setCurrentLesson(lessonName);
         }
+
+        if(currentPage!=0){
+            back_button.setVisibility(View.VISIBLE);
+        }
+
         progressLesson.setText(String.format(Locale.ENGLISH,"%d/%d", currentPage+1, lessonPages.size()));
         setProgressMax(progressBar,lessonPages.size()-1);
         setProgressAnimate(progressBar, currentPage);
@@ -83,15 +101,22 @@ public class LessonActivity extends AppCompatActivity {
     public void forwardLessonClicked(View view){
         if(currentPage<lessonPages.size()-1) {
             currentPage++;
+            // Update current progresson
             if(currentPage>lessonProgress) {
-                DataManager.getInstance().setLessonsProgress(lessonName,currentPage);
-                DataManager.getInstance().setCurrentLesson(lessonName);
+                dataManager.setLessonsProgress(lessonName,currentPage);
+                dataManager.setCurrentLesson(lessonName);
             }
             progressLesson.setText(String.format(Locale.ENGLISH, "%d/%d", currentPage+1, lessonPages.size()));
             setProgressAnimate(progressBar,currentPage);
             lessonContent.removeAllViews();
             updateCurrentLayout(currentPage);
+        } else{
+            List<String> lessons = Arrays.asList(getResources().getStringArray(R.array.lesson_names));
+            if(lessons.indexOf(lessonName)<(lessons.size()-1))
+                DataManager.getInstance().setCurrentLesson(lessons.get(lessons.indexOf(lessonName)+1));
+            LessonCongratsDialog.showDialog(this, getLayoutInflater());
         }
+        back_button.setVisibility(View.VISIBLE);
     }
 
     @OnClick(R.id.back_lesson)
@@ -103,6 +128,9 @@ public class LessonActivity extends AppCompatActivity {
             lessonContent.removeAllViews();
             updateCurrentLayout(currentPage);
         }
+
+        if(currentPage==0)
+            back_button.setVisibility(View.GONE);
     }
 
     private void setProgressMax(ProgressBar pb, int max) {
@@ -148,7 +176,7 @@ public class LessonActivity extends AppCompatActivity {
             byte[] buffer = new byte[size];
             is.read(buffer);
             is.close();
-            json = new String(buffer, "UTF-8");
+            json = new String(buffer, StandardCharsets.UTF_8);
         } catch (IOException ex) {
             ex.printStackTrace();
             return null;
@@ -204,6 +232,9 @@ public class LessonActivity extends AppCompatActivity {
                     break;
                 case "image":
                     lessonContent.addView(LessonViews.getImageView(LessonActivity.this,widget.get("scale"),widget.get("height"),widget.get("drawable")));
+                    break;
+                case "codeSnippet":
+                    lessonContent.addView(LessonViews.getCodeSnippet(LessonActivity.this,widget.get("name")));
                     break;
                 default:
                     break;

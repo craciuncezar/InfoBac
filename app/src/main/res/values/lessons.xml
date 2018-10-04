@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lesson_names">
+        <item>"Introducere"</item>
+        <item>"Pseudocod"</item>
+    </string-array>
+    <integer-array name="lesson_chapters">
+        <item>5</item>
+        <item>3</item>
+    </integer-array>
+</resources>

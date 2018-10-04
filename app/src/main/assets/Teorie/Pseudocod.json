@@ -1,0 +1,68 @@
+{
+  "pages": [
+    {
+      "widgets": [
+        {
+          "type": "title",
+          "text": "Bun venit!"
+        },
+        {
+          "type": "image",
+          "drawable": "img_introduction",
+          "height": "150",
+          "scale": "center-crop"
+        },
+        {
+          "type": "text",
+          "text": "Inainte de a incepe lectiile propriu zise, vreau sa incerci un exercitiu. Incearca sa formulezi o explicatie a ce este informatica intr-un mod prin care poate fi inteles de orice persoana."
+        },
+        {
+          "type": "text",
+          "text": "Daca nu ai reusit sa gasesti un raspuns, nu e o problema, de fapt asta este scopul acestui capitol, ca la final sa ii poti explica bunicii ce e informatica."
+        }
+      ]
+    },
+    {
+      "widgets": [
+        {
+          "type": "title",
+          "text": "Computer science"
+        },
+        {
+          "type": "text",
+          "text": "Cand a fost ultima data cand ai instalat o aplicatie? Probabil astazi, cand ai cautat 'informatica' in playstore. Pentru a ajunge sa citesti asta a trebuit sa folosesti mai multe aplicatii software, dezvoltate de catre programatori."
+        },
+        {
+          "type": "codeSnippet",
+          "name": "index"
+        },
+        {
+          "type": "text",
+          "text": "Informatica insa nu se rezuma doar la programare, programarea este intradevar o unealta folosita, dar informatica (computer science in engleza) este despre rezolvarea problemelor."
+        }
+      ]
+    },
+    {
+      "widgets": [
+        {
+          "type": "title",
+          "text": "Algoritmi"
+        },
+        {
+          "type": "text",
+          "text": "Un algoritm este o solutie pas-cu-pas la un tip general de probleme. A rezolva o problema inseamna a obtine, pentru anumite date de intrare, rezultatul problemei (date de iesire)."
+        },
+        {
+          "type": "image",
+          "drawable": "img_input_output",
+          "height": "50",
+          "scale": "center-inside"
+        },
+        {
+          "type": "text",
+          "text": "Studiul informaticii va ofera instrumentele de care aveti nevoie pentru a aplica gandirea algoritmica la problemele din lumea reala si pentru a finaliza rapid sarcinile, astfel optimizand procesele care altfel ar fi fost o povara de abordat."
+        }
+      ]
+    }
+  ]
+}

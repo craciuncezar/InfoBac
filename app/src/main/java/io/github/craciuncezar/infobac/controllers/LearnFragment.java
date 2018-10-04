@@ -22,8 +22,8 @@ public class LearnFragment extends Fragment {
 
     @BindView(R.id.progressBarIntroducere) ProgressBar progressBarIntroducere;
     @BindView(R.id.tv_progress_introducere) TextView progressTextViewIntroducere;
-    HashMap<String,Integer> lessonsProgress;
-    int[] subjectsChapters;
+    private HashMap<String,Integer> lessonsProgress;
+    private int[] subjectsChapters;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -31,13 +31,13 @@ public class LearnFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_learn, container, false);
 
         ButterKnife.bind(this,rootView);
-        subjectsChapters = getResources().getIntArray(R.array.Lesson_chapters);
+        subjectsChapters = getResources().getIntArray(R.array.lesson_chapters);
         lessonsProgress = DataManager.getInstance().getLessonsProgress();
 
         if(lessonsProgress.containsKey("Introducere")){
             int progress = lessonsProgress.get("Introducere");
             progressBarIntroducere.setMax(subjectsChapters[0]);
-            progressBarIntroducere.setProgress(progress);
+            progressBarIntroducere.setProgress(progress+1);
             progressTextViewIntroducere.setText((int)((float)progressBarIntroducere.getProgress()/progressBarIntroducere.getMax()*100)+"%");
         }
 
@@ -50,7 +50,7 @@ public class LearnFragment extends Fragment {
         if(lessonsProgress.containsKey("Introducere")){
             int progress = lessonsProgress.get("Introducere");
             progressBarIntroducere.setMax(subjectsChapters[0]);
-            progressBarIntroducere.setProgress(progress);
+            progressBarIntroducere.setProgress(progress+1);
             progressTextViewIntroducere.setText((int)((float)progressBarIntroducere.getProgress()/progressBarIntroducere.getMax()*100)+"%");
         }
     }

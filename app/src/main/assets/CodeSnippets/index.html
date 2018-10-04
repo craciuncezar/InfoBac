@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./styles/atom-one-dark.css">
+    <script src="./highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+    <pre style="margin:0"><code class="cpp" style="padding: 12px;">// C program for implementation of Bubble sort
+#include &lt;stdio.h&gt;
+
+void swap(int *xp, int *yp)
+{
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+
+// A function to implement bubble sort
+void bubbleSort(int arr[], int n)
+{
+   int i, j;
+   for (i = 0; i &lt; n-1; i++)
+
+       // Last i elements are already in place
+       for (j = 0; j &lt; n-i-1; j++)
+           if (arr[j] &gt; arr[j+1])
+              swap(&amp;arr[j], &amp;arr[j+1]);
+}
+
+/* Function to print an array */
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i=0; i &lt; size; i++)
+        printf(&quot;%d &quot;, arr[i]);
+    printf(&quot;n&quot;);
+}
+
+// Driver program to test above functions
+int main()
+{
+    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    bubbleSort(arr, n);
+    printf(&quot;Sorted array: \n&quot;);
+    printArray(arr, n);
+    return 0;
+} </code></pre>
+
+</body>
+
+</html>

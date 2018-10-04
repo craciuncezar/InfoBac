@@ -25,7 +25,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/progress_completed_lessons"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/progress_gradient"
@@ -48,6 +47,7 @@
                 android:textColor="@color/white" />
 
             <ProgressBar
+                android:id="@+id/progress_lectii"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
@@ -55,7 +55,7 @@
                 android:layout_marginTop="6dp"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="6dp"
-                android:progress="20"
+                android:progress="0"
                 android:progressDrawable="@drawable/rounded_progress_bar" />
 
             <TextView

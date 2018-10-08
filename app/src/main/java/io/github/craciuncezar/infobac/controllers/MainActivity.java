@@ -106,11 +106,6 @@ public class MainActivity extends AppCompatActivity {
                     mActionBar.setTitle(getString(R.string.bottom_navigation_exerseaza));
                     loadFragment(new ExerciseFragment());
                     return true;
-                case R.id.chat_menu_item:
-                    mActionBar.setTitle(getString(R.string.bottom_navigation_discuta));
-                    mActionBar.setElevation(0);
-                    loadFragment(new DiscussionFragment());
-                    return true;
             }
             return true;
         }

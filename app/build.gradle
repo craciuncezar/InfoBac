@@ -32,12 +32,12 @@ dependencies {
   testImplementation 'junit:junit:4.12'
   androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
   androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
-  implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
   implementation 'androidx.annotation:annotation:1.0.0-rc02'
   implementation "com.jakewharton:butterknife:9.0.0-SNAPSHOT"
   annotationProcessor "com.jakewharton:butterknife-compiler:9.0.0-SNAPSHOT"
   implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
 
   implementation "com.airbnb.android:lottie:2.6.1"
+    implementation 'androidx.cardview:cardview:1.0.0'
 
 }

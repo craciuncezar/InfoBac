@@ -8,6 +8,7 @@ import butterknife.OnClick;
 import io.github.craciuncezar.infobac.DataManager;
 import io.github.craciuncezar.infobac.R;
 import io.github.craciuncezar.infobac.models.LessonPage;
+import io.github.craciuncezar.infobac.utils.FileUtility;
 import io.github.craciuncezar.infobac.views.LessonCongratsDialog;
 import io.github.craciuncezar.infobac.views.LessonViews;
 
@@ -50,8 +51,6 @@ public class LessonActivity extends AppCompatActivity {
     @BindView(R.id.lesson_content) LinearLayout lessonContent;
     @BindView(R.id.progress_bar_lesson) ProgressBar progressBar;
     @BindView(R.id.back_lesson) View back_button;
-
-//    @BindView(R.id.webtest) WebView webView;
 
     private String lessonName;
     private ArrayList<LessonPage> lessonPages;
@@ -168,26 +167,10 @@ public class LessonActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public String loadJSONFromAsset() {
-        String json;
-        try {
-            InputStream is = this.getAssets().open("Teorie/"+lessonName+".json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, StandardCharsets.UTF_8);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        return json;
-    }
-
     public ArrayList<LessonPage> getLessonData() {
         ArrayList<LessonPage> pages = new ArrayList<>();
         try {
-            JSONObject obj = new JSONObject(loadJSONFromAsset());
+            JSONObject obj = new JSONObject(FileUtility.readFromAsset(LessonActivity.this,"Teorie/"+lessonName+".json"));
             JSONArray pages_jArry = obj.getJSONArray("pages");
 
             for (int i = 0; i < pages_jArry.length(); i++) {

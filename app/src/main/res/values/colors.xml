@@ -3,9 +3,9 @@
     <color name="colorPrimary">#2196f3</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="white">#ffff</color>
+    <color name="white">#FFFFFF</color>
     <color name="BlueGrey50">#F9FAFE</color>
-    <color name="bluegrey">#546e7a</color>
+    <color name="bluegrey">#657786</color>
     <color name="progressTint">#9fa8da</color>
     <color name="lightGrey">#eceff1</color>
     <color name="darkBlueGrey">#37474f</color>

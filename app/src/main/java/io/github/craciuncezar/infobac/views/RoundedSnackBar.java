@@ -15,7 +15,7 @@ import io.github.craciuncezar.infobac.R;
 public class RoundedSnackBar {
   public static void showRoundedSnackBar(Context context, View view, String text) {
     Snackbar snackbar = Snackbar
-            .make(view, "Postarea a fost adaugata!", Snackbar.LENGTH_LONG);
+            .make(view, text, Snackbar.LENGTH_LONG);
     View snackbarView = snackbar.getView();
     TextView textView = (TextView) snackbarView.findViewById(R.id.snackbar_text);
     textView.setTextColor(context.getResources().getColor(R.color.white));

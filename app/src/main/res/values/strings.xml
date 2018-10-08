@@ -34,7 +34,17 @@
         <item>Toamna 2011</item>
     </string-array>
 
-    <string name="popular_tab">POPULAR</string>
-    <string name="new_tab">RECENT</string>
+    <string-array name="problems">
+        <item>Cel mai mare divizor comun</item>
+        <item>Cel mai mic multiplu comun</item>
+        <item>Suma cifrelor unui numar</item>
+        <item>Cea mai mare cifra a unui numar</item>
+        <item>Inversarea cifrelor unui numar</item>
+        <item>Sortare vector</item>
+        <item>Minimul si maximul unui vector</item>
+        <item>Verificare palindrom - sir de caractere</item>
+        <item>Numar vocale - sir de caractere</item>
+        <item>Inlocuirea cuvintelor - sir de caractere</item>
+    </string-array>
 
 </resources>

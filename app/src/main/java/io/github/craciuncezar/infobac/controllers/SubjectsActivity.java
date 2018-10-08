@@ -51,7 +51,7 @@ public class SubjectsActivity extends AppCompatActivity {
 
     private String currentSubject;
     private String filePath = "Subiecte/";
-    private boolean subjectIsCompleted = false;
+    private boolean subjectIsCompleted;
     private static final String PROFIL_KEY = "profil_subiecte";
     private ArrayList<String> subiecteRezolvate;
 
@@ -65,13 +65,10 @@ public class SubjectsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjects);
-
-        subiecteRezolvate = DataManager.getInstance().getCompletedSubjects();
-
-        filePath += getIntent().getStringExtra(PROFIL_KEY) + "/";
         ButterKnife.bind(this);
 
-        currentSubject = filePath + getResources().getStringArray(R.array.bac_subjects)[0];
+        subiecteRezolvate = DataManager.getInstance().getCompletedSubjects();
+        filePath += getIntent().getStringExtra(PROFIL_KEY) + "/";
 
         initToolBar();
         initTabLayout();

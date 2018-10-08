@@ -54,11 +54,9 @@ public class PdfSubjectFragment extends Fragment {
   public void updatePdfContainer(String filePath){
     ArrayList<Bitmap> bitmaps = readFromPDF(filePath);
     final Bitmap concatenatedBitmap = combineImageIntoOne(bitmaps);
-    container_pdf.post(new Runnable() {
-      public void run() {
-        container_pdf.setImage(ImageSource.bitmap(concatenatedBitmap));
-        scrollView.fullScroll(ScrollView.FOCUS_UP);
-      }
+    container_pdf.post(() -> {
+      container_pdf.setImage(ImageSource.bitmap(concatenatedBitmap));
+      scrollView.fullScroll(ScrollView.FOCUS_UP);
     });
   }
 

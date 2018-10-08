@@ -14,6 +14,7 @@ public class DataManager implements Serializable {
 
     private static volatile DataManager instance;
     private ArrayList<String> completedSubjects;
+    private ArrayList<String> completedProblems;
     private HashMap<String, Integer> lessonsProgress;
 
 
@@ -57,6 +58,20 @@ public class DataManager implements Serializable {
         return completedSubjects;
     }
 
+    private static ArrayList<String> readProblemsProgressData(Context context){
+        ArrayList<String> completedProblems = new ArrayList<>();
+        try {
+            FileInputStream fis = context.openFileInput("completedProblems.bin");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            completedProblems = (ArrayList<String>)ois.readObject();
+            ois.close();
+            fis.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return completedProblems;
+    }
+
     private static HashMap<String, Integer> readLessonsProgressData(Context context){
         HashMap<String, Integer> completedLessons= new HashMap<>();
         try {
@@ -95,6 +110,14 @@ public class DataManager implements Serializable {
             e.printStackTrace();
         }
         try {
+            FileOutputStream fos = context.openFileOutput("completedProblems.bin", Context.MODE_PRIVATE);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(instance.completedProblems);
+            oos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
             FileOutputStream fos = context.openFileOutput("lessonsProgress.bin", Context.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(instance.lessonsProgress);
@@ -114,12 +137,17 @@ public class DataManager implements Serializable {
 
     public void readData(Context context){
         instance.completedSubjects = readSubjectsProgressData(context);
+        instance.completedProblems = readProblemsProgressData(context);
         instance.lessonsProgress = readLessonsProgressData(context);
         instance.currentLesson = readCurrentLesson(context);
     }
 
     public ArrayList<String> getCompletedSubjects(){
         return instance.completedSubjects;
+    }
+
+    public ArrayList<String> getCompletedProblems(){
+        return instance.completedProblems;
     }
 
     public HashMap<String, Integer> getLessonsProgress() {

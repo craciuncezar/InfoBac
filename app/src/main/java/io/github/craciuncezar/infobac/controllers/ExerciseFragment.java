@@ -1,5 +1,6 @@
 package io.github.craciuncezar.infobac.controllers;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,8 @@ public class ExerciseFragment extends Fragment {
     @BindView(R.id.tv_subiecte_sn) TextView subjectsSnNumber;
     @BindView(R.id.tv_rezolvate_mate) TextView subjectMateCompleted;
     @BindView(R.id.tv_rezolvate_sn) TextView subjectsSnCompleted;
+    @BindView(R.id.tv_prob_complete) TextView problemsCompleted;
+    @BindView(R.id.tv_probleme) TextView problemsNumber;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -29,8 +32,8 @@ public class ExerciseFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_exercise, container, false);
         ButterKnife.bind(this, view);
 
-        initSubjectsCards();
-        
+        computeSubjectsNumbers();
+        computeProblemsNumbers();
         return  view;
     }
 
@@ -43,7 +46,13 @@ public class ExerciseFragment extends Fragment {
         startActivity(SubjectsActivity.getIntent(getContext(),"Stiinte"));
     }
 
-    public void initSubjectsCards(){
+    @OnClick(R.id.cardViewProbleme)
+    public void onCardViewProblemePressed(View view){
+        Intent intent = new Intent(getContext(),ProblemsActivity.class);
+        startActivity(intent);
+    }
+
+    public void computeSubjectsNumbers(){
         ArrayList<String> completedSubjects = DataManager.getInstance().getCompletedSubjects();
         int completedMate = 0;
         int completedSn = 0;
@@ -60,9 +69,17 @@ public class ExerciseFragment extends Fragment {
         subjectsSnNumber.setText(bacSubjectsNumber);
     }
 
+    public void computeProblemsNumbers(){
+        int completedProblems = DataManager.getInstance().getCompletedProblems().size();
+        problemsCompleted.setText(completedProblems + " REZOLVATE");
+        String problemsCountString = getResources().getStringArray(R.array.problems).length+" PROBLEME";
+        problemsNumber.setText(problemsCountString);
+    }
+
     @Override
     public void onResume() {
         super.onResume();
-        initSubjectsCards();
+        computeSubjectsNumbers();
+        computeProblemsNumbers();
     }
 }

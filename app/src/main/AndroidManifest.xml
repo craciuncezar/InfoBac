@@ -17,11 +17,8 @@
       </intent-filter>
     </activity>
     <activity android:name=".controllers.SubjectsActivity"></activity>
-    <activity
-        android:name=".controllers.AddDiscussionActivity"
-        android:windowSoftInputMode="stateVisible"></activity>
-    <activity android:name=".controllers.CommentsActivity"></activity>
     <activity android:name=".controllers.LessonActivity"></activity>
+    <activity android:name=".controllers.ProblemsActivity"></activity>
   </application>
 
 </manifest>

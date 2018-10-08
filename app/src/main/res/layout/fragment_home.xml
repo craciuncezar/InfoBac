@@ -8,6 +8,68 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:stateListAnimator="@anim/lift_on_touch"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewLearn">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/learnnow_gradient"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".80"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".80"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="4dp"
+                    android:text="Testeaza-ti cunostintele"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".80"
+                    android:text="Quiz game"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".2"
+                android:contentDescription="TODO"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_quiz" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -157,48 +219,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewLearn">
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/learnnow_gradient"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:padding="16dp">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight=".80"
-                android:orientation="vertical">
+                android:gravity="center_vertical"
+                android:paddingBottom="4dp"
+                android:text="Feedback"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".80"
-                    android:gravity="center_vertical"
-                    android:paddingBottom="4dp"
-                    android:text="Testeaza-ti cunostintele"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".80"
-                    android:text="Quiz game"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="46dp"
-                android:layout_height="match_parent"
-                android:layout_weight=".2"
-                android:contentDescription="TODO"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_quiz" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".80"
+                android:text="Feedback-ul si sugestile sunt bine venite. Lasa un review in Play Store!"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

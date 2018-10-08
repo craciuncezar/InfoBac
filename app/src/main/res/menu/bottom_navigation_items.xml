@@ -14,8 +14,4 @@
       android:id="@+id/exercise_menu_item"
       android:icon="@drawable/ic_exercise"
       android:title="@string/bottom_navigation_exerseaza" />
-  <item
-      android:id="@+id/chat_menu_item"
-      android:icon="@drawable/ic_chat"
-      android:title="@string/bottom_navigation_discuta" />
 </menu>

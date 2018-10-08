@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../styles/atom-one-dark.css">
+    <script src="../../highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+    <pre style="margin:0"><code class="cpp" style="padding: 12px;">// Program C++ pentru gasirea celui mai mic multiplu comun
+#include &lt;iostream&gt;
+using namespace std;
+//se declara variabilele a si b de tip intreg
+//variabila a memoreaza primul numar introdus de la tastatura
+//variabila b memoreaza al doilea numar introdus de la tastatura
+int a,b;
+int main()
+{
+//se citesc numerele a si b
+cout&lt;&lt;&quot;Introduceti numerele a si b: &quot;&lt;&lt;endl;
+cin&gt;&gt;a&gt;&gt;b;
+//se determina cel mai mic divizor comun prin scaderi repetate
+while(a!=b)
+    {
+        if(a&gt;b)
+            a=a-b;
+        else
+            b=b-a;
+    }
+//se afiseaza a (care memoreaza acum cmmdc-ul dintre cele 2 numere)
+cout&lt;&lt;&quot;Cmmdc = &quot;&lt;&lt;a;
+} </code></pre>
+
+</body>
+
+</html>

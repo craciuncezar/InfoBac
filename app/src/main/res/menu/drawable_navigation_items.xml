@@ -2,12 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
   <item
-      android:icon="@drawable/ic_profile"
-      android:title="Profil" />
+      android:id="@+id/delete_progress"
+      android:icon="@drawable/ic_delete"
+      android:title="@string/reset_progress" />
   <item
-      android:icon="@drawable/ic_settings"
-      android:title="Setari" />
+      android:id="@+id/report_bug"
+      android:icon="@drawable/ic_flag"
+      android:title="@string/report_bug" />
   <item
+      android:id="@+id/play_store"
+    android:icon="@drawable/ic_play_store"
+    android:title="@string/play_store"/>
+  <item
+      android:id="@+id/info"
       android:icon="@drawable/ic_info"
-      android:title="Despre" />
+      android:title="@string/about" />
 </menu>

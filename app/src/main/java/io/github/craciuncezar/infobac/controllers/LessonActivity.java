@@ -1,147 +1,70 @@
 package io.github.craciuncezar.infobac.controllers;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import io.github.craciuncezar.infobac.DataManager;
-import io.github.craciuncezar.infobac.R;
-import io.github.craciuncezar.infobac.models.LessonPage;
-import io.github.craciuncezar.infobac.utils.FileUtility;
-import io.github.craciuncezar.infobac.views.LessonCongratsDialog;
-import io.github.craciuncezar.infobac.views.LessonViews;
-
-import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.DecelerateInterpolator;
 import android.webkit.WebView;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.webkit.WebViewClient;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Array;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Locale;
 
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
+import io.github.craciuncezar.infobac.BaseActivity;
+import io.github.craciuncezar.infobac.R;
+import io.github.craciuncezar.infobac.databinding.ActivityLessonBinding;
+import io.github.craciuncezar.infobac.viewmodels.LessonViewModel;
+import io.github.craciuncezar.infobac.views.CongratsDialog;
 
-public class LessonActivity extends AppCompatActivity {
-
+public class LessonActivity extends BaseActivity {
     private static final String NAME_FOR_LESSON = "lesson";
+    private LessonViewModel viewModel;
+    private ActivityLessonBinding binding;
+    private Handler handler = new Handler();
 
-    @BindView(R.id.toolbar_lesson) Toolbar toolbarLesson;
-    @BindView(R.id.progress_lesson) TextView progressLesson;
-    @BindView(R.id.lesson_content) LinearLayout lessonContent;
-    @BindView(R.id.progress_bar_lesson) ProgressBar progressBar;
-    @BindView(R.id.back_lesson) View back_button;
-
-    private String lessonName;
-    private ArrayList<LessonPage> lessonPages;
-    private DataManager dataManager;
-
-    private int currentPage = 0;
-    private int lessonProgress = 0;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson);
-
-        ButterKnife.bind(this);
-
-        initToolBar();
-
-        lessonName = getIntent().getStringExtra(NAME_FOR_LESSON);
-        lessonPages = getLessonData();
-        dataManager = DataManager.getInstance();
-
-        if(DataManager.getInstance().getLessonsProgress().get(lessonName)!= null){
-            lessonProgress = dataManager.getLessonsProgress().get(lessonName);
-            currentPage = (lessonProgress+1) == lessonPages.size() ? 0 : lessonProgress;
-        } else {
-            dataManager.getLessonsProgress().put(lessonName,0);
-            dataManager.setCurrentLesson(lessonName);
-        }
-
-        if(currentPage!=0){
-            back_button.setVisibility(View.VISIBLE);
-        }
-
-        progressLesson.setText(String.format(Locale.ENGLISH,"%d/%d", currentPage+1, lessonPages.size()));
-        setProgressMax(progressBar,lessonPages.size()-1);
-        setProgressAnimate(progressBar, currentPage);
-        updateCurrentLayout(currentPage);
-    }
-
-    public static Intent getIntent(Context context, String lesson){
+    public static Intent getIntent(Context context, String lesson) {
         Intent intent = new Intent(context, LessonActivity.class);
         intent.putExtra(NAME_FOR_LESSON, lesson);
         return intent;
     }
 
-    @OnClick(R.id.forward_lesson)
-    public void forwardLessonClicked(View view){
-        if(currentPage<lessonPages.size()-1) {
-            currentPage++;
-            // Update current progresson
-            if(currentPage>lessonProgress) {
-                dataManager.setLessonsProgress(lessonName,currentPage);
-                dataManager.setCurrentLesson(lessonName);
-            }
-            progressLesson.setText(String.format(Locale.ENGLISH, "%d/%d", currentPage+1, lessonPages.size()));
-            setProgressAnimate(progressBar,currentPage);
-            lessonContent.removeAllViews();
-            updateCurrentLayout(currentPage);
-        } else{
-            List<String> lessons = Arrays.asList(getResources().getStringArray(R.array.lesson_names));
-            if(lessons.indexOf(lessonName)<(lessons.size()-1))
-                DataManager.getInstance().setCurrentLesson(lessons.get(lessons.indexOf(lessonName)+1));
-            LessonCongratsDialog.showDialog(this, getLayoutInflater());
-        }
-        back_button.setVisibility(View.VISIBLE);
+    @SuppressLint({"SetJavaScriptEnabled", "ClickableViewAccessibility"})
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_lesson);
+        viewModel = ViewModelProviders.of(this).get(LessonViewModel.class);
+        viewModel.setLesson(getIntent().getStringExtra(NAME_FOR_LESSON));
+        viewModel.getLessonProgress().observe(this, (progress) -> viewModel.initLesson(progress, this));
+        binding.setActivity(this);
+        binding.setViewModel(viewModel);
+        binding.setLifecycleOwner(this);
+        binding.lessonWebView.getSettings().setJavaScriptEnabled(true);
+
+        initToolBar();
+        observeUI();
+
+        binding.progressBarLesson.setMax((viewModel.getLessonPages() - 1) * 100);
     }
 
-    @OnClick(R.id.back_lesson)
-    public void backLessonClicked(View view){
-        if(currentPage>0) {
-            currentPage--;
-            progressLesson.setText(String.format(Locale.ENGLISH, "%d/%d", currentPage+1, lessonPages.size()));
-            setProgressAnimate(progressBar,currentPage);
-            lessonContent.removeAllViews();
-            updateCurrentLayout(currentPage);
-        }
-
-        if(currentPage==0)
-            back_button.setVisibility(View.GONE);
-    }
-
-    private void setProgressMax(ProgressBar pb, int max) {
-        pb.setMax(max * 100);
-    }
-
-    private void setProgressAnimate(ProgressBar pb, int progressTo)
-    {
-        ObjectAnimator animation = ObjectAnimator.ofInt(pb, "progress", pb.getProgress(), progressTo * 100);
-        animation.setDuration(500);
-        animation.setInterpolator(new DecelerateInterpolator());
-        animation.start();
+    private void observeUI() {
+        viewModel.getCurrentPage().observe(this, (page) -> {
+            binding.progressLesson.setText(String.format(Locale.ENGLISH, "%d/%d", page + 1, viewModel.getLessonPages()));
+            binding.lessonWebView.setVisibility(View.GONE);
+            binding.lessonWebView.loadUrl("file:///android_asset/Teorie/" + viewModel.getLessonName() + "/" + page + ".html");
+            handler.removeCallbacksAndMessages(null);
+            binding.lessonWebView.setWebViewClient(new WebViewClient() {
+                @Override
+                public void onPageFinished(WebView view, String url) {
+                    super.onPageFinished(view, url);
+                    binding.lessonWebView.evaluateJavascript("setCurrentStyle('" + getCurrentTheme() + "')", (result) -> handler.postDelayed(()-> binding.lessonWebView.setVisibility(View.VISIBLE),300));
+                }
+            });
+        });
     }
 
     @Override
@@ -154,76 +77,23 @@ public class LessonActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void initToolBar(){
-        setSupportActionBar(toolbarLesson);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater findMenuItems = getMenuInflater();
-        findMenuItems.inflate(R.menu.lesson_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    public ArrayList<LessonPage> getLessonData() {
-        ArrayList<LessonPage> pages = new ArrayList<>();
-        try {
-            JSONObject obj = new JSONObject(FileUtility.readFromAsset(LessonActivity.this,"Teorie/"+lessonName+".json"));
-            JSONArray pages_jArry = obj.getJSONArray("pages");
-
-            for (int i = 0; i < pages_jArry.length(); i++) {
-                LessonPage lessonPage = new LessonPage();
-                HashMap<String, String> widget;
-
-                JSONArray widgets_jArry = pages_jArry.getJSONObject(i).getJSONArray("widgets");
-                for(int j = 0; j<widgets_jArry.length(); j++) {
-                    JSONObject widget_jObj = widgets_jArry.getJSONObject(j);
-                    widget = new HashMap<>();
-
-                    Iterator<String> iter = widget_jObj.keys();
-                    while (iter.hasNext()) {
-                        String key = iter.next();
-                        try {
-                            String value = (String)widget_jObj.get(key);
-                            widget.put(key, value);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    lessonPage.addWidget(widget);
-                }
-                pages.add(lessonPage);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
+    public void nextPage() {
+        if (viewModel.isEndOfLesson())
+            CongratsDialog.showLessonDialog(this, getLayoutInflater());
+        else {
+            viewModel.nextLessonPage();
         }
-        return pages;
     }
 
-    public void updateCurrentLayout(int pageNumber){
-        LessonPage currentPage = lessonPages.get(pageNumber);
-        ArrayList<HashMap<String,String>> widgets = currentPage.getWidgets();
-        for(HashMap<String,String> widget : widgets){
-            switch (widget.get("type")){
-                case "title":
-                    lessonContent.addView(LessonViews.getTitleTextView(LessonActivity.this,widget.get("text")));
-                    break;
-                case "text":
-                    lessonContent.addView(LessonViews.getTextView(LessonActivity.this,widget.get("text")));
-                    break;
-                case "image":
-                    lessonContent.addView(LessonViews.getImageView(LessonActivity.this,widget.get("scale"),widget.get("height"),widget.get("drawable")));
-                    break;
-                case "codeSnippet":
-                    lessonContent.addView(LessonViews.getCodeSnippet(LessonActivity.this,widget.get("name")));
-                    break;
-                default:
-                    break;
-            }
+    public void previousPage() {
+        viewModel.previousLessonPage();
+    }
+
+    private void initToolBar() {
+        setSupportActionBar(binding.toolbarLesson);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
         }
-
     }
-
 }

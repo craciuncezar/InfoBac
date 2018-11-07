@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.github.craciuncezar.infobac.viewmodels.QuizGameViewModel" />
+        <variable
+            name="handler"
+            type="io.github.craciuncezar.infobac.controllers.QuizGameActivity"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".controllers.LessonActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?toolbarColor"
+            android:elevation="2dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:id="@+id/progress_bar_quiz"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginEnd="32dp"
+                android:max="@{9*100}"
+                android:progressDrawable="?progressBarRounded"
+                app:setProgressAnimate="@{viewModel.currentQuestionNumber}" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_quiz">
+
+            <LinearLayout
+                android:id="@+id/lesson_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="12dp"
+                android:paddingBottom="71dp">
+
+                <TextView
+                    android:id="@+id/quiz_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="12dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="2dp"
+                    android:textColor="?android:textColorPrimary"
+                    android:text="@{viewModel.quizQuestion.question}"
+                    android:textSize="16sp"
+                    tools:text="Indicati expresia care are valoarea 1 dacă si numai dacă numărul natural memorat în variabila întreagă x are exact trei cifre." />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="4dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <WebView
+                        android:id="@+id/webView_problem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="12dp"
+                    android:weightSum="2">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardAnswer1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:background="?quizCardColor"
+                        android:gravity="center"
+                        android:onClick="@{()->viewModel.onChoiceSelected(0)}"
+                        app:cardCornerRadius="4dp"
+                        app:contentPadding="8dp"
+                        app:isSelectedAnswer="@{viewModel.selectedAnswerIndex == 0}">
+
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@{viewModel.quizQuestion.choices[0]}"
+                            android:textAlignment="center"
+                            android:textColor="@color/blueGrey"
+                            tools:text="x/1000==0 &amp;&amp; x>99" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardAnswer2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        android:background="?quizCardColor"
+                        android:gravity="center"
+                        android:minHeight="100dp"
+                        android:onClick="@{()->viewModel.onChoiceSelected(1)}"
+                        app:cardCornerRadius="4dp"
+                        app:contentPadding="8dp"
+                        app:isSelectedAnswer="@{viewModel.selectedAnswerIndex == 1}">
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@{viewModel.quizQuestion.choices[1]}"
+                            android:textAlignment="center"
+                            android:textColor="@color/blueGrey"
+                            tools:text="x/1000==0 || x&lt;1000" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="6dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="8dp"
+                    android:weightSum="2">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardAnswer3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1"
+                        android:background="?quizCardColor"
+                        android:gravity="center"
+                        android:minHeight="100dp"
+                        android:onClick="@{()->viewModel.onChoiceSelected(2)}"
+                        app:cardCornerRadius="4dp"
+                        app:contentPadding="8dp"
+                        app:isSelectedAnswer="@{viewModel.selectedAnswerIndex == 2}">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@{viewModel.quizQuestion.choices[2]}"
+                            android:textAlignment="center"
+                            android:textColor="@color/blueGrey"
+                            tools:text="x%1000==0 &amp;&amp; x&lt;1000" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardAnswer4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_weight="1"
+                        android:background="?quizCardColor"
+                        android:gravity="center"
+                        android:onClick="@{()->viewModel.onChoiceSelected(3)}"
+                        app:cardCornerRadius="4dp"
+                        app:contentPadding="8dp"
+                        app:isSelectedAnswer="@{viewModel.selectedAnswerIndex == 3}">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@{viewModel.quizQuestion.choices[3]}"
+                            android:textAlignment="center"
+                            android:textColor="@color/blueGrey"
+                            tools:text="x%1000==0 || x&gt;99" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/buttonAnswer"
+            android:layout_width="0dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:enabled="@{viewModel.selectedAnswerIndex != -1}"
+            android:onClick="@{()->handler.onAnswerPressed()}"
+            android:text="@string/Answer"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

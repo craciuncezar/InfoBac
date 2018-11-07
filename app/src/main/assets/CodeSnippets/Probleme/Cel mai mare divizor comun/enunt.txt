@@ -1,2 +1,3 @@
 <div>Se citesc de la tastatura doua numere a si b. Determinati si afisati pe ecran cel mai mare divizor comun al acestora.</div>
+<div>Ex: pentru numerele 98 si 56 se afiseaza 14.</div>
 Solutia prezentata determina cel mai mare divizor comun al lui a si b prin scaderi repetate.

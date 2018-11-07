@@ -1,95 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinator_layout_subjects"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".controllers.SubjectsActivity">
+<layout>
 
-    <com.google.android.material.appbar.AppBarLayout
+    <data>
+        <variable
+            name="activity"
+            type="io.github.craciuncezar.infobac.controllers.ProblemsActivity"/>
+        <variable
+            name="viewModel"
+            type="io.github.craciuncezar.infobac.viewmodels.ProblemsViewModel"/>
+
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/coordinator_layout_subjects"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".controllers.SubjectsActivity">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_subjects"
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_subjects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?toolbarColor"
+                android:elevation="4dp"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:contentInsetStartWithNavigation="0dp"
+                app:titleTextColor="?android:textColorPrimary" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/subject_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?toolbarColor"
+                android:elevation="4dp"
+                android:onItemSelected="@{(p, v, pos, id)->activity.onProblemItemSelected()}"
+                android:textAlignment="center" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:contentInsetStartWithNavigation="0dp"
-            android:background="@color/BlueGrey50"
-            android:elevation="4dp"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:titleTextColor="@color/darkBlueGrey" />
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/subject_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/BlueGrey50"
-            android:elevation="4dp"
-            android:textAlignment="center" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="4dp">
-
-            <TextView
-                android:id="@+id/problemText"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="4dp">
 
-            <Button
-                android:id="@+id/btn_show_solution"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:backgroundTint="@color/colorPrimary"
-                android:text="AFISEAZA SOLUTIE" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="0dp"
-                android:layout_marginLeft="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginRight="6dp"
-                android:layout_marginBottom="68dp">
-
-                <WebView
-                    android:id="@+id/webView_solution"
+                <TextView
+                    android:id="@+id/problemText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
-                    android:visibility="gone" />
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+                    android:layout_margin="16dp"
+                    android:textColor="?android:textColorPrimary"
+                    app:problemText="@{viewModel.problemText}"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabSubjects"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:foregroundGravity="right|bottom"
-        android:layout_gravity="bottom|end"
-        android:src="@drawable/avd_check_to_cross"
-        app:backgroundTint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:pressedTranslationZ="12dp" />
+                <Button
+                    android:id="@+id/btn_show_solution"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="@{_->activity.showSolutionPressed()}"/>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginBottom="68dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp"
+                    app:isVisible="@{viewModel.solutionIsVisible}">
+
+                    <WebView
+                        android:id="@+id/webView_solution"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        app:solutionUrl="@{viewModel.problemName}"/>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabSubjects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:foregroundGravity="right|bottom"
+            android:src="@drawable/avd_check_to_cross"
+            app:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:pressedTranslationZ="12dp"
+            app:animateFabIcon="@{viewModel.problemIsCompleted}"
+            android:onClick="@{()->activity.onCompletePressed()}"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

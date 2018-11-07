@@ -1,20 +1,67 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base application theme. -->
+    <!-- BASE THEME -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/BlueGrey50</item>
-        <item name="android:statusBarColor">@color/BlueGrey50</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="fontFamily">@font/fibra_regular</item>
-        <item name="colorControlNormal">@color/colorPrimary</item>
     </style>
+
+    <!-- LIGHT THEME -->
+    <style name="LightTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="toolbarColor">@color/lightThemeBackground</item>
+        <!-- Text Colors -->
+        <item name="android:textColorPrimary">@color/blueGrey</item>
+        <item name="android:textColorPrimaryInverse">@color/colorPrimary</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:textColorTertiary">@color/darkBlueGrey</item>
+        <item name="android:statusBarColor">@color/statusColor</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="textWorkaroundColor">@color/blueGrey</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:colorBackground">@color/lightThemeBackground</item>
+        <item name="progressBarRounded">@drawable/progress_bar_rounded</item>
+        <item name="dividerColor">@color/lightGrey</item>
+        <item name="quizCardColor">@color/white</item>
+        <item name="dialogBackground">@color/lightThemeBackground</item>
+        <!-- Gradients -->
+        <item name="progressGradient">@drawable/gradient_progress</item>
+        <item name="homeGradient">@drawable/gradient_home</item>
+        <item name="learnGradient">@drawable/gradient_learn</item>
+        <item name="exerciseGradient">@drawable/gradient_progress</item>
+    </style>
+
+    <!-- DARK THEME -->
+    <style name="DarkTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="toolbarColor">@color/darkThemeToolbar</item>
+        <!-- Text Colors -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:textColorTertiary">@color/darkBlueGrey</item>
+        <item name="android:statusBarColor">@color/darkThemeStatusBar</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="textWorkaroundColor">@color/white</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="android:colorBackground">@color/darkThemeBackground</item>
+        <item name="progressBarRounded">@drawable/progress_bar_rounded_dark</item>
+        <item name="dividerColor">@color/darkThemeToolbar</item>
+        <item name="quizCardColor">@color/darkThemeToolbar</item>
+        <item name="dialogBackground">@color/darkThemeBackground</item>
+        <!-- Gradients -->
+        <item name="progressGradient">@drawable/gradient_dark</item>
+        <item name="homeGradient">@drawable/gradient_dark</item>
+        <item name="learnGradient">@drawable/gradient_dark</item>
+        <item name="exerciseGradient">@drawable/gradient_dark</item>
+    </style>
+
 
     <style name="CustomMenuDrawerText" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="SplashScreen" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name ="android:windowBackground"> @drawable/splash_screen_bg</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
 </resources>

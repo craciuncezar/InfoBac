@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="toolbarColor" format="reference"/>
+    <attr name="progressGradient" format="reference"/>
+    <attr name="homeGradient" format="reference"/>
+    <attr name="learnGradient" format="reference"/>
+    <attr name="exerciseGradient" format="reference"/>
+    <attr name="progressBarRounded" format="reference"/>
+    <attr name="dividerColor" format="reference"/>
+    <attr name="quizCardColor" format="reference"/>
+    <attr name="dialogBackground" format="reference"/>
+    <!--... workaround bug ...-->
+    <attr name="textWorkaroundColor" format="reference"/>
+</resources>

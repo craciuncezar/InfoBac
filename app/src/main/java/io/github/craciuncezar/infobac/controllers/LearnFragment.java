@@ -5,62 +5,49 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-
-import java.util.HashMap;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import io.github.craciuncezar.infobac.DataManager;
+import androidx.lifecycle.ViewModelProviders;
 import io.github.craciuncezar.infobac.R;
+import io.github.craciuncezar.infobac.data.entity.LessonProgress;
+import io.github.craciuncezar.infobac.databinding.FragmentLearnBinding;
+import io.github.craciuncezar.infobac.viewmodels.LearnViewModel;
 
 public class LearnFragment extends Fragment {
-
-    @BindView(R.id.progressBarIntroducere) ProgressBar progressBarIntroducere;
-    @BindView(R.id.tv_progress_introducere) TextView progressTextViewIntroducere;
-    private HashMap<String,Integer> lessonsProgress;
-    private int[] subjectsChapters;
+    private FragmentLearnBinding binding;
+    private LearnViewModel viewModel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_learn, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_learn, container, false);
+        viewModel = ViewModelProviders.of(this).get(LearnViewModel.class);
+        binding.setFragment(this);
+        binding.setViewModel(viewModel);
+        binding.setLifecycleOwner(this);
 
-        ButterKnife.bind(this,rootView);
-        subjectsChapters = getResources().getIntArray(R.array.lesson_chapters);
-        lessonsProgress = DataManager.getInstance().getLessonsProgress();
-
-        if(lessonsProgress.containsKey("Introducere")){
-            int progress = lessonsProgress.get("Introducere");
-            progressBarIntroducere.setMax(subjectsChapters[0]);
-            progressBarIntroducere.setProgress(progress+1);
-            progressTextViewIntroducere.setText((int)((float)progressBarIntroducere.getProgress()/progressBarIntroducere.getMax()*100)+"%");
-        }
-
-        return rootView;
+        observeUi();
+        return binding.getRoot();
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        if(lessonsProgress.containsKey("Introducere")){
-            int progress = lessonsProgress.get("Introducere");
-            progressBarIntroducere.setMax(subjectsChapters[0]);
-            progressBarIntroducere.setProgress(progress+1);
-            progressTextViewIntroducere.setText((int)((float)progressBarIntroducere.getProgress()/progressBarIntroducere.getMax()*100)+"%");
-        }
+    private void observeUi() {
+        viewModel.getLessonProgressList().observe(this, (lessonProgressList) -> {
+            LessonProgress introducereProgress = viewModel.progressAvailable("Introducere");
+            binding.progressBarIntroducere.setProgress(introducereProgress != null ? introducereProgress.getProgressIndex() + 1 : 0);
+            String text = (int) (((float) binding.progressBarIntroducere.getProgress() / binding.progressBarIntroducere.getMax()) * 100)+"%";
+            binding.progressTextViewIntroducere.setText(text);
+
+            LessonProgress pseudocodProgress = viewModel.progressAvailable("Pseudocod");
+            binding.progressBarPseudocod.setProgress(pseudocodProgress != null ? pseudocodProgress.getProgressIndex() + 1 : 0);
+            text = (int) (((float) binding.progressBarPseudocod.getProgress() / binding.progressBarPseudocod.getMax()) * 100)+"%";
+            binding.progressTextViewPseudocod.setText(text);
+        });
     }
 
-    @OnClick(R.id.lesson_introduction)
-    public void onClickLesson(View view){
-        TextView textView = view.findViewById(R.id.lesson_name);
-        Intent intent = LessonActivity.getIntent(getContext(), textView.getText().toString());
+    public void onClickLesson(String lesson) {
+        Intent intent = LessonActivity.getIntent(getContext(), lesson);
         startActivity(intent);
     }
-
-
 }

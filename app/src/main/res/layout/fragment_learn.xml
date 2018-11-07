@@ -1,208 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".controllers.LearnFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/lesson_introduction"
-        android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="2dp"
-        android:clickable="true"
-        android:foreground="?selectableItemBackground"
-        android:stateListAnimator="@anim/lift_on_touch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:focusable="true">
+    <data>
 
-        <LinearLayout
+        <variable
+            name="fragment"
+            type="io.github.craciuncezar.infobac.controllers.LearnFragment" />
+
+        <variable
+            name="viewModel"
+            type="io.github.craciuncezar.infobac.viewmodels.LearnViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".controllers.LearnFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/lesson_introduction"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/introduction_gradient"
-            android:orientation="horizontal">
+            android:layout_height="120dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{()->fragment.onClickLesson(viewModel.getSubjectName(0))}"
+            android:stateListAnimator="@anim/lift_on_touch"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.4">
+                android:background="?learnGradient"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
 
-                <ProgressBar
-                    android:id="@+id/progressBarIntroducere"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="0dp"
-                    android:layout_height="5dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="16dp"
-                    android:progressDrawable="@drawable/rounded_progress_bar"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/tv_progress_introducere" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4">
 
-                <TextView
-                    android:id="@+id/tv_progress_introducere"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="0%"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toTopOf="@+id/progressBarIntroducere"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    <ProgressBar
+                        android:id="@+id/progressBarIntroducere"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="5dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:max="@{viewModel.getNumbersOfChapters(0)}"
+                        android:progressDrawable="?progressBarRounded"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/progressTextViewIntroducere" />
 
-                <TextView
-                    android:id="@+id/lesson_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Introducere"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/tv_progress_introducere"
-                    app:layout_constraintStart_toStartOf="@+id/tv_progress_introducere" />
+                    <TextView
+                        android:id="@+id/progressTextViewIntroducere"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/progressBarIntroducere"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:text="0%" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="COMPLETAT"
-                    android:textColor="@color/BlueGrey50"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_progress_introducere"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/tv_progress_introducere"
-                    app:layout_constraintTop_toTopOf="@+id/tv_progress_introducere" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/indroduction"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/progressTextViewIntroducere"
+                        app:layout_constraintStart_toStartOf="@+id/progressTextViewIntroducere" />
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.6"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/completed"
+                        android:textColor="@color/lightThemeBackground"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/progressTextViewIntroducere"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/progressTextViewIntroducere"
+                        app:layout_constraintTop_toTopOf="@+id/progressTextViewIntroducere" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
+                    android:layout_weight="0.6"
+                    android:contentDescription="@null"
                     android:paddingTop="12dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/ic_undraw_outer_space_3v6n" />
-            </FrameLayout>
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?selectableItemBackground"
-        android:stateListAnimator="@anim/lift_on_touch"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lesson_introduction">
-
-        <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/lesson_pseudocod"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/introduction_gradient"
-            android:orientation="horizontal">
+            android:layout_height="120dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{()->fragment.onClickLesson(viewModel.getSubjectName(1))}"
+            android:stateListAnimator="@anim/lift_on_touch"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.4">
+                android:background="?learnGradient"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
 
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="0dp"
-                    android:layout_height="5dp"
-                    android:progressDrawable="@drawable/rounded_progress_bar"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginStart="16dp"
-                    />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4">
 
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="0%"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toTopOf="@+id/progressBar"
-                    app:layout_constraintStart_toStartOf="@+id/progressBar" />
+                    <ProgressBar
+                        android:id="@+id/progressBarPseudocod"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:max="@{viewModel.getNumbersOfChapters(1)}"
+                        android:progressDrawable="?progressBarRounded"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:text="Pseudocod"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/textView5"
-                    app:layout_constraintStart_toStartOf="@+id/progressBar" />
+                    <TextView
+                        android:id="@+id/progressTextViewPseudocod"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/progressBarPseudocod"
+                        app:layout_constraintStart_toStartOf="@+id/progressBarPseudocod"
+                        tools:text="0%" />
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:text="COMPLETAT"
-                    android:textColor="@color/BlueGrey50"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView7"
-                    app:layout_constraintStart_toEndOf="@+id/textView7"
-                    app:layout_constraintTop_toTopOf="@+id/textView7" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:text="@string/pseudocod"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/textView5"
+                        app:layout_constraintStart_toStartOf="@+id/progressBarPseudocod" />
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.6"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/completed"
+                        android:textColor="@color/lightThemeBackground"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/progressTextViewPseudocod"
+                        app:layout_constraintStart_toEndOf="@+id/progressTextViewPseudocod"
+                        app:layout_constraintTop_toTopOf="@+id/progressTextViewPseudocod" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
+                    android:layout_weight="0.6"
+                    android:contentDescription="@null"
+                    android:paddingLeft="12dp"
                     android:paddingTop="12dp"
-                    android:paddingBottom = "12dp"
-                    android:paddingRight = "12dp"
-                    android:paddingLeft = "12dp"
-                    android:src="@drawable/ic_img_blocks"
-                    android:scaleType="fitCenter" />
-            </FrameLayout>
+                    android:paddingRight="12dp"
+                    android:paddingBottom="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_img_blocks" />
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

@@ -5,81 +5,78 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import io.github.craciuncezar.infobac.DataManager;
+import androidx.lifecycle.ViewModelProviders;
 import io.github.craciuncezar.infobac.R;
+import io.github.craciuncezar.infobac.databinding.FragmentExerciseBinding;
+import io.github.craciuncezar.infobac.viewmodels.ExerciseViewModel;
 
 public class ExerciseFragment extends Fragment {
-    
-    @BindView(R.id.tv_subiecte_mate) TextView subjectsMateNumber;
-    @BindView(R.id.tv_subiecte_sn) TextView subjectsSnNumber;
-    @BindView(R.id.tv_rezolvate_mate) TextView subjectMateCompleted;
-    @BindView(R.id.tv_rezolvate_sn) TextView subjectsSnCompleted;
-    @BindView(R.id.tv_prob_complete) TextView problemsCompleted;
-    @BindView(R.id.tv_probleme) TextView problemsNumber;
+    private FragmentExerciseBinding binding;
+    private ExerciseViewModel viewModel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_exercise, container, false);
-        ButterKnife.bind(this, view);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_exercise, container, false);
+        binding.setFragment(this);
+        viewModel = ViewModelProviders.of(this).get(ExerciseViewModel.class);
 
-        computeSubjectsNumbers();
-        computeProblemsNumbers();
-        return  view;
+        initExerciseNumbers();
+        observeUI();
+        return binding.getRoot();
     }
 
-    @OnClick({R.id.cardViewMate})
-    public void onSubjectsCardPressed(View view){
-        startActivity(SubjectsActivity.getIntent(getContext(),"Mate"));
-    }
-    @OnClick({R.id.cardViewStiinte})
-    public void onCardViewStiintePressed(View view){
-        startActivity(SubjectsActivity.getIntent(getContext(),"Stiinte"));
+    private void observeUI() {
+        viewModel.getNumberOfCompletedProblems().observe(this, (number) -> {
+            String text = number + " REZOLVATE";
+            binding.tvProbComplete.setText(text);
+        });
+
+        viewModel.getNumberOfCompletedQuizzes().observe(this, (number) -> {
+            String text = number + " COMPLETATE";
+            binding.tvQuizComplete.setText(text);
+        });
+
+        viewModel.getNumberOfCompletedSubjectMate().observe(this, (number) -> {
+            String text = number + " REZOLVATE";
+            binding.tvRezolvateMate.setText(text);
+        });
+
+        viewModel.getNumberOfCompletedSubjectStiinte().observe(this, (number) -> {
+            String text = number + " REZOLVATE";
+            binding.tvRezolvateSn.setText(text);
+        });
     }
 
-    @OnClick(R.id.cardViewProbleme)
-    public void onCardViewProblemePressed(View view){
-        Intent intent = new Intent(getContext(),ProblemsActivity.class);
+    public void onCardMatePressed() {
+        startActivity(SubjectsActivity.getIntent(getContext(), "Mate"));
+    }
+
+    public void onCardStiintePressed() {
+        startActivity(SubjectsActivity.getIntent(getContext(), "Stiinte"));
+    }
+
+    public void onCardProblemePressed() {
+        Intent intent = new Intent(getContext(), ProblemsActivity.class);
         startActivity(intent);
     }
 
-    public void computeSubjectsNumbers(){
-        ArrayList<String> completedSubjects = DataManager.getInstance().getCompletedSubjects();
-        int completedMate = 0;
-        int completedSn = 0;
-        for(String s: completedSubjects){
-            if(s.startsWith("Subiecte/Mate"))
-                completedMate++;
-            else if(s.startsWith("Subiecte/Stiinte"))
-                completedSn++;
-        }
-        subjectMateCompleted.setText(completedMate + " REZOLVATE");
-        subjectsSnCompleted.setText(completedSn + " REZOLVATE");
-        String bacSubjectsNumber = getResources().getStringArray(R.array.bac_subjects).length+" SUBIECTE";
-        subjectsMateNumber.setText(bacSubjectsNumber);
-        subjectsSnNumber.setText(bacSubjectsNumber);
+    public void onCardQuizPressed() {
+        Intent intent = new Intent(getContext(), QuizActivity.class);
+        startActivity(intent);
     }
 
-    public void computeProblemsNumbers(){
-        int completedProblems = DataManager.getInstance().getCompletedProblems().size();
-        problemsCompleted.setText(completedProblems + " REZOLVATE");
-        String problemsCountString = getResources().getStringArray(R.array.problems).length+" PROBLEME";
-        problemsNumber.setText(problemsCountString);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        computeSubjectsNumbers();
-        computeProblemsNumbers();
+    private void initExerciseNumbers() {
+        String bacSubjectsNumber = getResources().getStringArray(R.array.bac_subjects).length + " SUBIECTE";
+        binding.tvSubiecteMate.setText(bacSubjectsNumber);
+        binding.tvSubiecteSn.setText(bacSubjectsNumber);
+        String problemsCountString = getResources().getStringArray(R.array.problems).length + " PROBLEME";
+        binding.tvProbleme.setText(problemsCountString);
+        String numberOfQuizes = getResources().getStringArray(R.array.quiz_name).length + " QUIZURI";
+        binding.tvQuiz.setText(numberOfQuizes);
     }
 }

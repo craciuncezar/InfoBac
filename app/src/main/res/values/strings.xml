@@ -1,50 +1,43 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">InfoBac</string>
     <string name="bottom_navigation_home">Home</string>
     <string name="bottom_navigation_invata">Invata</string>
     <string name="bottom_navigation_exerseaza">Exerseaza</string>
     <string name="bottom_navigation_discuta">Discuta</string>
-
-    <string-array name="bac_subjects">
-        <item>Toamna 2018</item>
-        <item>Vara 2018</item>
-        <item>Model 2018</item>
-        <item>Toamna 2017</item>
-        <item>Vara 2017</item>
-        <item>Model 2017</item>
-        <item>Simulare 2017</item>
-        <item>Model 2016</item>
-        <item>Simulare 2016</item>
-        <item>Olimpici 2016</item>
-        <item>Vara 2016</item>
-        <item>Toamna 2016</item>
-        <item>Model 2015</item>
-        <item>Simulare 2015</item>
-        <item>Vara 2015</item>
-        <item>Toamna 2015</item>
-        <item>Model 2014</item>
-        <item>Simulare 2014</item>
-        <item>Vara 2014</item>
-        <item>Toamna 2014</item>
-        <item>Vara 2013</item>
-        <item>Toamna 2013</item>
-        <item>Vara 2012</item>
-        <item>Toamna 2012</item>
-        <item>Vara 2011</item>
-        <item>Toamna 2011</item>
-    </string-array>
-
-    <string-array name="problems">
-        <item>Cel mai mare divizor comun</item>
-        <item>Cel mai mic multiplu comun</item>
-        <item>Suma cifrelor unui numar</item>
-        <item>Cea mai mare cifra a unui numar</item>
-        <item>Inversarea cifrelor unui numar</item>
-        <item>Sortare vector</item>
-        <item>Minimul si maximul unui vector</item>
-        <item>Verificare palindrom - sir de caractere</item>
-        <item>Numar vocale - sir de caractere</item>
-        <item>Inlocuirea cuvintelor - sir de caractere</item>
-    </string-array>
-
+    <string name="darkTheme">Dark Theme</string>
+    <string name="lightTheme">Light Theme</string>
+    <string name="test_your_knowledge">Testeaza-ti cunostintele</string>
+    <string name="quiz_game">Quiz game</string>
+    <string name="your_progress">Progresul tau</string>
+    <string name="completed_lessons">Lectii completate</string>
+    <string name="completed_exercises">Exercitii rezolvate</string>
+    <string name="feedback">Feedback</string>
+    <string name="feedback_text">Feedback-ul si sugestile sunt bine venite. Lasa un review in Play Store!</string>
+    <string name="completed">COMPLETAT</string>
+    <string name="indroduction">Introducere</string>
+    <string name="pseudocod">Pseudocod</string>
+    <string name="varied_level">NIVEL VARIAT</string>
+    <string name="medium_level">NIVEL MEDIU</string>
+    <string name="next">INAINTE</string>
+    <string name="back">INAPOI</string>
+    <string name="Answer">RASPUNDE</string>
+    <string name="Hide_solution">Ascunde solutia</string>
+    <string name="Show_solution">Afiseaza solutia</string>
+    <string name="lesson_progress">%1$d \%</string>
+    <string name="wrong">GRESIT</string>
+    <string name="continua">CONTINUA</string>
+    <string name="despreApp">Salut, numele meu este Cezar, sunt dezvoltatorul acestei aplicatii. Am creat aceasta aplicatie cu scopul de a ii ajuta pe cei ce doresc sa se pregateasca pentru examenul de bacalaureat la informatica. Sper sa iti fie de folos, bafta la invatat!</string>
+    <string name="are_you_sure">Esti sigur ca doresti sa resetezi progresul?</string>
+    <string name="bug_mail_subject">Info Bug Report</string>
+    <string name="bug_mail_text">Bugul gasit:</string>
+    <string name="completed_lesson">Lectie completa</string>
+    <string name="completed_quiz">Quiz complet</string>
+    <string name="change_quiz">Schimba quizul</string>
+    <string name="reset_progress">Reseteaza Progresul</string>
+    <string name="report_bug">Reporteaza un bug</string>
+    <string name="play_store">Play store</string>
+    <string name="about">Despre</string>
+    <string name="student">Student</string>
+    <string name="choose_question_set" tools:ignore="Typos">Alege setul de intrebari</string>
+    <string name="Correct_answer_was">Raspunsul corect era: %s</string>
 </resources>

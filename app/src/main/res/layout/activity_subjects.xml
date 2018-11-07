@@ -1,74 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinator_layout_subjects"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".controllers.SubjectsActivity">
+<layout>
+    <data>
+        <variable
+            name="activity"
+            type="io.github.craciuncezar.infobac.controllers.SubjectsActivity"/>
+        <variable
+            name="viewModel"
+            type="io.github.craciuncezar.infobac.viewmodels.SubjectsViewModel"/>
+    </data>
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_subjects"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:contentInsetStartWithNavigation="0dp"
-            android:background="@color/BlueGrey50"
-            android:elevation="4dp"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:titleTextColor="@color/darkBlueGrey" />
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayoutSubjects"
-            style="@style/Widget.MaterialComponents.TabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/BlueGrey50"
-            android:elevation="4dp"
-            app:tabGravity="fill"
-            app:tabIndicatorColor="@color/colorPrimary"
-            app:tabInlineLabel="false"
-            app:tabMaxWidth="0dp"
-            app:tabSelectedTextColor="@color/colorPrimary"
-            app:tabTextColor="@color/bluegrey">
-
-        </com.google.android.material.tabs.TabLayout>
-
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/subject_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/BlueGrey50"
-            android:elevation="4dp"
-            android:textAlignment="center" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/subject_fragment_container"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/coordinator_layout_subjects"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:nestedScrollingEnabled="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:fitsSystemWindows="true"
+        tools:context=".controllers.SubjectsActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabSubjects"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:foregroundGravity="right|bottom"
-        android:layout_gravity="bottom|end"
-        android:src="@drawable/avd_check_to_cross"
-        app:backgroundTint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:pressedTranslationZ="12dp" />
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_subjects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?toolbarColor"
+                android:elevation="4dp"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:titleTextColor="?android:textColorPrimary" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayoutSubjects"
+                style="@style/Widget.MaterialComponents.TabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?toolbarColor"
+                android:elevation="4dp"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/colorPrimary"
+                app:tabInlineLabel="false"
+                app:tabMaxWidth="0dp"
+                app:tabSelectedTextColor="@color/colorPrimary"
+                app:tabTextColor="@color/blueGrey">
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/subject_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?toolbarColor"
+                android:elevation="4dp"
+                android:textAlignment="center"
+                android:onItemSelected="@{()->activity.onSubjectItemSelected()}"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/subject_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabSubjects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:foregroundGravity="right|bottom"
+            android:src="@drawable/avd_check_to_cross"
+            app:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:pressedTranslationZ="12dp"
+            app:animateFabIcon="@{viewModel.subjectIsCompleted}"
+            android:onClick="@{()->activity.onFabClick()}"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

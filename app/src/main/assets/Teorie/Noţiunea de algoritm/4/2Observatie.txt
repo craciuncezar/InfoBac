@@ -1,1 +1,0 @@
-﻿ - Rezolvabilitate algoritmul trebuie să aibă cel puţin o soluţie

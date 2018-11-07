@@ -1,1 +1,0 @@
-﻿        Această succesiune de paşi rezolvă ecuaţia de forma specificată pentru orice valori ale datelor de intrare, prin urmare este un algoritm. 

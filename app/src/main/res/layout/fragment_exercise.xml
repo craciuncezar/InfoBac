@@ -1,500 +1,504 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".controllers.ExerciseFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+            name="fragment"
+            type="io.github.craciuncezar.infobac.controllers.ExerciseFragment"/>
+    </data>
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".controllers.ExerciseFragment">
 
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewMate"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:clickable="true"
-            android:foreground="?selectableItemBackground"
-            android:stateListAnimator="@anim/lift_on_touch"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:orientation="vertical">
 
-            <LinearLayout
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewMate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/progress_gradient"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="SUBIECTE BAC\nMATE-INFO"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@anim/lift_on_touch"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:onClick="@{()-> fragment.onCardMatePressed()}">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:weightSum="3">
+                    android:background="?exerciseGradient"
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="SUBIECTE BAC\nMATE-INFO"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:weightSum="3">
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="2dp"
-                            app:srcCompat="@drawable/ic_count" />
 
-                        <TextView
-                            android:id="@+id/tv_subiecte_mate"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:text="23 SUBIECTE"
-                            android:textColor="@color/white"
-                            android:textSize="11sp" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                android:contentDescription="@null"
+                                app:srcCompat="@drawable/ic_count" />
+
+                            <TextView
+                                android:id="@+id/tv_subiecte_mate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                tools:text="23 SUBIECTE" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:srcCompat="@drawable/ic_completed" />
+
+                            <TextView
+                                android:id="@+id/tv_rezolvate_mate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                tools:text="0 REZOLVATE" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:srcCompat="@drawable/ic_difficulty" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:text="@string/medium_level"
+                                android:textColor="@color/white"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="2dp"
-                            app:srcCompat="@drawable/ic_completed" />
-
-                        <TextView
-                            android:id="@+id/tv_rezolvate_mate"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:text="0 REZOLVATE"
-                            android:textColor="@color/white"
-                            android:textSize="11sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="2dp"
-                            app:srcCompat="@drawable/ic_difficulty" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:text="NIVEL MEDIU"
-                            android:textColor="@color/white"
-                            android:textSize="11sp" />
-
-                    </LinearLayout>
-
                 </LinearLayout>
-            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewStiinte"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="8dp"
-            android:clickable="true"
-            android:foreground="?selectableItemBackground"
-            android:stateListAnimator="@anim/lift_on_touch"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardViewMate">
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewStiinte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/progress_gradient"
-                android:orientation="vertical"
-                android:paddingBottom="2dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="SUBIECTE BAC\nSTIINTELE NATURII"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="8dp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@anim/lift_on_touch"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:onClick="@{()->fragment.onCardStiintePressed()}">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:weightSum="3">
+                    android:layout_height="wrap_content"
+                    android:background="?exerciseGradient"
+                    android:orientation="vertical"
+                    android:paddingBottom="2dp">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="SUBIECTE BAC\nSTIINTELE NATURII"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:weightSum="3">
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="2dp"
-                            app:srcCompat="@drawable/ic_count" />
 
-                        <TextView
-                            android:id="@+id/tv_subiecte_sn"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:text="23 SUBIECTE"
-                            android:textColor="@color/white"
-                            android:textSize="11sp" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:srcCompat="@drawable/ic_count" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tv_subiecte_sn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                tools:text="23 SUBIECTE" />
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="2dp"
-                            app:srcCompat="@drawable/ic_completed" />
+                        </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/tv_rezolvate_sn"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:text="0 REZOLVATE"
-                            android:textColor="@color/white"
-                            android:textSize="11sp" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:srcCompat="@drawable/ic_completed" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tv_rezolvate_sn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                tools:text="0 REZOLVATE" />
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="2dp"
-                            app:srcCompat="@drawable/ic_difficulty" />
+                        </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:text="NIVEL MEDIU"
-                            android:textColor="@color/white"
-                            android:textSize="11sp" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:srcCompat="@drawable/ic_difficulty" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:text="@string/medium_level"
+                                android:textColor="@color/white"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="8dp"
-            android:clickable="true"
-            android:foreground="?selectableItemBackground"
-            android:stateListAnimator="@anim/lift_on_touch"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardViewStiinte">
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewQuiz"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/progress_gradient"
-                android:orientation="vertical"
-                android:paddingBottom="2dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="QUIZURI\nTEORIE"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="8dp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@anim/lift_on_touch"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:onClick="@{()->fragment.onCardQuizPressed()}">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:weightSum="3">
+                    android:layout_height="wrap_content"
+                    android:background="?exerciseGradient"
+                    android:orientation="vertical"
+                    android:paddingBottom="2dp">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="QUIZURI\nTEORIE"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:weightSum="3">
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="2dp"
-                            app:srcCompat="@drawable/ic_count" />
 
-                        <TextView
-                            android:id="@+id/tv_quiz"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:text="23 QUIZURI"
-                            android:textColor="@color/white"
-                            android:textSize="11sp" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:srcCompat="@drawable/ic_count" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tv_quiz"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                tools:text="23 QUIZURI" />
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="2dp"
-                            app:srcCompat="@drawable/ic_completed" />
+                        </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/tv_quiz_complete"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:text="0 COMPLETATE"
-                            android:textColor="@color/white"
-                            android:textSize="11sp" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:srcCompat="@drawable/ic_completed" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tv_quiz_complete"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                tools:text="0 COMPLETATE" />
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="2dp"
-                            app:srcCompat="@drawable/ic_difficulty" />
+                        </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:text="NIVEL VARIAT"
-                            android:textColor="@color/white"
-                            android:textSize="11sp" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:srcCompat="@drawable/ic_difficulty" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:text="@string/varied_level"
+                                android:textColor="@color/white"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewProbleme"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="16dp"
-            android:clickable="true"
-            android:foreground="?selectableItemBackground"
-            android:stateListAnimator="@anim/lift_on_touch"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView4">
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewProbleme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/progress_gradient"
-                android:orientation="vertical"
-                android:paddingBottom="2dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="PROBLEME\nALGORITMI"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@anim/lift_on_touch"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:onClick="@{()->fragment.onCardProblemePressed()}">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:weightSum="3">
+                    android:layout_height="wrap_content"
+                    android:background="?exerciseGradient"
+                    android:orientation="vertical"
+                    android:paddingBottom="2dp">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="PROBLEME\nALGORITMI"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:weightSum="3">
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="2dp"
-                            app:srcCompat="@drawable/ic_count" />
 
-                        <TextView
-                            android:id="@+id/tv_probleme"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:text="23 PROBLEME"
-                            android:textColor="@color/white"
-                            android:textSize="11sp" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:srcCompat="@drawable/ic_count" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tv_probleme"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                tools:text="23 PROBLEME" />
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="2dp"
-                            app:srcCompat="@drawable/ic_completed" />
+                        </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/tv_prob_complete"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:text="0 COMPLETATE"
-                            android:textColor="@color/white"
-                            android:textSize="11sp" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                    </LinearLayout>
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:srcCompat="@drawable/ic_completed" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tv_prob_complete"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                tools:text="0 COMPLETATE" />
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="2dp"
-                            app:srcCompat="@drawable/ic_difficulty" />
+                        </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginBottom="2dp"
-                            android:text="NIVEL VARIAT"
-                            android:textColor="@color/white"
-                            android:textSize="11sp" />
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:srcCompat="@drawable/ic_difficulty" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:text="@string/varied_level"
+                                android:textColor="@color/white"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</layout>

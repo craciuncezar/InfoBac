@@ -1,0 +1,10 @@
+{
+  "question": "Utilizând metoda backtracking, se generează toate aranjamentele florale de câte 5 flori distincte din mulţimea {frezie, iris, lalea, mac, nard}. Două aranjamente sunt distincte dacă florile sunt dispuse în altă ordine. Primele patru soluţii obţinute sunt, în această ordine: (frezie, iris, lalea, mac, nard), (frezie, iris, lalea, nard, mac), (frezie, iris, mac, lalea, nard), (frezie,iris, mac, nard, lalea). A cincea soluție generată este:",
+  "choices": [
+    "(frezie, iris, nard, lalea, mac)",
+    "(frezie, iris, nard, mac, lalea)",
+    "(frezie, lalea, iris, mac, nard)",
+    "(frezie, lalea, iris, nard, mac)"
+  ],
+  "correctAnswer": "(frezie, iris, nard, lalea, mac)"
+}

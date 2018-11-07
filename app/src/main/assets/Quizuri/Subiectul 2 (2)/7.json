@@ -1,0 +1,5 @@
+{
+  "question": "Matricea de adiacenţă a unui graf neorientat cu 7 noduri are 10 elemente nenule. Numărul maxim de componente conexe ale grafului este:",
+  "choices": ["2", "3", "4", "5"],
+  "correctAnswer": "5"
+}

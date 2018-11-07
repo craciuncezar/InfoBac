@@ -1,0 +1,5 @@
+{
+  "question": "Variabilele x, y și z sunt de tip întreg și memorează câte un număr natural. Știind că expresia C/C++ alăturată are valoarea 1, indicați șirul crescător format cu valorile acestor variabile, în ordinea precizată mai jos.\n\n!(x>=y) && z>y\n",
+  "choices": ["x, y, z", "y, z, x", "z, x, y", "z, y, x"],
+  "correctAnswer": "x, y, z"
+}

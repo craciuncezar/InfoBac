@@ -1,0 +1,34 @@
+body {
+  margin: 16px;
+  background-color: #f9fafe;
+}
+
+@font-face {
+  font-family: fibra;
+  src: url("./fibra_regular.otf") format("opentype");
+}
+
+.title {
+  font-family: fibra;
+  font-weight: 600;
+  font-size: 1.7em;
+  margin-bottom: 14px;
+  margin-top: 16px;
+  color: #455a64;
+}
+
+p {
+  font-family: fibra;
+  font-size: 0.9em;
+  color: #455a64;
+}
+
+.code-snippet {
+  border-radius: 9px;
+}
+
+img {
+  border-radius: 9px;
+  width: 100%;
+  height: auto;
+}

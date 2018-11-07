@@ -1,0 +1,5 @@
+{
+  "question": "Variabila x este de tip întreg și poate memora un număr natural cu cel mult două cifre. Valoarea maximă pe care o poate avea expresia C/C++ alăturată este:\n\nx%4\n",
+  "choices": ["3", "24.75", "95", "396"],
+  "correctAnswer": "3"
+}

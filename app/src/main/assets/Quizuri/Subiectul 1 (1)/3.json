@@ -1,0 +1,5 @@
+{
+  "question": "Valoarea expresiei C/C++ 3+5%10/2 este:",
+  "choices": ["3", "4", "5", "5.5"],
+  "correctAnswer": "5"
+}

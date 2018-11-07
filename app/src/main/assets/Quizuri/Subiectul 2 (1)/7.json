@@ -1,0 +1,5 @@
+{
+  "question": "Se consideră arborele cu 8 noduri, numerotate de la 1 la 8, reprezentat prin vectorul de „tati”: (3, 0, 2, 2, 4, 4, 2, 4). Un nod care este „frate” al nodului 4 este:",
+  "choices": ["1", "2", "7", "8"],
+  "correctAnswer": "7"
+}

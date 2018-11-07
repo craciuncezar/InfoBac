@@ -1,0 +1,10 @@
+{
+  "question": "Variabilele i şi j sunt de tip întreg, iar variabila m memorează un tablou bidimensional cu 5 linii şi 5 coloane, numerotate de la 0 la 4, cu elemente numere întregi. O expresie C/C++ a cărei valoare este egală cu produsul dintre primul element de pe linia i și ultimul element de pe coloana j din acest tablou este:",
+  "choices": [
+    "m[0,i]*m[j,4]",
+    "m(0,i)*m(j,4)",
+    "m(i)(0)*m(4)(j)",
+    "m[i][0]*m[4][j]"
+  ],
+  "correctAnswer": "m[i][0]*m[4][j]"
+}

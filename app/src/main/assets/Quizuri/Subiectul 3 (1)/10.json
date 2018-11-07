@@ -1,0 +1,14 @@
+{
+  "question": "Subprogramul f este definit alăturat. Indicați ce se afişează în urmaapelului de mai jos.f(6);
+  
+void f(int x)
+{ cout<<x; | printf(\"%d\",x);
+  if(x>3)
+  { f(x-2);
+    cout<<x; | printf(\"%d\",x);
+  }
+}
+",
+  "choices": ["642", "6446", "64246", "642246"],
+  "correctAnswer": "64246"
+}

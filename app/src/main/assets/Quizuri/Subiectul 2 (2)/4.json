@@ -1,0 +1,11 @@
+{
+  "question": "Variabila A, declarată alăturat, memorează lungimile celor două catete ale unui triunghi dreptunghic. Indicați expresia C/C++ care are ca valoare pătratul lungimii ipotenuzei acestui triunghi.
+  
+struct TD
+{
+float x,y;
+} A;
+",
+  "choices": ["A(x)*A(x)+A(y)*A(y)", "A.x*A.x+A.y*A.y", "TD(A).x*TD(A).x+TD(A).y*TD(A).y", "TD.x*TD.x+TD.y*TD.y"],
+  "correctAnswer": "A.x*A.x+A.y*A.y"
+}

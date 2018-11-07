@@ -1,0 +1,5 @@
+{
+  "question": "Variabila a memoreaza elementele unui tablou bidimensional cu 100 de linii si 100 de coloane, numerotate de la 0 la 99. In limbajul C/C++ un element aflat pe linia 21 si coloana 50 a tabloului poate fi accesat prin:",
+  "choices": ["a(50,21)", "a(50)(21)", "a[21;50]", "a[21][50]"],
+  "correctAnswer": "a[21][50]"
+}

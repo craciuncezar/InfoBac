@@ -1,0 +1,5 @@
+{
+  "question": "Un graf orientat are 12 arce, 3 componente tare conexe, iar fiecare vârf al său are gradul interior un număr nenul. Numărul maxim de noduri pe care le poate avea graful este:",
+  "choices": ["12", "11", "9", "8"],
+  "correctAnswer": "12"
+}

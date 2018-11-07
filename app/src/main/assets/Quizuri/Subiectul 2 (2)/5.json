@@ -1,0 +1,5 @@
+{
+  "question": "Se consideră arborele cu 7 noduri, numerotate de la 1 la 7, reprezentat prin vectorul de „taţi” (5,4,5,3,0,3,1). Mulţimea tuturor “frunzelor” arborelui este:",
+  "choices": ["{2}", "{1,4}", "{3,5}", "{2,6,7}"],
+  "correctAnswer": "{2,6,7}"
+}

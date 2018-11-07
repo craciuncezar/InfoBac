@@ -1,0 +1,5 @@
+{
+  "question": "Indicaţi o expresie C/C++ care are valoarea 1 dacă şi numai dacă numărul natural memorat în variabila întreagă x are exact o cifră.",
+  "choices": ["x%10==x", "x/10==x", "x%10==x/10", "(x%10)/10==x"],
+  "correctAnswer": "x%10==x"
+}

@@ -1,0 +1,10 @@
+{
+  "question": "Indicaţi expresia care are valoarea 1 dacă şi numai dacă numărul memorat în variabila întreagă x aparţine mulţimii {1,2,3}.",
+  "choices": [
+    "x==1 && x==2 && x==3",
+    "!( x<=1 && x>=3 )",
+    "x==1 || x==2 || x==3",
+    "!( x<=1 || x>=3 )"
+  ],
+  "correctAnswer": "x==1 || x==2 || x==3"
+}

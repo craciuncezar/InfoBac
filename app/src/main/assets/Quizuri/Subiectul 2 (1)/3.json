@@ -1,0 +1,5 @@
+{
+  "question": "Un arbore cu 4 noduri, numerotate de la 1 la 4, poate fi reprezentat prin vectorul de „tati”:",
+  "choices": ["(2,0,3,1)", "(2,1,0,3)", "(4,3,2,1)", "(4,3,4,0)"],
+  "correctAnswer": "(4,3,2,1)"
+}

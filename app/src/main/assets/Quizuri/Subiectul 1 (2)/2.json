@@ -1,0 +1,5 @@
+{
+  "question": "Variabila x este de tip întreg şi memorează un număr natural. Expresia alăturată are valoarea 0 dacă şi numai dacă expresia x%5 are valoarea:\n\n((x%5+1)%5+1)%5\n",
+  "choices": ["1", "2", "3", "4"],
+  "correctAnswer": "3"
+}

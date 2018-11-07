@@ -1,0 +1,10 @@
+{
+  "question": "Indicaţi expresia C/C++ care are valoarea 1 dacă şi numai dacă numărul memorat în variabila întreagă x aparţine mulţimii {2015, 2016, 2017}.",
+  "choices": [
+    "x==2015 && !(x<2016 || x<2017)",
+    "x==2015 && !(x<2016 && x<2017)",
+    "x==2015 || !(x<2016 || x>2017)",
+    "x==2015 || !(x<2016 && x>2017)"
+  ],
+  "correctAnswer": "x==2015 || !(x<2016 || x>2017)"
+}

@@ -1,0 +1,5 @@
+{
+  "question": "Valoarea expresiei C/C++ alăturate este:\n\n5+7/2\n",
+  "choices": ["6", "8", "8.5", "9"],
+  "correctAnswer": "8"
+}

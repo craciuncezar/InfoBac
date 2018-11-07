@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../styles/atom-one-dark.css">
+    <script src="../../highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+    <pre style="margin:0"><code class="cpp" style="padding: 12px;">// Program C++ pentru calcularea sumei cifrelor unui numar
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n, suma;
+    cout&lt;&lt;&quot;Introduceti numarul : &quot;;
+    cin&gt;&gt;n;
+    // suma este initializata cu 0
+    suma = 0;
+    // parcurgerea numarului cifra cu cifra
+    while(n != 0)
+    {
+        // adaugam ultima cifra a numarului la suma
+        suma = suma + n%10;
+        // eliminam ultima cifra din numar
+        n = n/10;
+    }
+    cout&lt;&lt;&quot;Suma cifrelor numarului introdus este &quot;&lt;&lt;suma;
+}</code></pre>
+
+</body>
+
+</html>

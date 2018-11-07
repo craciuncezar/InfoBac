@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../styles/atom-one-dark.css">
+    <script src="../../highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+    <pre style="margin:0"><code class="cpp" style="padding: 12px;">// Program C++ pentru sortarea unui vector
+#include <iostream>
+using namespace std;
+
+int main(){
+    // numarul de elemente
+    int n;
+    cout<<"Introduceti numarul de elemente"<<endl;
+    cin>>n;
+
+    int v[n];
+    int i,j;
+
+    // citim elementele vectorului
+    cout<<"Introduceti elementele vectorului"<<endl;
+    for (i = 0; i < n; i++)
+        cin>>v[i];
+
+    // parcurgem vectorul comparand fiecare cifra
+    for (i = 0; i < n; i++){
+        for (j = i+1; j < n; j++){
+            // daca cele doua cifre nu sunt in ordine
+            // le schimba intre ele
+            if (v[i] > v[j]){
+                int aux = v[i];
+                v[i] = v[j];
+                v[j] = aux;
+            }
+        }
+    }
+
+    // afisam vectorul
+    for (i = 0; i < n; i++)
+        cout<<v[i]<<" ";
+    return 0;
+}</code></pre>
+
+</body>
+
+</html>

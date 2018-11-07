@@ -1,0 +1,5 @@
+{
+  "question": "Un graf orientat are 8 vârfuri, numerotate de la 1 la 8, și arcele (1,4), (1,6), (3,4), (3,6), (3,7), (3,8), (5,4), (5,8), (6,4), (6,7), (8,4), (8,7). Numărul vârfurilor care au gradul extern nul este:",
+  "choices": ["1", "2", "3", "4"],
+  "correctAnswer": "3"
+}

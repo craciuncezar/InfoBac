@@ -1,0 +1,5 @@
+{
+  "question": "Se consideră un graf orientat cu 15 arce si fără circuite. Numărul minim de vârfuri ale grafului este:",
+  "choices": ["6", "7", "14", "15"],
+  "correctAnswer": "6"
+}

@@ -1,0 +1,10 @@
+{
+  "question": "Expresia C/C++ !(-20>=x) && (x<=-10) || (x>=-5) && !(x>5) are valoarea 1 dacă si numai dacă valoarea memorată de variabila reală x apartine reuniunii de intervale:",
+  "choices": [
+    "(-∞,-10] ∪ [5, ∞)",
+    "[-20,-10] ∪ (-5,5)",
+    "(-20,-10) ∪ (-5,5)",
+    "(-20,-10] ∪ [-5,5]"
+  ],
+  "correctAnswer": "(-20,-10] ∪ [-5,5]"
+}

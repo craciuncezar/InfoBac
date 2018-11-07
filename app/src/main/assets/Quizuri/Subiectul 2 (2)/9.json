@@ -1,0 +1,5 @@
+{
+  "question": "Frunzele arborelui cu rădăcină, având 8 noduri, numerotate de la 1 la 8, reprezentat prin vectorul ”de tati” (6,6,5,0,6,4,4,7) sunt:",
+  "choices": ["1,2,3,8", "1,2,8", "3,7", "4,6,7"],
+  "correctAnswer": "1,2,3,8"
+}

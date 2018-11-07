@@ -1,0 +1,24 @@
+{
+  "question": "Se consideră subprogramele f1 si f2, definite mai jos.
+  
+long f1 (int n)
+{ if(n<10)
+    return n*f1(n+1);
+  return 10;
+}
+
+long f2 (int n)
+{ if(n>1)
+    return n*f2(n-1);
+  return 1;
+}
+
+Identificati subprogramul care, la apel, pentru parametrul n=10, returnează produsul primelor 10 numere naturale nenule.",
+  "choices": [
+    "atât f1, cât si f2",
+    "numai f1",
+    "numai f2",
+    "nici f1, nici f2"
+  ],
+  "correctAnswer": "numai f2"
+}

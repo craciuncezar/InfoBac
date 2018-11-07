@@ -1,0 +1,10 @@
+{
+  "question": "Variabilele x, y și z sunt de tip întreg și memorează numere naturale din intervalul [1,103]. Indicați o expresie C/C++ care are valoarea 1 dacă și numai dacă valoarea variabilei x este strict mai mare decât valoarea oricăreia dintre variabilele y și z.",
+  "choices": [
+    "x*y>y*z && x*z>y*z",
+    "x*z>x*y && y*z>y*x",
+    "y*z>x*z && y*x>z*x",
+    "y*z>y*x && y*z>z*x"
+  ],
+  "correctAnswer": "x*y>y*z && x*z>y*z"
+}

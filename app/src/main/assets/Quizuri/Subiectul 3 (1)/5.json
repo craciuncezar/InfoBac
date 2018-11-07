@@ -1,0 +1,12 @@
+{
+  "question": "Se consideră subprogramul f, definit alăturat. Valoarea f(20,18) este:
+  
+int f(int x, int y)
+{ if (x==y) return 0;
+  if(x>y) return 1+f(x/2,y);
+  return 1+f(x,y/2);
+}
+",
+  "choices": ["2", "4", "6", "8"],
+  "correctAnswer": "6"
+}

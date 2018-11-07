@@ -1,0 +1,5 @@
+{
+  "question": "Variabilele x şi y sunt de tip real. Expresia C/C++ alăturată este echivalentă cu expresia:\n\n!(x>0 && y>0)\n",
+  "choices": ["x<=0 || y<=0", "x<=0 && y<=0", "x>0 || y>0", "!(x>0) && !(y>0)"],
+  "correctAnswer": "x<=0 || y<=0"
+}

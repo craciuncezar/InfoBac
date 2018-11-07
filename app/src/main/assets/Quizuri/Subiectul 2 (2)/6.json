@@ -1,0 +1,10 @@
+{
+  "question": "Variabila s din secvența următoare permite memorarea unui şir de cel mult 20 de caractere.
+  
+strcpy(s,\"tezauriza\");
+cout<<strstr(s,\"za\"); | printf(\"%s\",strstr(s,\"za\"));
+
+În urma executării secvenţei, se afișează pe ecran:",
+  "choices": ["3", "2", "za", "zauriza"],
+  "correctAnswer": "zauriza"
+}

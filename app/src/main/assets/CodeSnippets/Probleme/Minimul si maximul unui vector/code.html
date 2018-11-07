@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="stylesheet" href="../../styles/atom-one-dark.css">
+        <script src="../../highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+        <pre style="margin:0"><code class="cpp" style="padding: 12px;">// Program C++ pentru gasirea celui mai mic/mare numar al unui vector
+#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+    // numarul de elemente
+    int n;
+    cout&lt;&lt;&quot;Introduceti numarul de elemente&quot;&lt;&lt;endl;
+    cin&gt;&gt;n;
+
+    int v[n];
+    int i,j;
+
+    // citim elementele vectorului
+    cout&lt;&lt;&quot;Introduceti elementele vectorului&quot;&lt;&lt;endl;
+    for (i = 0; i &lt; n; i++)
+            cin&gt;&gt;v[i];
+
+    int max, min;
+    // initializam maximul si minimul cu prima cifra a vectorului
+    max = v[0];
+    min = v[0];
+    // parcurgem vectorul comparand fiecare cifra cu maximul si minimul
+    for (i = 1; i &lt; n; i++){
+        if(v[i] &gt; max)
+            max = v[i];
+        else if (v[i] &lt; min)
+            min = v[i];
+    }
+    
+    cout&lt;&lt;&quot;Cel mai mic element este &quot;&lt;&lt;min&lt;&lt;&quot;, iar cel mai mare element este &quot;&lt;&lt;max;
+}</code></pre>
+
+</body>
+
+</html>

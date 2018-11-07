@@ -1,0 +1,10 @@
+{
+  "question": "Utilizând metoda backtracking, se generează toate posibilitățile de a forma succesiuni de câte 5 tipuri de creații literare din mulțimea {baladă, basm, eseu, epopee, poem}, astfel încât în fiecare succesiune eseul precede epopeea. Două succesiuni sunt distincte dacă tipurile de creații literare sunt în altă ordine. Primele cinci solutii generate sunt, în această ordine, (baladă, basm, eseu, epopee, poem), (baladă, basm, eseu, poem, epopee), (baladă, basm, poem, eseu, epopee), (baladă, eseu, basm, epopee, poem), (baladă, eseu, basm, poem, epopee). Imediat înainte de (poem, eseu, epopee, baladă, basm) este generată soluția:",
+  "choices": [
+    "(basm, baladă, epopee, eseu, poem)",
+    "(basm, baladă, eseu, epopee, poem)",
+    "(poem, eseu, basm, epopee, baladă)",
+    "(poem, basm, eseu, epopee, baladă)"
+  ],
+  "correctAnswer": "(poem, eseu, basm, epopee, baladă)"
+}

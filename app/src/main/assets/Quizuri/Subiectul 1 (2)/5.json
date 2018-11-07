@@ -1,0 +1,10 @@
+{
+  "question": "Indicați expresia C/C++ care are valoarea 1 dacă şi numai dacă numărul natural memorat în variabila întreagă n este divizibil cu 2, dar NU şi cu 5.",
+  "choices": [
+    "!((n%2==1) || (n%5==0))",
+    "(n%2==0) && (n%5==0)",
+    "(n%10==0) || (n%5!=0)",
+    "(n%10==0) && (n%2==0)"
+  ],
+  "correctAnswer": "!((n%2==1) || (n%5==0))"
+}

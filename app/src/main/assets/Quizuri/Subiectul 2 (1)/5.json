@@ -1,0 +1,12 @@
+{
+  "question": "Variabila c, declarată alăturat, memorează codul si pretul unei cărti. Expresia C/C++ a cărei valoare reprezintă dublul pretului cărtii respective este:
+
+struct carte
+{ 
+  int cod;
+  float pret;
+}c;
+",
+  "choices": ["c.pret*2", "c[pret]*2", "pret^c*2", "pret(c)*2"],
+  "correctAnswer": "c.pret*2"
+}

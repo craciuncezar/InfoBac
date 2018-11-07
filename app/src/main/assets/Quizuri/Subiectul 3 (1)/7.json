@@ -1,0 +1,5 @@
+{
+  "question": "Utilizând metoda backtracking se generează, în ordine crescătoare, toate numerele de patru cifre din mulțimea {1, 4, 6, 8, 9}, cu proprietatea că nu au două cifre alăturate egale. Primele patru numere generate sunt, în această ordine: 1414, 1416, 1418, 1419. Al cincilea număr generat este:",
+  "choices": ["1441", "1461", "1468", "1491"],
+  "correctAnswer": "1461"
+}

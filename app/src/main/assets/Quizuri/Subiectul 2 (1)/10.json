@@ -1,0 +1,5 @@
+{
+  "question": "Se consideră un graf neorientat complet, cu 21 de noduri. Pentru a obține un graf parțial al său cu două componente conexe, fiecare dintre acestea fiind grafuri complete, numărul maxim de muchii care pot fi eliminate este:",
+  "choices": ["100", "105", "108", "110"],
+  "correctAnswer": "110"
+}

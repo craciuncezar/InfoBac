@@ -1,0 +1,10 @@
+{
+  "question": "Utilizând metoda bactracking se generează toate submultimile cu cel mult patru instrumente muzicale din multimea {clarinet, corn, flaut, oboi, saxofon}. Primele șase solutii generate sunt, în această ordine: {clarinet}, {clarinet, corn}, {clarinet, corn, flaut}, {clarinet, corn, flaut, oboi}, {clarinet, corn, flaut, saxofon}, {clarinet, corn, oboi}. Cea de a opta solutie este:",
+  "choices": [
+    "{corn}",
+    "{clarinet, flaut}",
+    "{clarinet, flaut}",
+    "{clarinet, corn, oboi, saxofon}"
+  ],
+  "correctAnswer": "{clarinet, corn, saxofon}"
+}

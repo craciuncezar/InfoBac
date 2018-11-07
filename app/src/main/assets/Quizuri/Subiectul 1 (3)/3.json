@@ -1,0 +1,5 @@
+{
+  "question": "Variabila întreagă x memorează un număr natural cu cel puțin patru cifre nenule distincte. Expresia C/C++ a cărei valoare este egală cu cifra sutelor acestui număr este:",
+  "choices": ["x/100", "x%100", "(x/10)%10", "(x/100)%10"],
+  "correctAnswer": "(x/100)%10"
+}

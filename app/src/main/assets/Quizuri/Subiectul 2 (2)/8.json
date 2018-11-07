@@ -1,0 +1,5 @@
+{
+  "question": "Se consideră graful orientat cu 6 vârfuri, numerotate de la 1 la 6, reprezentat prin listele de adiacenŃă alăturate. Două drumuri sunt distincte dacă diferă prin cel puŃin un arc. Numărul de drumuri elementare distincte de la vârful 2 la vârful 3 este:",
+  "choices": ["0", "1", "2", "3"],
+  "correctAnswer": "2"
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../styles/atom-one-dark.css">
+    <script src="../../highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+    <pre style="margin:0"><code class="cpp" style="padding: 12px;">// Program C++ pentru calcularea numarului de vocale dintr-un text
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+
+int main(){
+    // citirea textului de la tastatura
+    char a[51];
+    cin.get(a,50);
+    // sir de caractere continand vocalele
+    char vocale[]=&quot;aeiou&quot;;
+    int i,nrVocale = 0;
+    // parcurgem sirul
+    for (i = 0; i &lt; strlen(a); i++){
+        // daca sirul cu vocale contine caracterul actual
+        // incrementam numarul de vocale
+        if (strchr(vocale,a[i]))
+            nrVocale++;
+    }
+    
+    cout&lt;&lt;&quot;Numarul de vocale din textul este: &quot;&lt;&lt;nrVocale&lt;&lt;'\n';
+    return 0;
+}</code></pre>
+
+</body>
+
+</html>

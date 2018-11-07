@@ -1,0 +1,12 @@
+{
+  "question": "Subprogramul F este incomplet definit alăturat. Indicați expresia cu care pot fi înlocuite punctele de suspensie, astfel încât, în urma apelului de mai jos, să se afișeze dcba. F(’a’);
+  
+void F(char c)
+{ if(c<’e’)
+    { F(......);
+      cout<<c; | printf(”%c”,c);
+    }
+}",
+  "choices": ["c-4", "c-1", "c+1", "c+4"],
+  "correctAnswer": "c+1"
+}

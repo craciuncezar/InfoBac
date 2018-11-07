@@ -1,0 +1,5 @@
+{
+  "question": "Într-un arbore cu rădăcină considerăm că un nod se află pe nivelul x dacă lanţul elementar care are o extremitate în nodul respectiv şi cealaltă extremitate în rădăcina arborelui are lungimea x. Pe nivelul 0 se află un singur nod (rădăcina). Se consideră arborele cu 7 noduri, numerotate de la 1 la 7, reprezentat prin vectorul de „taţi” (0,1,1,3,4,2,3). Mulţimea tuturor nodurilor aflate pe nivelul 2 este:",
+  "choices": ["{1, 2, 6}", "{2,3}", "{4,7}", "{4,6,7}"],
+  "correctAnswer": "{4,6,7}"
+}

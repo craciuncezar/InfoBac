@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="problems">
+        <item>Cel mai mare divizor comun</item>
+        <item>Cel mai mic multiplu comun</item>
+        <item>Suma cifrelor unui numar</item>
+        <item>Cea mai mare cifra a unui numar</item>
+        <item>Inversarea cifrelor unui numar</item>
+        <item>Sortare vector</item>
+        <item>Minimul si maximul unui vector</item>
+        <item>Verificare palindrom sir de caractere</item>
+        <item>Numar vocale sir de caractere</item>
+        <item>Conversie sir in litere mici</item>
+    </string-array>
+</resources>

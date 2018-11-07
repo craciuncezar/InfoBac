@@ -1,0 +1,5 @@
+<div>Se citesc de la tastatura doua numere a si b. Determinati si afisati pe ecran cel mai mic multiplu comun al acestora.</div>
+<div>Ex: pentru numerele 98 si 56 se afiseaza 392.</div>
+Solutia salveaza numarul mai mare dintre cele 2 numere citite de la tastatura in variabila max.<br><br>
+Se verifica daca max este divizibil cu n1 si n2, daca este divizibil cu ambele numere, max este cel mai mic multiplu comun, este afisat pe ecran si bucla este terminata.<br><br>
+Daca nu, valoarea lui max este incrementata cu 1 si acelasi proces merge pana cand max este divizibil atat cu n1, cat si cu n2.

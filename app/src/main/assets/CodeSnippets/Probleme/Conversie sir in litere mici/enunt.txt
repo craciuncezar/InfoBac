@@ -1,0 +1,3 @@
+<div>Se citeste de la tastatura un sir de caractere. Transformati literele mari in litere mici si afisati sirul pe ecran.</div>
+<div>Ex: textul "AsTa esTe un SIR!" va afisa "asta este un sir!"</div>
+Solutia prezentata parcurge fiecare caracter din sir si daca este o litera mare o transforma in litera mica. 

@@ -1,0 +1,11 @@
+{
+  "question": "Variabila s poate memora un șir cu maximum 20 de caractere. În urma executării secvenței de instrucțiuni alăturate se afișează:
+
+strcpy(s,\"3x2y1\");
+s[2]='x'+2;
+strcpy(s,s+1);
+strcpy(s+3,s+4);
+cout<<s; | printf(\"%s\",s);
+",  "choices": ["xzy", "xyy", "3x417", "42241"],
+  "correctAnswer": "xzy"
+}

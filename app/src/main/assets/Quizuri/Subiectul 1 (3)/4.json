@@ -1,0 +1,10 @@
+{
+  "question": "Variabila x este de tip întreg. Indicaţi o expresie C/C++ care are valoarea 1 dacă şi numai dacă valoarea variabilei x are exact trei cifre.",
+  "choices": [
+    "x%1000==0 || x%100!=0",
+    "x/1000==0 || x/100!=0",
+    "x%1000==0 && x%100!=0",
+    "x/1000==0 && x/100!=0"
+  ],
+  "correctAnswer": "x/1000==0 && x/100!=0"
+}

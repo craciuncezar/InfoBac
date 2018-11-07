@@ -1,0 +1,5 @@
+{
+  "question": "Într-un arbore cu rădăcină considerăm că un nod se află pe nivelul x dacă lantul elementar care are o extremitate în nodul respectiv si cealaltă extremitate în rădăcina arborelui are lungimea x. Pe nivelul 0 se află un singur nod (rădăcina). Se consideră un arbore cu rădăcină, cu cinci niveluri. Toate nodurile de pe același nivel (cu excepția ultimului nivel) au un număr egal (nenul) de descendenți direcți („fii”) și nu există două niveluri cu același număr de noduri. Numărul minim de noduri de pe nivelul 4 este:",
+  "choices": ["4", "9", "16", "18"],
+  "correctAnswer": "16"
+}

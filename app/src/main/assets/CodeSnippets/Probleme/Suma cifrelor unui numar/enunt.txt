@@ -1,0 +1,3 @@
+<div>Se citeste de la tastatura un numar. Determinati si afisati pe ecran suma cifrelor acestuia.</div>
+<div>Ex: pentru numarul 234567 se va afisa 27.</div>
+Solutia prezentata parcurge fiecare cifra a numarului si o aduna cu variabila suma ce este initializata cu 0.

@@ -1,0 +1,5 @@
+{
+  "question": "Un graf orientat cu 5 vârfuri, numerotate de la 1 la 5, are arcele (1,4), (1,5), (2,1), (2,3), (3,1), (3,4), (4,2), (5,1), (5,3). Numărul maxim de arce care se pot elimina, astfel încât graful partial obtinut să fie tare conex este:",
+  "choices": ["5", "4", "3", "2"],
+  "correctAnswer": "4"
+}

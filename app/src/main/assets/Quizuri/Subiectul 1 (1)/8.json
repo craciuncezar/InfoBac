@@ -1,0 +1,10 @@
+{
+  "question": "Indicaţi expresia C/C++ care are valoarea 1 dacă şi numai dacă cifra zecilor numărului natural memorat în variabila întreagă n este 2 sau 7.",
+  "choices": [
+    "(n/10)%10==2 || (n/10)%10==7",
+    "(n/10)%10==2 && (n/10)%10==7",
+    "(n%10)/10==2 || (n%10)/10==7",
+    "(n%10)/10==2 && (n%10)/10==7"
+  ],
+  "correctAnswer": "(n/10)%10==2 || (n/10)%10==7"
+}

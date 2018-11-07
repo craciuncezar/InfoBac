@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../styles/atom-one-dark.css">
+    <script src="../../highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+    <pre style="margin:0"><code class="cpp" style="padding: 12px;">// Program C++ pentru gasirea celui mai mic multiplu comun
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n1, n2, max;
+    // citim numerele de la tastatura
+    cout &lt;&lt; &quot;Introdu cele doua numere: &quot;;
+    cin &gt;&gt; n1 &gt;&gt; n2;
+    
+    // salvam numarul mai mare in variabila max
+    if(n1 &gt; n2)
+        max = n1;
+    else
+        max = n2;
+
+    do
+    {
+        if (max % n1 == 0 &amp;&amp; max % n2 == 0)
+        {
+            cout &lt;&lt; &quot;CMMMC = &quot; &lt;&lt; max;
+            break;
+        }
+        else
+            ++max;
+    } while (true);
+    
+    return 0;
+}</code></pre>
+</body>
+
+</html>

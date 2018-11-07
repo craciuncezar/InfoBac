@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css">
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="../assets/styles/lessons.css" />
+    <script src="../assets/scripts/script.js"></script>
+</head>
+
+<body>
+    <div class="title">Test page 2!</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla egestas sem ac rhoncus finibus. Sed eleifend tempus ante.
+        Donec eleifend mi et dignissim suscipit. Duis sed placerat mauris. Aliquam quis aliquam elit. Etiam bibendum blandit
+        suscipit. Vivamus mi nulla, rutrum tincidunt gravida vel, commodo congue nunc.</p>
+    <img src="../assets/img/img_introduction.jpg" />
+    <p>Morbi lacus ante, mollis at eros sit amet, maximus suscipit ipsum. In dignissim vitae tellus sit amet ultrices. Cras
+        sit amet metus sed magna facilisis pharetra sit amet ac quam.</p>
+    <pre style="margin:0"><code class="cpp code-snippet" style="padding: 12px;">// Program C++ pentru gasirea celei mai mare cifre dintr-un numarului
+#include &lt;iostream&gt;
+using namespace std;
+    
+int main()
+{
+    int n, max;
+    cout&lt;&lt;&quot;Introduceti numarul : &quot;;
+    cin&gt;&gt;n;
+    // max este initializat cu 0
+    max = 0;
+    // parcurgerea numarului cifra cu cifra
+    while(n != 0)
+    {
+        // verificam daca ultima cifra a numarului este cea mai mare cifra 
+        if(n%10 &gt; max)
+            max = n%10;
+        // eliminam ultima cifra din numar
+        n = n/10;
+    }
+    cout&lt;&lt;&quot;Cea mai mare cifra a numarului este &quot;&lt;&lt;max;
+}</code></pre>
+
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+{
+  "question": "Într-un arbore cu 20 de noduri, gradul maxim pe care îl poate avea un nod este:",
+  "choices": ["2", "10", "19", "20"],
+  "correctAnswer": "19"
+}

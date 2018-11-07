@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "745474275645",
+    "firebase_url": "https://infobac-913de.firebaseio.com",
+    "project_id": "infobac-913de",
+    "storage_bucket": "infobac-913de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745474275645:android:0ff520a295f7f691",
+        "android_client_info": {
+          "package_name": "io.github.craciuncezar.infobac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745474275645-da2lit0qht37ch1v5gdqkcvrtqkvdjdm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.craciuncezar.infobac",
+            "certificate_hash": "28566924d842bb3eb5b6c1587c7a0aa32436e46d"
+          }
+        },
+        {
+          "client_id": "745474275645-5lbca3cr1vsj2m6i11qo8pra85hijvbt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1lJMuxyZZjtwS7ClBqHt9aIpSUvyjz1I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745474275645-5lbca3cr1vsj2m6i11qo8pra85hijvbt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

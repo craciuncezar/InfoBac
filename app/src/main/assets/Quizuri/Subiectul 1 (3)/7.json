@@ -1,0 +1,10 @@
+{
+  "question": "Indicati expresia care are valoarea 1 dacă si numai dacă numărul natural memorat în variabila întreagă x are exact trei cifre.",
+  "choices": [
+    "x/1000==0 && x>99",
+    "x/1000==0 || x<1000",
+    "x%1000==0 && x<1000",
+    "x%1000==0 || x>99"
+  ],
+  "correctAnswer": "x/1000==0 && x>99"
+}

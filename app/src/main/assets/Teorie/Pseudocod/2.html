@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Operatori</div>
+    <p>
+      Operatorii sunt caractere speciale sau cuvinte cheie prin intermediul
+      carora se reprezinta operatiile care se efectueaza in cadrul algoritmului.
+    </p>
+    <p>1. <b>Operatorul de atribuire</b>: variabila ← expresie</p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">x ← 2
+y ← x + 5
+x ← x + 1
+</code></pre>
+    <p class="important">
+      Mai intai se evalueaza expresia din partea dreapta a sagetii, apoi
+      valoarea acesteia este retinuta de variabila specificata în partea stanga.
+    </p>
+    <p>
+      2. <b>Operatori matematici</b>: + (adunare), – (scadere), * (inmultire), /
+      (catul impartirii), % (restul impartirii sau mod).
+    </p>
+    <p class="important">
+      Operatorii matematici se aplica pe date de tip numeric iar rezultatul va
+      fi numeric.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">1 + 2 = 3
+4 - 2 = 2
+2 * 3 = 6
+9 / 4 = 2
+5 % 2 = 1</code></pre>
+    <p>
+      3. <b>Operatori relationali</b>: < (mai mic), > (mai mare), <= (mai mic
+      sau egal), >= (mai mare sau egal), = (egal), ≠ (diferit).
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">(5 < 10) este Adevarat
+(1 = 1) este Adevarat
+(2 >= 5) este Fals
+(6 >= 6) este Adevarat
+(23 ≠ 23) este Fals
+</code></pre>
+    <p class="important">
+      Operatorii relationali se aplica pe date de tip numeric sau sir de
+      caractere iar rezultatul este de tip logic (adevarat sau fals). A nu se
+      confunda operatorul de atribuire ← cu operatorul relational = care doar
+      verifica egalitatea intre doua variabile.
+    </p>
+    <p>
+      4. <b>Operatori logici:</b> si, sau. Operatorul "si" are rezultat adevarat
+      cand toti operanzi sunt adevarati, operatorul "sau" are rezultat adevarat
+      cand cel putin unul din operanzi este adevarat.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">(5 < 10) si (1 = 1) este Adevarat
+(1 ≠ 1) si (5 > 10) este Fals
+(1 = 1) si (1 > 2) este Fals
+(1 = 1) sau (1 > 2) este Adevarat
+(1 ≠ 1) sau (5 > 10) este Fals
+</code></pre>
+    <p class="important">
+      Operatorii logici se aplica pe date de tip logic iar rezultatul este tot
+      de tip logic.
+    </p>
+  </body>
+</html>

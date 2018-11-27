@@ -1,0 +1,3 @@
+<div>Se citeste de la tastatura un sir de caractere. Determinati si afisati pe ecran numarul de vocale prezente in sir.</div>
+<div>Ex: pentru sirul "Asta este un sir" se va afisa 6.</div>
+Solutia prezentata cauta fiecare caracter din sir intr-un sir ce contine toate vocalele. Pentru a evita diferenta dintre litere mari si litere mici se foloseste functia tolower.

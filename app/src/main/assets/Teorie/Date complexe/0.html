@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Vectori</div>
+    <p>
+      Un vector (denumit si tablou unidimensional) este o serie de elemente de
+      același tip unde fiecare element este asociat cu un index, ce reprezintă
+      locația acestuia în seria de elemente.
+    </p>
+    <p class="important">
+      Vectorii sunt utili în special în cazurile în care aveți o mulțime de
+      valori diferite ce sunt legate una de cealaltă sau trebuie să efectuați
+      anumite sarcini pe anumite valori în funcție de anumite condiții.
+    </p>
+    <p>
+      Asta înseamnă că, de exemplu, cinci valori de tip int pot fi declarate ca
+      un vector fără a fi nevoie să se declare 5 variabile diferite (fiecare cu
+      propria denumire). În schimb, utilizând un vector, cele cinci valori int
+      sunt stocate în locații de memorie alaturate și toate cele cinci pot fi
+      accesate utilizând aceași denumire, cu indexul adecvat.
+    </p>
+    <p>
+      De exemplu, un vector care conține 5 elemente, valori întregi de tip int
+      ar putea fi reprezentată ca:
+    </p>
+    <img src="../assets/img/arrays1.png" />
+    <p class="important">
+      În C++, primul element dintr-un vector este întotdeauna numerotat cu zero
+      (nu unu), indiferent de lungimea sa.
+    </p>
+    <p>
+      Ca o variabilă obișnuită, un vector trebuie declarat înainte de a fi
+      utilizat. Declararea unui vector denumit exempluVector cu 5 elemente de
+      tip int în C ++ este:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">int exempluVector [5];
+</code></pre>
+    <p class="important">
+      Valorile elementelor de tip numeric ale unui vector sunt inițializate cu 0
+      dacă nu se specifică o inițializare explicită.
+    </p>
+    <p>
+      Elementele dintr-un vector pot fi inițializate explicit la valori
+      specifice atunci când este declarat vectorul, prin includerea acelor
+      valori inițiale în acolade {}. De exemplu:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">int numereLoto [6] = { 16, 2, 12, 40, 33, 29 };
+</code></pre>
+    <p>
+      Atunci când exista o inițializare a valorilor pentru un vector, C++
+      permite posibilitatea de a lăsa parantezele pătrate goale []. În acest
+      caz, compilatorul va presupune automat o dimensiune pentru vector care
+      corespunde numărului de valori incluse între acolade {}:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">int numereLoto [] = { 16, 2, 12, 40, 33, 29 };
+</code></pre>
+    <p>
+      Acesarea unei valori dint-un vector se face specificând indexul acesteia
+      între paranteze pătrate.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">int numereLoto [6] = { 16, 2, 12, 40, 33, 29 };
+cout<< numereLoto[2]; // afiseaza 12, elementul al 3-lea din vector
+//deoarece cum am spus numerotarea elementelor unui vector incepe cu 0
+</code></pre>
+    <p>Parcurgerea unui vector se face folosind structura repetitiva for:</p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">int numereLoto [6] = { 16, 2, 12, 40, 33, 29 };
+int index;
+for(index = 0 ; index < 6; i++){
+    cout<< "Elemetnul de pe pozitia "<< index <<" are valoarea" << numereLoto[index] << endl;
+}
+</code></pre>
+  </body>
+</html>

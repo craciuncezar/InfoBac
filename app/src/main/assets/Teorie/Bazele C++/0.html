@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Hello world!</div>
+    <div
+      class="img-container"
+      style="background-image:url(../assets/img/cpp.jpg);height: 220px;"
+    ></div>
+
+    <p>
+      Cea mai bună metodă de a învața un limbaj de programare este evident
+      scrierea unui program. De obicei, in programare, începătorii pornesc prin
+      scrierea unui program numit "Hello world!", care efectuează simpla afișare
+      pe ecran a mesajului "Hello world!".
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">// Primul program in C++
+#include &lt;iostream&gt;
+using namespace std;
+
+int main ()
+{
+  cout &lt;&lt; &quot;Hello World! &quot;;
+}
+</code></pre>
+    <p>
+      Deși este un program foarte simplu, conține toate componentele
+      fundamentale ale unui program C++. Haideți să analizăm programul linie cu
+      linie.
+    </p>
+    <p>
+      <b>Linia 1: <i>// Primul meu program in C++</i></b
+      ><br />
+      Cele două slash-uri "//" indică faptul că restul liniei este un comentariu
+      introdus de către programator, dar care nu are niciun efect asupra
+      comportamentului programului. Programatorii folosesc comentariile pentru a
+      include scurte explicații sau observații referitoare la cod.
+    </p>
+    <p>
+      <b>Linia 2: <i>#include &lt;iostream&gt;</i></b
+      ><br />
+      Liniile care încep cu un semn hash (#) sunt directive citite și
+      interpretate de ceea ce este cunoscut sub numele de preprocesor. Sunt
+      linii speciale interpretate înainte de începerea compilării programului.
+      În acest caz, prin directiva #include &lt;iostream&gt; preprocesorul
+      include în program instrucțiunile necesare pentru a citi și afișa pe
+      ecran.
+    </p>
+    <p>
+      <b>Linia 3: <i>using namespace std;</i></b
+      ><br />
+      Această linie permite utilizarea elementelor din biblioteca C++ standard
+      fără a fi nevoie să specificăm locația acestora.
+    </p>
+    <p>
+      <b>Linia 4</b> este o linie goala, ce nu are efect asupra programului și
+      pur și simplu îmbunătățesc lizibilitatea codului.
+    </p>
+    <p>
+      <b>Linia 5: <i>int main ()</i></b
+      ><br />
+      Această linie declară o funcție numită main. În esență, o funcție este un
+      grup de instrucțiuni de cod. Funcțiile vor fi discutate în detaliu într-un
+      capitol ulterior.
+    </p>
+    <p class="important">
+      Funcția numită main este o funcție specială în toate programele C++, ea
+      reprezintă începutul instrucțiunilor executate de către calculator,
+      practic este punctul de start al programului.
+    </p>
+    <p>
+      <b>Liniile 6 si 8: <i>{ si }</i></b
+      ><br />
+      Acoladele indică un bloc de cod. Un bloc de cod reprezintă mai multe
+      instrucțiuni grupate împreună, în cazul de față instrucțiunile din bloc
+      reprezintă instrucțiunile executate de către funcția principală main.
+    </p>
+    <p>
+      <b>Linia 7: <i>cout &lt;&lt; &quot;Hello World! &quot;;</i></b
+      ><br />
+      Aceasta este o instrucțiune C++ ce afișează pe ecran mesajul "Hello
+      World!".
+    </p>
+    <p class="important">
+      Instrucțiunile sunt executate în ordinea în care sunt scrise. Observați că
+      o instrucțiune se termină cu punct și virgulă ";". Acest caracter
+      marchează sfârșitul instrucțiuni, la fel cum punctul "." marchează finalul
+      unei propoziții în limba română. Una dintre cele mai comune erori de
+      sintaxă în C++ este omiterea încheierii unei instrucțiuni prin punct și
+      virgulă ";".
+    </p>
+  </body>
+</html>

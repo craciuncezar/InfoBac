@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Conversia structurilor repetitive</div>
+    <p>
+      Unul dintre exercitiile subiectului 1 de bacalaureat cere conversia unei
+      structuri repetitive intr-o alta structura repetitiva.
+    </p>
+    <p>
+      Spre exemplu modificare unei structuri repetitive cu test initial (cat
+      timp) intr-o structura repetitiva cu test final (repeta pana cand).
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">┏━ cat timp x ≠ 0 executa
+┃     x ← x - 1 
+┃     scrie x
+┗━■
+</code></pre>
+    <p>Devine:</p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">┏━ daca x ≠ 0 atunci
+┃┏━ repeta
+┃┃     x ← x - 1 
+┃┃     srcie x
+┃┗━ pana cand x = 0
+┗━■
+</code></pre>
+    <p>
+      Modificare unei structuri repetitive cu test final (repeta pana cand)
+      intr-o structura repetitiva cu test initial (cat timp).
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">┏━ repeta
+┃     x ← x - 1 
+┃     srcie x
+┗━ pana cand x = 0
+</code></pre>
+    <p>Devine:</p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">x ← x - 1 
+scrie x
+┏━ cat timp x ≠ 0 executa
+┃     x ← x - 1 
+┃     scrie x
+┗━■
+</code></pre>
+    <p>
+      Modificare unei structuri repetitive cu numar cunoscut de pasi (pentru)
+      intr-o structura repetitiva cu test initial (cat timp).
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">┏━ pentru i ← 0,n executa
+┃ ┏━  daca i % 2 = 1
+┃ ┃    scrie i
+┃ ┗━■
+┗━■
+</code></pre>
+    <p>Devine:</p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">i ← 0
+┏━ cat timp i <= n executa
+┃ ┏━  daca i % 2 = 1
+┃ ┃    scrie i
+┃ ┗━■
+┃  i ← i + 1
+┗━■
+</code></pre>
+  </body>
+</html>

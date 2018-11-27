@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Citire, afișare, atribuire</div>
+    <p>
+      Datele de intrare în pseudocod pot fi citite de la tastatură folosind
+      instrucțiunea citește, specificând în paranteză tipul de dată citit:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">citește x (număr intreg)</code></pre>
+    <p>
+      In algoritmul de mai sus x este denumirea variabilei citite de la
+      tastatură. Termenul de variabilă îl poți asemăna cu o cutie ce deține
+      informații. Scopul variabilelor este de a stoca și eticheta date în
+      algoritm. Variabilele iși pot schimba valoarea prin atribuirea lor cu noi
+      valori.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">citește x (număr intreg)
+x ← 5</code></pre>
+    <p>
+      Presupunand ca se introduce valoarea 1, prima linie din algoritmul de mai
+      sus ii atribuie variabilei x valoarea 1 (cea introdusa de utilizator de la
+      tastatura), iar a doua linie ii atribuie variabilei x valoarea 5. In final
+      variabila x va detine valoarea 5 desi aceasta a fost initializata cu 1.
+    </p>
+    <p class="important">
+      A se remarca faptul ca instructiunile din pseudocod sunt executate de sus
+      in jos pe rand linie cu linie.
+    </p>
+    <p>
+      Afisarea pe ecran a unei variabile se face folosind instructiunea scrie:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">scrie x</code></pre>
+    <p>
+      Folosind informatiile de mai sus putem asadar sa scriem un algoritm in
+      pseudocod ce citește doua valori de la tastatura si afiseaza suma
+      acestora:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">citește x, y (numere intregi)
+suma ← x + y
+scrie suma</code></pre>
+  </body>
+</html>

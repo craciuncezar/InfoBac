@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Structuri de decizie si blocuri de cod</div>
+    <p>
+      Exista secvente in algoritmi cand este nevoie sa stabilim anumite
+      conditii. Pentru a verfica o anumita conditie si a executa in functie de
+      rezulatul acesteia anumite instructiuni se va folosi structura de decizie:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">┏━ daca expresie atunci
+┃     instructiuni
+┃  altfel
+┃     instructiuni    
+┗━■
+</code></pre>
+    <p class="important">
+      Ramura altfel este optionala si se poate omite. Se poate observa ca toata
+      structura este inconjurata de un bloc de cod. Blocul de cod are ca scop
+      gruparea mai multor instructiuni. In cazul de fata vrem ca doar
+      instructiunile din blocul de cod sa fie executate in functie de conditia
+      indeplinita. Instructiunile din afara blocului de cod vor fi executate
+      nedepinzand de rezultatul conditiei din structura de decizie.
+    </p>
+    <p>
+      Exemplu structura de decizie: citirea de la tastatura a unui numar intreg
+      si afisarea pe ecran a tipului de numar: impar sau par.
+    </p>
+    <pre style="margin:0"><code class="cpp code-snippet" style="padding: 12px;">
+citeste x (numar intreg)
+┏━ daca x % 2 = 0 atunci
+┃     scrie "Numarul este par"
+┃  altfel
+┃     scrie "Numarul este impar"    
+┗━■
+</code></pre>
+    <p>
+      Secventa de decizie de mai sus verifica daca restul impartiri la 2 a
+      numarului citit de la tastatura este 0, caz in care numarul este par si se
+      afiseaza pe ecran "Numarul este par", in cazul in care numarul nu se
+      imparte fix la 2 se executa structura altfel afisand "Numarul este impar".
+    </p>
+  </body>
+</html>

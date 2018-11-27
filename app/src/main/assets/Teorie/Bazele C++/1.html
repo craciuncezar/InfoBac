@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Variabile și tipuri de date</div>
+    <p>
+      Să ne imaginăm că trebuie să reți numărul 5 și numărul 2 în același timp.
+      Ai reținut două valori diferite în memoria ta (5 și 2). Acum trebuie să
+      adaugi 1 la primul număr. În momentul de față memorezi numerele 6 (adică 5
+      + 1) și 2 în memorie. Apoi calculezi suma celor două numere.
+    </p>
+    <p>
+      Întreg procesul de mai sus este similar cu ceea ce un calculator poate
+      face cu două variabile. Așadar același proces poate fi exprimat in C++
+      prin următoarele instrucțiuni:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">a = 5;
+b = 2;
+a = a + 1;
+suma = a + b;
+</code></pre>
+    <p>
+      O variabilă este un identificator, purtător a unei singure valori și se
+      caracterizează prin: nume și tip de dată.
+    </p>
+    <p>
+      Fiecare variabilă are nevoie de un nume care o identifică și o deosebește
+      de celelalte. De exemplu, în codul anterior numele variabilelor au fost a,
+      b și sumă, dar am fi putut numi variabilele orice nume valabil în C++.
+      Numele valabile în C++ nu pot conține spații, simboluri, semne de
+      punctuație, să inceapă cu cifră, sau să existe cuvinte cheie in C++ cu
+      aceași denumire.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">variabila mea = 5; // eroare
+variabila.doi = 2; // eroare
+int = 1; // eroare
+1variabila = 3; // eroare
+variabila1 = 3; // corect
+</code></pre>
+    <p class="important">
+      Limbajul C/C++ face distincție între litere mari și mici. Variabilele NR,
+      nR, nr, Nr sunt diferite din punctul de vedere al C/C++.
+    </p>
+    <p><b>Tipuri de date elementare in C++:</b></p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">int a = 5; // Număr întreg
+float b = 2.5; // Număr real
+unsigned c = 2; // Număr natural
+char a = 'A'; // Caracter
+double d = 1.0000008 // Număr real (pune accent pe partea fracționară)
+</code></pre>
+    <p class="important">
+      Pentru fiecare variabilă se alocă (rezervă) un spațiu de memorie conform
+      cu tipul ei. Acest lucru influențează domeniul de valori care se poate
+      aloca variabilei. Pentru tipurile int și double se poate adăuga în față
+      cuvântul long pentru a avea un domeniu de valori extins (long double sau
+      long int).
+    </p>
+    <p>
+      Declararea mai multor variabile de același tip se poate face pe același
+      rând:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">int a, b, c;
+</code></pre>
+    <p class="important">
+      Inițializarea valorilor variabilelor la momentul declarării este
+      opțională.
+    </p>
+  </body>
+</html>

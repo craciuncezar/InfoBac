@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Structuri repetitive</div>
+    <p>
+      Instrucțiunea while execută blocul de cod cât timp condiția stabilită este
+      adevarată. In momentul în care condiția este falsă se trece la urmatoarea
+      instrucțiune din afara blocului de cod.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">// număratoare inversa
+#include &lt;iostream&gt;
+using namespace std;
+
+int main ()
+{
+  int n = 10;
+  // Cât timp n este mai mare decât 0
+  while (n>0) {
+    // Afișam valoarea lui n
+    cout << n << ", ";
+    // Scădem valoarea lui n cu 1
+    --n;
+  }
+  cout << "Final de program";
+}
+</code></pre>
+    <p>
+      Codul de mai sus va afișa pe ecran următorul mesaj:<br />
+      10, 9, 8, 7, 6, 5, 4, 3, 2, 1, Final de program
+    </p>
+    <p class="important">
+      Un lucru ce trebuie luat in calcul la instrucțiuniile repetitive este
+      posibilitatea unei bucle infinite. Așadar condiția de terminare a buclei
+      trebuie să poată fi evaluată falsă la un moment dat.
+    </p>
+    <p>
+      Instrucțiunea do while este similară cu instrucțiunea while, cu excepția
+      că evaluarea condiției se face după executarea blocului de cod. Așadar
+      instrucțiunea do while va executa blocul de cod cel puțin odată.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">#include &lt;iostream&gt;
+using namespace std;
+
+int main ()
+{
+    int n;
+    // Execută blocul de cod
+    do {
+        cout <<"Pentru a termina programul introdu cifra 0."<< endl;
+        cout << "Introdu numarul:";
+        cin >> n;
+        cout << "Ai introdus numărul "<< n << endl;
+    } while (n != 0); // Daca n este diferit de 0 repetă execuția blocului de cod
+}
+</code></pre>
+    <p class="important">
+      Programul de mai sus exceută blocul de cod cât timp utilizatorul introduce
+      o cifră diferită de 0. Codul este executat cel puțin odată deoarece
+      condiția este verificată la finalul blocului de cod.
+    </p>
+    <p>
+      Instrucțiunea repetitivă cu un număr cunoscut de pași for (se folosește
+      când numărul de repetiții este cunoscut – un număr fix de ori.)
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">#include &lt;iostream&gt;
+using namespace std;
+
+int main ()
+{
+    int n, i;
+    // Citește valoarea lui n
+    cin>>n;
+    // Inițializează i cu valoarea 1
+    // Cât timp i este mai mic decât n executâ blocul de cod
+    // Crește valoarea lui i cu 1 la finalul fiecărei repetiții
+    for(i = 1; i <= n; i++){
+        // Afișează valoarea lui i
+        cout<< i <<",";
+        cout<< endl;
+    }
+}
+</code></pre>
+    <p>
+      Se va afișa fiecare număr de la 1 până la numărul introdus de la
+      tastatură.
+    </p>
+    <p class="important">
+      Sintaxa este: for(inițializare; test final; pasul următor) instrucțiune;
+    </p>
+  </body>
+</html>

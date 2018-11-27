@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Citire și afișare</div>
+    <p>
+      Exemplele de programe din secțiunile anterioare au oferit puțina
+      interacțiune cu utilizatorul. Biblioteca standard oferă multe modalități
+      suplimentare de a interacționa cu utilizatorul prin intermediul funcțiilor
+      de intrare (input) / ieșire (output).
+    </p>
+    <p class="important">
+      Instrucțiunea cin<br />
+      Sintaxă: cin>>variabila1>>variabila2… <br />
+      Efect: se preiau de la tastatură valori pentru fiecare variabilă din sir
+      <br />
+      Cerințe: folosirea instrucțiunii necesita #include &lt;iostream&gt;
+    </p>
+    <p class="important">
+      Instrucțiunea cout<br />
+      Sintaxă: cout &lt;&lt; expresie1 &lt;&lt; expresie2..;<br />
+      Efect: se afișează, pe rând, valorile expresiilor <br />
+      Cerințe: folosirea instrucțiunii necesită #include &lt;iostream&gt; <br />
+      Pentru a trece pe urmatoarea linie se folosește expresia endl
+    </p>
+    <p>
+      Exemplu: program care citește de la tastatură două numere și afișează suma
+      și produsul lor.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">#include &lt;iostream&gt;
+using namespace std;
+
+int main ()
+{
+    int a, b, suma, produs;
+    cout<<"Introduceți cele două numere: ";
+    cin>>a>>b;
+    suma = a + b;
+    produs = a * b;
+    cout<<"Suma numerelor "<< a << " și " << b <<"este "<< suma << endl;
+    cout<<"Produsul numerelor "<< a <<" și "<< b <<"este "<< produs << endl;
+}
+</code></pre>
+  </body>
+</html>

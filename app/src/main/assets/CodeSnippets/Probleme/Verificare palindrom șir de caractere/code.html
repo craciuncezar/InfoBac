@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../styles/atom-one-dark.css">
+    <script src="../../highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+    <pre style="margin:0"><code class="cpp" style="padding: 12px;">// Program C++ pentru verificarea unui text palindrom
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+
+int main(){
+// citirea textului
+char a[201];
+cout&lt;&lt;&quot;Introdu textul:&quot;&lt;&lt;endl;
+cin.get(a,200);
+
+int i,ok = 0;
+
+// eliminam &quot; ,!.&quot; din sir
+for (i = 0; i &lt; strlen(a); i++){
+    if (strchr(&quot; ,!.&quot;,a[i])){
+        int j;
+        for (j = i; j &lt; strlen(a); j++){
+            a[j] = a[j+1];
+        }
+    }
+}
+
+// comparam caracterele (primul caracter cu ultimul, al 2-lea cu penultimul s.a.m.d)
+for (i = 0; i &lt; strlen(a)/2 &amp;&amp; ok == 0; i++){
+    // folosim tolower pentru a converti literele in litera mica
+    // astfel tolower(&quot;A&quot;) va fi egal cu tolower(&quot;a&quot;)
+    if (tolower(a[i]) != tolower(a[strlen(a) - i - 1]))
+        ok = 1;
+}
+
+if (ok == 0)
+    cout&lt;&lt;&quot;Textul este palindrom\n&quot;;
+else
+    cout&lt;&lt;&quot;Textul nu este palindrom\n&quot;;
+
+return 0;
+}</code></pre>
+
+</body>
+
+</html>

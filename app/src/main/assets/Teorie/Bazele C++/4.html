@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Instrucțiunea if</div>
+    <p>
+      Programele C++ nu se limitează la o secvența liniară de instrucțiuni. În
+      timpul procesului, un program poate repeta segmente de cod, sau poate lua
+      decizii. C ++ oferă instrucțiuni de control al fluxului care servesc la
+      specificarea a ceea ce trebuie făcut de programul nostru, când și în ce
+      condiții.
+    </p>
+    <p class="important">
+      Instrucțiunea "if" este utilizată pentru a executa o instrucțiune sau un
+      bloc de instrucțiuni, dacă și numai dacă, o condiție este indeplinită.
+      Sintaxa este următoarea:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">if(x > 0)
+    cout<<"număr pozitiv";
+</code></pre>
+    <p>
+      Daca doriți să includeți mai mult de o singură instrucțiune pentru a fi
+      executată atunci când condiția este îndeplinită, se folosește un bloc de
+      instrucțiuni:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">if (x != 0)
+{
+   cout << "x este ";
+   cout << x;
+}
+</code></pre>
+    <p>
+      Instrucțiunea if poate, de asemenea, să specifice ce se intamplă atunci
+      când condiția nu este îndemplinită, utilizând cuvântul cheie else. Sintaxa
+      sa este:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">if (x == 0)
+  cout << "x este 0";
+else
+  cout << "x este diferit de 0";
+</code></pre>
+    <p>
+      Tot odată poate lega mai multe condiții prin utilizarea mai multor if-uri.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">if (x > 0)
+  cout << "x este pozitiv";
+else if (x < 0)
+  cout << "x este negativ";
+else
+  cout << "x este 0";
+</code></pre>
+  </body>
+</html>

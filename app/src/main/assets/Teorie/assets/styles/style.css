@@ -1,0 +1,50 @@
+body {
+  margin: 16px;
+}
+
+@font-face {
+  font-family: fibra;
+  src: url("./fibra_regular.otf") format("opentype");
+}
+
+.title {
+  font-family: fibra;
+  font-weight: 600;
+  font-size: 1.7em;
+  margin-bottom: 14px;
+  margin-top: 16px;
+}
+
+p {
+  font-family: fibra;
+  font-size: 0.85em;
+  line-height: 1.5em;
+}
+
+.code-snippet {
+  border-radius: 9px;
+}
+
+.img-container {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 9px;
+}
+
+img {
+  border-radius: 9px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.important {
+  border-radius: 9px;
+  background-color: rgb(158, 156, 9);
+  color: aliceblue;
+  padding: 12px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Structuri repetitive</div>
+    <p>
+      Se pot defini mai multe tipuri de structuri repetitive in functie de
+      numarul de pasi sau momentul verificarii conditiei.
+    </p>
+    <p>
+      1. <b>Structura repetitiva cu test initial</b>: CAT TIMP (se foloseste
+      cand numarul de repetitii este nedefinit)
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">┏━ cat timp expresie executa
+┃     instructiuni
+┗━■
+</code></pre>
+    <p>
+      2. <b>Structura repetitiva cu test final</b>: REPETA-PANA CAND (se
+      foloseste cand numarul de repetitii este nedefinit)
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">┏━ repeta
+┃     instructiuni
+┗━ pana cand expresie
+  </code></pre>
+    <p class="important">
+      Structura repetitiva cu test final va fi exectuata cel putin o data.
+    </p>
+    <p>
+      3. <b>Structura repetitiva cu numar cunoscut de pasi</b>: PENTRU (se
+      foloseste cand numarul de repetitii este cunoscut – un numar fix de ori)
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">┏━ PENTRU contor ← exp_init,exp_fin EXECUTA
+┃     instructiuni
+┗━■
+</code></pre>
+    <p><b>Exemple de structuri repetitive:</b></p>
+    <p>
+      Afisarea pe ecran a tuturor numerelor intregi pozitive mai mici decat un
+      numar intreg primit ca input de la tastatura.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">citeste x (numar intreg)
+┏━ cat timp x ≠ 0 executa
+┃     x ← x - 1
+┃     scrie x
+┗━■
+</code></pre>
+    <p>
+      Afisarea pe ecran a tuturor numerelor intregi pozitive impare din
+      intervalul [1,n], unde n este numar intreg citit de la tastatura.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">citeste n (numar intreg)
+┏━ pentru i ← 0,n executa
+┃ ┏━  daca i % 2 = 1
+┃ ┃    scrie i
+┃ ┗━■
+┗━■
+</code></pre>
+  </body>
+</html>

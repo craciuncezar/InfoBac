@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Operatori</div>
+    <p>
+      Odată introduse variabilele putem începe să modificăm variabilele și să
+      stabilim relații folosind operatori.
+    </p>
+    <p>
+      1.
+      <b
+        >Operatii aritmetice: + (adunare), - (scadere), * (inmultire),
+        /(impartire), %(modulo)</b
+      >
+    </p>
+    <p>
+      Operațiile de adunare, scădere, înmulțire și împărțire corespund
+      literalmente operatorilor lor matematici. Ultimul, operatorul modulo,
+      reprezentat de un semn procentual (%), dă restul imparțiri a două valori.
+      De exemplu:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">x = 11 % 3;
+// x este 2 deoarece 11 impărțit la 3 
+// are câtul 3 și restul 2
+</code></pre>
+    <p>2.<b>Operatori compuși: (+=, -=, *=, /=)</b></p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">y += x; // echivalent cu y = y + x;
+x -= 5; // echivalent cu x = x - 5;
+x /= y;	// echivalent cu x = x / y;</code></pre>
+    <p>3.<b>Operatori de încrementare și decrementare: ++ și --</b></p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">y++; // echivalent cu y += 1 și y = y + 1;
+y--; // echivalent cu y -= 1 si y = y - 1;
+</code></pre>
+    <p class="important">
+      Acești operatori de încrementare și decrementare pot fi folosiți pentru
+      variabile și ca sufix și ca prefix, diferența fiind momentul evaluării
+      expresiei:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">// Prefix
+x = 3;
+y = ++x;
+// x este 4, y este 4
+
+// Suffix
+x = 3;
+y = x++;
+// x este 4, y este 3
+</code></pre>
+    <p>
+      4.
+      <b
+        >Operatorii relaționali: == (egal), != (diferit), > (mai mare), < (mai
+        mic), >= (mai mare sau egal), <= (mai mic sau egal)
+      </b>
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">(7 == 5) // se evaluează fals
+(5 > 4) // se evaluează adevarat
+(3 != 2) // se evaluează adevarat
+(6 >= 6) // se evaluează adevarat
+(5 < 5) // se evaluează fals
+</code></pre>
+    <p class="important">
+      Atenție! Operatorul de atribuire (operator =, cu un semn egal) nu este
+      același cu operatorul de comparare a egalității (operator ==, cu două
+      semne egal).
+    </p>
+    <p>5.<b>Operatori logici: ! (negație), && (și), || (sau)</b></p>
+    <p>
+      Operatorul && "și" are rezultat adevărat când toți operanzi sunt
+      adevarați, operatorul || "sau" are rezultat adevărat când cel puțin unul
+      din operanzi este adevărat.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">(5 < 10) && (1 == 1) este Adevărat
+(1 != 1) && (5 > 10) este Fals
+(1 = 1) && (1 > 2) este Fals
+(1 = 1) || (1 > 2) este Adevărat
+(1 != 1) || (5 > 10) este Fals
+</code></pre>
+    <p>Operatorul de negație inversează rezultatul unei expresii ex:</p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">!(1 == 1) este Fals
+!(1 != 1) este Adevărat
+</code></pre>
+    <p class="important"><b>Ordinea operaților!!</b></p>
+    <p>O singură expresie poate avea mai mulți operatori. De exemplu:</p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">x = 5 + 7 % 2;
+</code></pre>
+    <p>
+      În C ++, expresia de mai sus atribuie întotdeauna valoarea 6 variabilei x,
+      deoarece operatorul % are o prioritate mai mare decât operatorul + și este
+      întotdeauna evaluat înainte. Părți ale expresiilor pot fi puse între
+      paranteze pentru a înlocui această ordine de prioritate sau pentru a
+      clarifica în mod explicit efectul dorit. Observați diferența:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">x = 5 + (7 % 2); // x = 6 (ca fară paranteze)
+x = (5 + 7) % 2; // x = 0 
+</code></pre>
+    <p class="important">
+      În ordinea scăderii importanței, operatorii sunt:<br />
+      1) ! (negare)<br />
+      2) *, /, %<br />
+      3) +, – <br />
+      4) <, <=, >=, ><br />
+      5) ==, !=<br />
+      6) &&<br />
+      7) ||
+    </p>
+  </body>
+</html>

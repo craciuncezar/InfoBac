@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../styles/atom-one-dark.css">
+    <script src="../../highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+    <pre style="margin:0"><code class="cpp" style="padding: 12px;">// Program C++ pentru gasirea celei mai mare cifre dintr-un numarului
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n, max;
+    cout&lt;&lt;&quot;Introduceti numarul : &quot;;
+    cin&gt;&gt;n;
+    // max este initializat cu 0
+    max = 0;
+    // parcurgerea numarului cifra cu cifra
+    while(n != 0)
+    {
+        // verificam daca ultima cifra a numarului este cea mai mare cifra 
+        if(n%10 &gt; max)
+            max = n%10;
+        // eliminam ultima cifra din numar
+        n = n/10;
+    }
+    cout&lt;&lt;&quot;Cea mai mare cifra a numarului este &quot;&lt;&lt;max;
+}</code></pre>
+
+</body>
+
+</html>

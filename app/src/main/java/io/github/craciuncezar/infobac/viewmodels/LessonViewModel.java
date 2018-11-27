@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import io.github.craciuncezar.infobac.R;
@@ -42,18 +41,17 @@ public class LessonViewModel extends AndroidViewModel {
         this.lessonPages = chapterNumbers[lessons.indexOf(lessonName)];
     }
 
-    public void initLesson(LessonProgress progress, LifecycleOwner owner) {
+    public void initLesson(LessonProgress progress) {
         if (progress == null) {
             setCurrentLesson(lessonName);
             currentPage.setValue(0);
-            LessonProgress progressLesson = new LessonProgress(lessonName,0);
+            LessonProgress progressLesson = new LessonProgress(lessonName, 0);
             repository.addLessonProgress(progressLesson);
             this.lessonProgress = new MutableLiveData<>();
             ((MutableLiveData<LessonProgress>) this.lessonProgress).setValue(progressLesson);
         } else {
-            currentPage.setValue(progress.getProgressIndex() == lessonPages ? 0 : progress.getProgressIndex());
+            currentPage.setValue(progress.getProgressIndex());
         }
-        lessonProgress.removeObservers(owner);
     }
 
     public void nextLessonPage() {

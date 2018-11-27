@@ -58,7 +58,7 @@ public class HomeFragment extends Fragment {
     private void initLearnNowCard() {
         String currentLesson = PreferencesManager.getInstance(getActivity()).getCurrentLesson();
         binding.textViewCurrentLesson.setText(currentLesson);
-        binding.textViewLearn.setText(currentLesson.equals("Introducere") ? "Incepe sa inveti" : "Continua sa inveti");
+        binding.textViewLearn.setText(currentLesson.equals(getString(R.string.introducere)) ? getString(R.string.start_learning) : getString(R.string.keep_learning));
     }
 
     private void initProgressMax() {
@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment {
         int[] lessonsChapters = getResources().getIntArray(R.array.lesson_chapters);
         int totalLessonsChapters = 0;
         for (int i : lessonsChapters) {
-            totalLessonsChapters += i-1;
+            totalLessonsChapters += i - 1;
         }
         binding.progressBarLessons.setMax(totalLessonsChapters);
     }

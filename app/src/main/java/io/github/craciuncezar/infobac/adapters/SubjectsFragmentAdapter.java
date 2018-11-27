@@ -9,8 +9,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import io.github.craciuncezar.infobac.controllers.PdfSubjectFragment;
 
 public class SubjectsFragmentAdapter extends FragmentPagerAdapter {
-    ArrayList<PdfSubjectFragment> fragments = new ArrayList<>();
-    ArrayList<String> fragmentTitles = new ArrayList<>();
+    private ArrayList<PdfSubjectFragment> fragments = new ArrayList<>();
+    private ArrayList<String> fragmentTitles = new ArrayList<>();
 
     public SubjectsFragmentAdapter(FragmentManager fm) {
         super(fm);

@@ -3,9 +3,13 @@
     <string-array name="lesson_names">
         <item>"Introducere"</item>
         <item>"Pseudocod"</item>
+        <item>Bazele C++</item>
+        <item>Date complexe</item>
     </string-array>
     <integer-array name="lesson_chapters">
-        <item>5</item>
+        <item>7</item>
+        <item>6</item>
+        <item>6</item>
         <item>3</item>
     </integer-array>
 </resources>

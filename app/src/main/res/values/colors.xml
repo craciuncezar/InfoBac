@@ -8,11 +8,9 @@
     <color name="progressTint">#9fa8da</color>
     <color name="lightGrey">#eceff1</color>
     <color name="darkBlueGrey">#37474f</color>
-    <color name="textColor">#455a64</color>
     <color name="statusColor">#C2ACAC</color>
 
     <!--DARK THEME-->
-    <color name="colorPrimaryDark">#00574B</color>
     <color name="darkThemeBackground">#15202B</color>
     <color name="darkThemeToolbar">#1C2938</color>
     <color name="darkThemeStatusBar">#131D28</color>

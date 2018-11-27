@@ -31,7 +31,7 @@ public class QuizGameActivity extends BaseActivity implements QuizBottomSheet.Qu
         setSupportActionBar(binding.toolbarQuiz);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close_black_24dp);
         }
     }
 

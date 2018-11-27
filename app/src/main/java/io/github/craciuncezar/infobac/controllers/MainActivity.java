@@ -153,8 +153,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 Intent emailIntent;
                 emailIntent = new Intent(Intent.ACTION_SENDTO);
                 emailIntent.setData(Uri.parse("mailto:craciuncezar1996@gmail.com"));
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, R.string.bug_mail_subject);
-                emailIntent.putExtra(Intent.EXTRA_TEXT, R.string.bug_mail_text);
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Bug report info");
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "Bugul gasit: ");
                 if (emailIntent.resolveActivity(getPackageManager()) != null) {
                     startActivity(emailIntent);
                 } else {

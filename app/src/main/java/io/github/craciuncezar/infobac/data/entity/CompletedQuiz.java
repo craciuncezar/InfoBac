@@ -2,6 +2,7 @@ package io.github.craciuncezar.infobac.data.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "completed_quizzes")
@@ -15,12 +16,18 @@ public class CompletedQuiz {
         this.quizName = quizName;
     }
 
-    public void setId(long id) {
+    @Ignore
+    public CompletedQuiz(long id, String quizName) {
         this.id = id;
+        this.quizName = quizName;
     }
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getQuizName() {

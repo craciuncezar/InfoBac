@@ -36,11 +36,7 @@ public class LearnViewModel extends AndroidViewModel {
     public LiveData<List<LessonProgress>> getLessonProgressList() {
         return lessonProgressList;
     }
-
-    public int[] getSubjectsChapters() {
-        return subjectsChapters;
-    }
-
+    
     public String getSubjectName(int index) {
         return subjectsNames[index];
     }

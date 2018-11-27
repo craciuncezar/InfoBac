@@ -42,9 +42,11 @@ public class QuizGameViewModel extends AndroidViewModel {
     }
 
     private void getQuestion() {
-        int questionIndex = randomQuizIndexes.get(currentQuestionNumber.getValue());
-        int quizIndex = new Random().nextInt(quizNames.length);
-        updateQuestion(quizNames[quizIndex], questionIndex);
+        if (currentQuestionNumber.getValue() != null) {
+            int questionIndex = randomQuizIndexes.get(currentQuestionNumber.getValue());
+            int quizIndex = new Random().nextInt(quizNames.length);
+            updateQuestion(quizNames[quizIndex], questionIndex);
+        }
     }
 
     private void updateQuestion(String quizSet, int index) {
@@ -54,8 +56,8 @@ public class QuizGameViewModel extends AndroidViewModel {
     }
 
     public void nextQuestion() {
-        if (selectedAnswerIndex.getValue() != -1) {
-            if (!isLastQuestion())
+        if (selectedAnswerIndex.getValue() != null && selectedAnswerIndex.getValue() != -1) {
+            if (!isLastQuestion() && currentQuestionNumber.getValue() != null)
                 currentQuestionNumber.setValue(currentQuestionNumber.getValue() + 1);
             selectedAnswerIndex.setValue(-1);
             getQuestion();
@@ -63,13 +65,16 @@ public class QuizGameViewModel extends AndroidViewModel {
     }
 
     public boolean answerIsCorrect() {
-        String selectedAnswer = quizQuestion.getValue().getChoices()[selectedAnswerIndex.getValue()];
-        String correctAnswer = quizQuestion.getValue().getCorrectAnswer();
-        return selectedAnswer.equals(correctAnswer);
+        if (quizQuestion.getValue() != null && selectedAnswerIndex.getValue() != null) {
+            String selectedAnswer = quizQuestion.getValue().getChoices()[selectedAnswerIndex.getValue()];
+            String correctAnswer = quizQuestion.getValue().getCorrectAnswer();
+            return selectedAnswer.equals(correctAnswer);
+        }
+        return false;
     }
 
     public void onChoiceSelected(int index) {
-        if (selectedAnswerIndex.getValue() != index) {
+        if (selectedAnswerIndex.getValue() != null && selectedAnswerIndex.getValue() != index) {
             selectedAnswerIndex.setValue(index);
         } else {
             selectedAnswerIndex.setValue(-1);
@@ -77,7 +82,9 @@ public class QuizGameViewModel extends AndroidViewModel {
     }
 
     public boolean isLastQuestion() {
-        return currentQuestionNumber.getValue().equals(9);
+        if (currentQuestionNumber.getValue() != null)
+            return currentQuestionNumber.getValue().equals(9);
+        return false;
     }
 
     public MutableLiveData<QuizQuestion> getQuizQuestion() {

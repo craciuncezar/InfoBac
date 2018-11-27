@@ -37,6 +37,7 @@ public class PdfSubjectFragment extends Fragment {
     private SubsamplingScaleImageView container_pdf;
     private NestedScrollView scrollView;
     private Boolean isBarem;
+    private SubjectsViewModel viewModel;
 
     void setIsBarem(Boolean isBarem) {
         Bundle bundle = new Bundle();
@@ -48,7 +49,7 @@ public class PdfSubjectFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         isBarem = getArguments() != null && getArguments().getBoolean(BAREM_KEY);
-        SubjectsViewModel viewModel = ViewModelProviders.of(Objects.requireNonNull(getActivity())).get(SubjectsViewModel.class);
+        viewModel = ViewModelProviders.of(Objects.requireNonNull(getActivity())).get(SubjectsViewModel.class);
         scrollView = new NestedScrollView(getActivity());
         scrollView.setLayoutParams(new CoordinatorLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         CoordinatorLayout.LayoutParams params =
@@ -60,9 +61,7 @@ public class PdfSubjectFragment extends Fragment {
         container_pdf = new SubsamplingScaleImageView(getActivity());
         container_pdf.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         scrollView.addView(container_pdf);
-
-        viewModel.getCurrentFilePath().observe(this, this::updatePdfContainer);
-
+        container_pdf.post(() -> viewModel.getCurrentFilePath().observe(this, this::updatePdfContainer));
         return scrollView;
     }
 

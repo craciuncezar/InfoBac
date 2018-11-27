@@ -1,3 +1,0 @@
-<div>Se citeste de la tastatura un numar. Determinati si afisati pe ecran inversul acestuia.</div>
-<div>Ex: pentru numarul 123654 se va afisa 456321.</div>
-Solutia prezentata parcurge fiecare cifra a numarului si salveaza cifra cea mai mare in variabila max.

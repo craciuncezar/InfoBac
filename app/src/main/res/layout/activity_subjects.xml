@@ -81,7 +81,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:pressedTranslationZ="12dp"
-            app:animateFabIcon="@{viewModel.subjectIsCompleted}"
+            app:animateFabIcon="@{safeUnbox(viewModel.subjectIsCompleted)}"
             android:onClick="@{()->activity.onFabClick()}"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

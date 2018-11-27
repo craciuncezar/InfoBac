@@ -1,17 +1,28 @@
 package io.github.craciuncezar.infobac;
 
+import android.app.Application;
+import android.content.Context;
+
+import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import androidx.test.core.app.ApplicationProvider;
+import io.github.craciuncezar.infobac.viewmodels.ExerciseViewModel;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
+import static com.google.common.truth.Truth.assertThat;
+
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    private ExerciseViewModel exerciseViewModel;
+    private Context context = ApplicationProvider.getApplicationContext();
+
+    @Before
+    public void setUp(){
+        exerciseViewModel = new ExerciseViewModel((Application)context);
     }
+
+    @Test
+    public void test1(){
+        assertThat(exerciseViewModel).isNotNull();
+    }
+
 }

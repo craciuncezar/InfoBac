@@ -15,6 +15,7 @@ import io.github.craciuncezar.infobac.data.entity.LessonProgress;
 @Dao
 public interface ProgressDao {
 
+    // Lessons
     @Query("SELECT * FROM lesson_progress")
     LiveData<List<LessonProgress>> getAllLessonProgress();
 
@@ -56,6 +57,7 @@ public interface ProgressDao {
     @Query("SELECT (SELECT COUNT(*) FROM completed_quizzes) + (SELECT COUNT(*) FROM completed_subjects)")
     LiveData<Integer> getTotalNumberOfCompletedExercises();
 
+    // WIPE DATA
     @Query("DELETE FROM lesson_progress")
     void deleteLessonProgress();
     @Query("DELETE FROM completed_quizzes")

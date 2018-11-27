@@ -39,7 +39,7 @@
                 android:layout_marginEnd="32dp"
                 android:max="@{9*100}"
                 android:progressDrawable="?progressBarRounded"
-                app:setProgressAnimate="@{viewModel.currentQuestionNumber}" />
+                app:setProgressAnimate="@{safeUnbox(viewModel.currentQuestionNumber)}" />
         </androidx.appcompat.widget.Toolbar>
 
         <ScrollView
@@ -115,7 +115,7 @@
                         android:onClick="@{()->viewModel.onChoiceSelected(0)}"
                         app:cardCornerRadius="4dp"
                         app:contentPadding="8dp"
-                        app:isSelectedAnswer="@{viewModel.selectedAnswerIndex == 0}">
+                        app:isSelectedAnswer="@{safeUnbox(viewModel.selectedAnswerIndex) == 0}">
 
 
                         <TextView
@@ -144,7 +144,7 @@
                         android:onClick="@{()->viewModel.onChoiceSelected(1)}"
                         app:cardCornerRadius="4dp"
                         app:contentPadding="8dp"
-                        app:isSelectedAnswer="@{viewModel.selectedAnswerIndex == 1}">
+                        app:isSelectedAnswer="@{safeUnbox(viewModel.selectedAnswerIndex) == 1}">
 
                         <TextView
                             android:id="@+id/textView10"
@@ -184,7 +184,7 @@
                         android:onClick="@{()->viewModel.onChoiceSelected(2)}"
                         app:cardCornerRadius="4dp"
                         app:contentPadding="8dp"
-                        app:isSelectedAnswer="@{viewModel.selectedAnswerIndex == 2}">
+                        app:isSelectedAnswer="@{safeUnbox(viewModel.selectedAnswerIndex) == 2}">
 
 
                         <TextView
@@ -211,7 +211,7 @@
                         android:onClick="@{()->viewModel.onChoiceSelected(3)}"
                         app:cardCornerRadius="4dp"
                         app:contentPadding="8dp"
-                        app:isSelectedAnswer="@{viewModel.selectedAnswerIndex == 3}">
+                        app:isSelectedAnswer="@{safeUnbox(viewModel.selectedAnswerIndex) == 3}">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -234,7 +234,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/colorPrimary"
-            android:enabled="@{viewModel.selectedAnswerIndex != -1}"
+            android:enabled="@{safeUnbox(viewModel.selectedAnswerIndex) != -1}"
             android:onClick="@{()->handler.onAnswerPressed()}"
             android:text="@string/Answer"
             android:textSize="15sp"

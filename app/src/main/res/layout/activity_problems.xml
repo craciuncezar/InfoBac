@@ -103,11 +103,11 @@
             android:layout_marginBottom="16dp"
             android:foregroundGravity="right|bottom"
             android:src="@drawable/avd_check_to_cross"
-            app:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:pressedTranslationZ="12dp"
-            app:animateFabIcon="@{viewModel.problemIsCompleted}"
+            app:animateFabIcon="@{safeUnbox(viewModel.problemIsCompleted)}"
             android:onClick="@{()->activity.onCompletePressed()}"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

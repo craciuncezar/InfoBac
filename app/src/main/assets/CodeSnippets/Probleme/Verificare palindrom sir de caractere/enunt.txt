@@ -1,4 +1,0 @@
-<div>Se citeste de la tastatura un sir de caractere. Determinati daca sirul este un palindrom.</div>
-<div>Un sir de caractere este palindrom daca fiind citit de la stanga la dreapta sau de la dreapta la stanga ramane neschimbat.</div>
-<div>Ex: textul "O rama maro" este palindrom.</div>
-Solutia prezentata elimina semnele de punctuatie si apoi compara prima jumatate a literelor cu a doua jumatate.

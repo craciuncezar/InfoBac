@@ -65,7 +65,7 @@
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="1dp"
                     android:layout_marginBottom="6dp"
-                    android:progress="@{viewModel.totalLessonProgress}"
+                    android:progress="@{safeUnbox(viewModel.totalLessonProgress)}"
                     android:progressDrawable="?progressBarRounded" />
 
                 <TextView
@@ -83,7 +83,7 @@
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="1dp"
                     android:layout_marginBottom="6dp"
-                    android:progress="@{viewModel.numberOfCompletedExercises}"
+                    android:progress="@{safeUnbox(viewModel.numberOfCompletedExercises)}"
                     android:progressDrawable="?progressBarRounded" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

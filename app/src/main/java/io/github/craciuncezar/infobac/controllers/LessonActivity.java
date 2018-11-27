@@ -39,7 +39,7 @@ public class LessonActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_lesson);
         viewModel = ViewModelProviders.of(this).get(LessonViewModel.class);
         viewModel.setLesson(getIntent().getStringExtra(NAME_FOR_LESSON));
-        viewModel.getLessonProgress().observe(this, (progress) -> viewModel.initLesson(progress, this));
+        viewModel.getLessonProgress().observe(this, (progress) -> viewModel.initLesson(progress));
         binding.setActivity(this);
         binding.setViewModel(viewModel);
         binding.setLifecycleOwner(this);
@@ -55,13 +55,14 @@ public class LessonActivity extends BaseActivity {
         viewModel.getCurrentPage().observe(this, (page) -> {
             binding.progressLesson.setText(String.format(Locale.ENGLISH, "%d/%d", page + 1, viewModel.getLessonPages()));
             binding.lessonWebView.setVisibility(View.GONE);
+            binding.lessonWebView.scrollTo(0, 0);
             binding.lessonWebView.loadUrl("file:///android_asset/Teorie/" + viewModel.getLessonName() + "/" + page + ".html");
             handler.removeCallbacksAndMessages(null);
             binding.lessonWebView.setWebViewClient(new WebViewClient() {
                 @Override
                 public void onPageFinished(WebView view, String url) {
                     super.onPageFinished(view, url);
-                    binding.lessonWebView.evaluateJavascript("setCurrentStyle('" + getCurrentTheme() + "')", (result) -> handler.postDelayed(()-> binding.lessonWebView.setVisibility(View.VISIBLE),300));
+                    binding.lessonWebView.evaluateJavascript("setCurrentStyle('" + getCurrentTheme() + "')", (result) -> handler.postDelayed(() -> binding.lessonWebView.setVisibility(View.VISIBLE), 300));
                 }
             });
         });
@@ -93,7 +94,7 @@ public class LessonActivity extends BaseActivity {
         setSupportActionBar(binding.toolbarLesson);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close_black_24dp);
         }
     }
 }

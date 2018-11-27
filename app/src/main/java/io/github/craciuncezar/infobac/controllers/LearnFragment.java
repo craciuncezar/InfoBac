@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -34,16 +36,18 @@ public class LearnFragment extends Fragment {
 
     private void observeUi() {
         viewModel.getLessonProgressList().observe(this, (lessonProgressList) -> {
-            LessonProgress introducereProgress = viewModel.progressAvailable("Introducere");
-            binding.progressBarIntroducere.setProgress(introducereProgress != null ? introducereProgress.getProgressIndex() + 1 : 0);
-            String text = (int) (((float) binding.progressBarIntroducere.getProgress() / binding.progressBarIntroducere.getMax()) * 100)+"%";
-            binding.progressTextViewIntroducere.setText(text);
-
-            LessonProgress pseudocodProgress = viewModel.progressAvailable("Pseudocod");
-            binding.progressBarPseudocod.setProgress(pseudocodProgress != null ? pseudocodProgress.getProgressIndex() + 1 : 0);
-            text = (int) (((float) binding.progressBarPseudocod.getProgress() / binding.progressBarPseudocod.getMax()) * 100)+"%";
-            binding.progressTextViewPseudocod.setText(text);
+            updateProgress("Introducere", binding.progressBarIntroducere, binding.progressTextViewIntroducere);
+            updateProgress("Pseudocod", binding.progressBarPseudocod, binding.progressTextViewPseudocod);
+            updateProgress("Bazele C++", binding.progressBarCpp, binding.progressTextViewCpp);
+            updateProgress("Date complexe", binding.progressBarDate, binding.progressTextViewDate);
         });
+    }
+
+    private void updateProgress(String subject, ProgressBar progressBar, TextView textView) {
+        LessonProgress progress = viewModel.progressAvailable(subject);
+        progressBar.setProgress(progress != null ? progress.getProgressIndex() + 1 : 0);
+        String text = (int) (((float) progressBar.getProgress() / progressBar.getMax()) * 100) + "%";
+        textView.setText(text);
     }
 
     public void onClickLesson(String lesson) {

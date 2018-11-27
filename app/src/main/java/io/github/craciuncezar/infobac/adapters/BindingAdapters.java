@@ -38,6 +38,7 @@ public class BindingAdapters {
         }
     }
 
+
     @BindingAdapter("isVisible")
     public static void isVisible(View view, Boolean isVisible){
         if(isVisible){

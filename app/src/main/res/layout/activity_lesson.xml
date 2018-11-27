@@ -38,27 +38,19 @@
                 android:layout_height="8dp"
                 android:layout_marginEnd="32dp"
                 android:progressDrawable="?progressBarRounded"
-                app:setProgressAnimate="@{viewModel.getCurrentPage()}" />
+                app:setProgressAnimate="@{safeUnbox(viewModel.getCurrentPage())}" />
         </androidx.appcompat.widget.Toolbar>
 
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/scrollView2"
-            android:layout_width="match_parent"
+        <WebView
+            android:id="@+id/lesson_web_view"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar_lesson"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_lesson">
 
-            <WebView
-                android:id="@+id/lesson_web_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </WebView>
-        </androidx.core.widget.NestedScrollView>
+        </WebView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -89,7 +81,7 @@
                 android:paddingStart="4dp"
                 android:paddingEnd="4dp"
                 android:visibility="gone"
-                app:isVisible="@{viewModel.currentPage != 0}"
+                app:isVisible="@{safeUnbox(viewModel.currentPage) != 0}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/progress_lesson"
                 app:layout_constraintStart_toStartOf="parent"

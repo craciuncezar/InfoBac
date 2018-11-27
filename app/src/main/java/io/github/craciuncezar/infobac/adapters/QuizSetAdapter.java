@@ -51,7 +51,7 @@ public class QuizSetAdapter extends RecyclerView.Adapter<QuizSetAdapter.ViewHold
         return quizSets.size();
     }
 
-    public String getItem(int position) {
+    private String getItem(int position) {
         return quizSets.get(position);
     }
 

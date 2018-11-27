@@ -77,7 +77,7 @@ public class SubjectsActivity extends BaseActivity {
     public void onFabClick() {
         viewModel.changeSubjectIsCompleted();
         if (viewModel.getSubjectIsCompleted().getValue() != null && viewModel.getSubjectIsCompleted().getValue()) {
-            RoundedSnackBar.showRoundedSnackBar(this, findViewById(R.id.coordinator_layout_subjects), "Felicitari, subiect rezolvat!");
+            RoundedSnackBar.showRoundedSnackBar(this, findViewById(R.id.coordinator_layout_subjects), getString(R.string.congrats_subject_complete));
         }
     }
 

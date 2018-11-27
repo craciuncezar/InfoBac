@@ -43,10 +43,6 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
-    public PreferencesManager getPreferencesManager() {
-        return preferencesManager;
-    }
-
     public String getCurrentTheme() {
         return currentTheme;
     }

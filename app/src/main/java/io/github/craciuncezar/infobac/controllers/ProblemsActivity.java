@@ -50,11 +50,10 @@ public class ProblemsActivity extends BaseActivity {
         viewModel = ViewModelProviders.of(this).get(ProblemsViewModel.class);
         binding.setViewModel(viewModel);
         binding.webViewSolution.getSettings().setJavaScriptEnabled(true);
-
         setupToolbar();
         setupSpinner();
         viewModel.getSolutionIsVisible().observe(this, this::setSolutionButtonText);
-        viewModel.getCompletedProblemsList().observe(this,((CustomSpinnerAdapter)binding.subjectSpinner.getAdapter())::updateCompletedSubjects);
+        viewModel.getCompletedProblemsList().observe(this, ((CustomSpinnerAdapter) binding.subjectSpinner.getAdapter())::updateCompletedSubjects);
     }
 
     @Override
@@ -94,7 +93,7 @@ public class ProblemsActivity extends BaseActivity {
     public void onCompletePressed() {
         viewModel.changeProblemIsCompleted();
         if (viewModel.getProblemIsCompleted().getValue() != null && viewModel.getProblemIsCompleted().getValue()) {
-            RoundedSnackBar.showRoundedSnackBar(this, findViewById(R.id.coordinator_layout_subjects), "Felicitari, problema rezolvata!");
+            RoundedSnackBar.showRoundedSnackBar(this, findViewById(R.id.coordinator_layout_subjects), getString(R.string.congrats_problem_complete));
         }
     }
 }

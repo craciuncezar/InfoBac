@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Funcții pentru sir de caractere</div>
+    <p>
+      Funcțiile pentru operatii cu șiruri se găsesc in header-ul
+      &lt;string.h&gt;.
+    </p>
+    <p>
+      Funcția strlen returnează lungimea șirului. Caracterul nul nu se numără.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">cout << strlen("informatica"); // 11</code></pre>
+    <p>
+      Funcția strcpy copiază caracterele dint-un șir in alt șir inclusiv
+      caracterul nul.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">char sursa[5] = "info";
+char destinatie[5];
+strcpy(destinatie , sursa); // se muta sirul din variabila sursa in variabila destinatie
+cout<< destinatie; // se afiseaza info 
+</code></pre>
+    <p>Funcția strncpy copiază primele n caracterele dint-un șir in alt șir.</p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">char s[100]="informatica";
+strncpy(s, "test", 3);
+cout << s; // tesormatica
+</code></pre>
+    <p>
+      Funcția strcat adaugă caracterele dint-un șir inclusiv caracterul nul, la
+      alt șir.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">char a[21]="info", b[21] = "bac";
+strcat(a , b);
+cout << a; // infobac
+</code></pre>
+    <p>
+      Strchr caută caracterul în șir. Dacă îl găsește returnează șirul începând
+      cu prima apariție a caracterului altfel returnează null.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">char ch = 'i';
+if(strchr("aeiou" , ch) != NULL)
+    cout << "VOCALA"
+else
+    cout << "CONSOANA";
+//se va afisa VOCALA
+</code></pre>
+    <p>
+      Strstr caută un șir în alt șir. Dacă îl găsește returnează șirul începând
+      cu prima apariție a șirului altfel returnează null.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">char a[20]="infobac";
+char b[20] = strstr(a , "bac");
+cout << b; // bac
+</code></pre>
+    <p>
+      Eliminarea și inserarea unui caracter într-un șir sunt operații frecvente
+      și pot fi realizate cu ajutorul funcției strcpy. Deoarece comportamentul
+      funcției strcpy este impredictibil dacă parametri se suprapun, este
+      necesară utilizarea unui șir suplimentar.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">char s[256] = "informatica", t[256];
+int pozitia = 2;
+
+// eliminarea elementului de pe pozitia 2 din sirul s
+strcpy(t , s + pozitia + 1); // copeim in sirul suplimentar caracterele incepand cu pozita 3
+strcpy(s + pozitia , t); // copiem in sir incepand de la pozitia 2 caracterele din sirul suplimentar
+
+// inserarea unui caracter in sir pe pozitia 2
+strcpy(t , s + pozitia); // copeim in sirul suplimentar caracterele incepand cu pozita 2
+strcpy(s + pozitia + 1 , t); // copiem in sir incepand de la pozitia 3 caracterele din sirul suplimentar
+// in momentul de fata pe pozitia 2 nu exista un caracter
+s[pozitia] = 'A'; // adaugam un caracter pe pozitia 2
+</code></pre>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Tipul struct</div>
+    <p>
+      De multe ori datele folosite într-un program caracterizează
+      obiecte/fenomene din realitate, iar acestea au mai multe caracteristici
+      decât un simplu număr sau un șir de caractere. Pentru astfel de date
+      folosim tipul struct.
+    </p>
+    <p>
+      Să ne imaginăm că vrem să gestionăm datele unui elev (nume, prenume,
+      vârstă). În loc să folosim mai multe variabile pentru un elev putem să le
+      grupăm pe toate sub un singur tip de date:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">struct Elev{
+    char nume[21]; 
+    char prenume[21];
+    int varsta;
+};
+</code></pre>
+    <p>
+      Declararea unei variabile din tipul definit poate fi făcută fie în
+      momentul declarării structurii fie anterior.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">struct Elev{
+    char nume[21]; 
+    char prenume[21];
+    int varsta;
+} elev1, elev2; // declararea variabilelor aici
+
+// sau ulterior
+
+Elev elev3;
+</code></pre>
+    <p class="important">
+      Accesarea unui câmp din structura se face cu ajutorul operatorului .
+      (punct), numit și operator de acces:
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">struct Elev{
+    char nume[21]; 
+    char prenume[21];
+    int varsta;
+};
+
+Elev elev;
+elev.nume = "Popescu";
+elev.prenume = "Ionescu";
+elev.varsta = 15;
+cout<< "Elev: " << elev.nume << " " << elev.prenume << " cu varsta " << elev.varsta << "ani."; 
+// afiseaza "Elev: Popescu Ionescu cu varsta 15 ani."
+</code></pre>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../CodeSnippets/styles/atom-one-dark.css" />
+    <script src="../../CodeSnippets/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <script src="../assets/scripts/script.js"></script>
+  </head>
+
+  <body>
+    <div class="title">Sir de caractere</div>
+    <p>
+      O constantă de tip șir de caractere se declară intre doua caractere “. În
+      memoria internă, o constantă de acest tip este reținută sub forma unui
+      vector de caractere.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">char vect[11]=”calculator”;
+char vect[]=”calculator”; // compilatorul va presupune automat o dimensiune
+</code></pre>
+    <p class="important">
+      Șirurile de caractere sunt de fapt tablouri de caractere, care au ca ultim
+      element un terminator de sir, caracterul null.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">#include &lt;iostream&gt;
+using namespace std;
+
+char tc[5] = {&rsquo;a&rsquo;, &rsquo;b&rsquo;, &rsquo;c&rsquo;, &rsquo;d&rsquo;, &rsquo;e&rsquo;};    // tablou de caractere
+char sc[5] = {&rsquo;a&rsquo;, &rsquo;b&rsquo;, &rsquo;c&rsquo;, &rsquo;d&rsquo;, &rsquo;\0&rsquo;};  // sir de caractere cu elementele abcd
+
+//Ultima initializare este echivalenta cu:
+char sc[5] = &rdquo;abcd&rdquo;;     //sau char sc[] = &rdquo;abcd&rdquo;;
+
+char sc1[5] = &rdquo;abcd&rdquo;;
+char s[10];
+cout&lt;&lt;sc&lt;&lt;endln;    //afiseaza abcd
+cout&lt;&lt;tc&lt;&lt;endl;     //eroare: tabloul de caractere nu contine terminatorul de sir, deci nu poate fi afisat ca sir
+cout&lt;&lt;s&lt;&lt;endl;      // eroare: tablou neinitializat
+cout&lt;&lt;sc1[0];       // afiseaza primul caracter din sirul sc1
+cout&lt;&lt;sc1[2];       // afiseaza al treilea element din sirul sc1
+sc1[1]=&rsquo;K&rsquo;;         // elementului din sir de indice 1 i se atribuie valoarea &bdquo;K‟;
+</code></pre>
+    <p>
+      Citirea unui șir de caractere se poate face ca citirea oricărui tablou,
+      intr-un for, caracter cu caracter (deși nu este recomandată). În acest
+      caz, terminatorul de șir nu este memorat automat, el trebuie pus explicit
+      după ultimul caracter din șir.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">char c[20];
+for (int i = 0; i &lt; 6; i++)
+    cin&gt;&gt;c[i];
+cout&lt;&lt;c&lt;&lt;endl; //se va afisa sirul format din cele 6 caractere, urmat de caractere &quot;reziduale&quot;,
+                          //initializate implicit la compilare, din cauza ca 
+                                    //n-a fost pus terminatorul de sir
+c[6] = '\0';
+cout&lt;&lt;c&lt;&lt;endl; //a fost pus terminatorul, deci sirul va fi afisat corect
+</code></pre>
+    <p>
+      Se poate face pur și simplu, folosind ‘cin>>’ . Caracterul nul este
+      adaugat automat. Dezavantajul este că în acest fel nu se pot citi șiruri
+      care conțin mai multe cuvinte separate prin spații.
+    </p>
+    <p>
+      Se poate folosi o funcție specială pentru citirea șirurilor de caractere,
+      inclusă în biblioteca &lt;string.h&gt; (varianta recomandată).
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">char a[30];
+char b[10];
+cin.get(a,30); // 30 specifica numarul maxim de caractere citite de la tastatura
+</code></pre>
+    <p class="important">
+      În cazul utilizării repetate a funcției cin.get, după fiecare folosire
+      trebuie citit caracterul de la sfârșitul fiecărui șir , adică ‟\n‟ (în caz
+      contrar, acest caracter va fi incărcat la începutul următorului șir, a
+      cărui citire se termină la caracterul Enter, deci citirea celui de-al
+      doilea șir se termină înainte de a începe, iar al doilea șir va fi șirul
+      vid). Această citire a caracterului ‟\n‟ se realizează folosind cin.get()
+      fară parametri.
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">char a[30],b[30];
+cin.get(a,15);
+cin.get(b,10);
+
+/* Daca se incearca citirea sirurilor „sarbatoare” si „vacanta” de pe 2 linii diferite, 
+se observa ca a=”sarbatoare”, b=”” (nici nu apucam sa citim sirul b). Varianta corecta este: */
+
+cin.get(a,15);
+cin.get(); //trecem la linia urmatoare
+cin.get(b,10);
+</code></pre>
+    <p>
+      Caracterele din șir sunt accesate prin index exact ca și în cazul
+      tablourilor de elemente(vectori/matrici).
+    </p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">char a[30];
+cin.get(a,15); // presupunem citirea mesajului "informatica"
+cout<< a[3]; // afiseaza caracterul 'o'
+</code></pre>
+  </body>
+</html>

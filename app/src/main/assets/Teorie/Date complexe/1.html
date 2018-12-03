@@ -15,15 +15,86 @@
     <p>
       O matrice sau un tablou bidimensional, poate fi descris ca un "vector de
       vectori". De exemplu, o matrice poate fi imaginată ca un tabel format din
-      elemente structurate pe linii si coloane, toate având același tip de date.
+      elemente structurate pe linii și coloane, toate având același tip de date.
     </p>
     <img src="../assets/img/matrix.png" />
     <p>
-      Declararea unei matrici denumite matriceExemplu cu elemente de tip întreg:
+      Declararea unei matrici cu 3 linii și 5 coloane, denumită matriceExemplu
+      cu elemente de tip întreg:
     </p>
     <pre
       style="margin:0"
     ><code class="cpp code-snippet" style="padding: 12px;">int matriceExemplu [3][5];
 </code></pre>
+    <p class="important">
+      Ca și în cazul vectorilor, liniile și coloanele matricii se numară
+      încapând de la valoarea 0. Astfel, prima line, respectiv prima coloană a
+      matricii este linia/coloana 0, a doua linie/coloana este 1, s.a.m.d.
+    </p>
+    <p>
+      Accesarea elementelor din matrice se face ca și în cazul vectorilor
+      specificând numele matrici și intre paranteze pătrate indexul liniei urmat
+      de indexul coloanei.
+    </p>
+    <p>Parcurgerea și inițializarea unei matrici cu valori de la tastatură:</p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+    int i, j, m, n, matrice[10][10];
+    cout&lt;&lt;&quot;Introduceti numarul de linii: m=&quot;;
+    cin&gt;&gt;m;
+    cout&lt;&lt;&quot;Introduceti numarul de coloane: n=&quot;;
+    cin&gt;&gt;n;
+    cout&lt;&lt;&quot;Introduceti numerele:&quot;&lt;&lt;endl;
+    for (i=0;i&lt;m;i++) 
+        for (j=0;j&lt;n;j++){
+            cout&lt;&lt;&quot;matrice[&quot;&lt;&lt;i&lt;&lt;&quot;][&quot;&lt;&lt;j&lt;&lt;&quot;]=&quot;;
+            cin&gt;&gt;matrice[i][j];
+        }
+}
+</code></pre>
+    <p>Afișarea elementelor matrici de mai sus:</p>
+    <pre
+      style="margin:0"
+    ><code class="cpp code-snippet" style="padding: 12px;">// parcurgerea matricii
+for (i=0;i&lt;m;i++) {
+    for (j=0;j&lt;n;j++) {
+        // afisarea elementului
+        cout&lt;&lt;matrice[i][j]&lt;&lt;&quot; &quot;;
+    }
+    // trecerea pe o noua linie
+    cout&lt;&lt;endl;
+}
+</code></pre>
+    <p class="important">
+      Într-o matrice pătratică numarul de linii= numarul de coloane (n=m).
+    </p>
+    <p>Într-o matrice pătratică avem:</p>
+    <p>
+      Diagonala principală care este formată din elementele unei matrici
+      pătratice aflate pe pozițiile în care indicele liniei este egal cu cel al
+      coloanei (i=j), adica a[i][i].
+    </p>
+    <p>
+      Diagonala secundară care este formata din elementele unei matrici
+      pătratice aflate pe pozițiile în care i+j=n+1, mai exact a[i][n-i+1].
+    </p>
+    <img src="../assets/img/diagonala.jpg" />
+    <p class="important">
+      În matricea de mai sus, pătratele colorate cu verde reprezintă diagonala
+      principală și pătratele colorate cu galben reprezintă diagonala secundară.
+    </p>
+    <p class="important">
+      Zonele determinate de diagonale:<br /><br />
+      Pe diagonala principală i=j<br />
+      Sub diagonala principală: i&gt;j<br />
+      Deasupra diagonalei principale: i&lt;j<br /><br />
+      Pe diagonala secundară j=n-i+1<br />
+      Sub diagonala secundară: j&gt;n-i+1<br />
+      Deasupra diagonalei secundare:j&lt;n-i+1
+    </p>
   </body>
 </html>

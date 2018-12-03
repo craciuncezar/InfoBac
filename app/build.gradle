@@ -7,15 +7,17 @@ android {
         enabled = true
     }
     testOptions {
-        unitTests.includeAndroidResources = true
+        unitTests {
+            includeAndroidResources = true
+        }
     }
     compileSdkVersion 28
     defaultConfig {
         applicationId "io.github.craciuncezar.infobac"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 2
-        versionName "1.01"
+        versionCode 3
+        versionName "1.02"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -38,9 +40,14 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
 
     // Test environment
-    testImplementation 'androidx.test:core:1.0.0'
+    testImplementation 'androidx.test:core:1.1.0-alpha01'
     testImplementation "junit:junit:4.12"
     testImplementation "com.google.truth:truth:0.42"
+
+    // Robolectric
+    testImplementation 'androidx.test.espresso:espresso-core:3.1.1-alpha01'
+    testImplementation 'androidx.test.ext:junit:1.1.0-alpha01'
+    testImplementation 'org.robolectric:robolectric:4.1-alpha-1'
 
     implementation 'androidx.annotation:annotation:1.0.0'
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"

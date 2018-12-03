@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="bac_subjects">
+        <item>Model 2019</item>
         <item>Toamna 2018</item>
         <item>Vara 2018</item>
         <item>Model 2018</item>

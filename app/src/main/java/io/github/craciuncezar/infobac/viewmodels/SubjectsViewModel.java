@@ -27,9 +27,11 @@ public class SubjectsViewModel extends AndroidViewModel {
     }
 
     public void setSubjectType(String subjectType) {
-        this.subjectType = subjectType;
-        this.baseFilePath += subjectType + "/";
-        completedSubjectsList = repository.getCompletedSubjects(subjectType);
+        if(this.subjectType == null) {
+            this.subjectType = subjectType;
+            this.baseFilePath += subjectType + "/";
+            completedSubjectsList = repository.getCompletedSubjects(subjectType);
+        }
     }
 
     public void setCurrentSubject(String currentSubject) {

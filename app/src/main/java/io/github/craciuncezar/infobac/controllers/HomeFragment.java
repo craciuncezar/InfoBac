@@ -46,6 +46,11 @@ public class HomeFragment extends Fragment {
         startActivity(intent);
     }
 
+    public void subjectPressed() {
+        Intent intent = SubjectsActivity.getIntent(getContext(),"Mate");
+        startActivity(intent);
+    }
+
     public void feedbackPressed() {
         final String appPackageName = Objects.requireNonNull(getContext(), "Unexpected context null").getPackageName();
         try {

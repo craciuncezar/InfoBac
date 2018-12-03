@@ -15,8 +15,6 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 
 import com.davemorrissey.labs.subscaleview.ImageSource;
-import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
-import com.google.android.material.appbar.AppBarLayout;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -25,19 +23,18 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 import androidx.annotation.NonNull;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.widget.NestedScrollView;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import io.github.craciuncezar.infobac.BaseActivity;
+import io.github.craciuncezar.infobac.R;
+import io.github.craciuncezar.infobac.databinding.FragmentPdfBinding;
 import io.github.craciuncezar.infobac.viewmodels.SubjectsViewModel;
 
 public class PdfSubjectFragment extends Fragment {
     private static final String BAREM_KEY = "ISBAREM";
-    private SubsamplingScaleImageView container_pdf;
-    private NestedScrollView scrollView;
     private Boolean isBarem;
-    private SubjectsViewModel viewModel;
+    private FragmentPdfBinding binding;
 
     void setIsBarem(Boolean isBarem) {
         Bundle bundle = new Bundle();
@@ -48,21 +45,11 @@ public class PdfSubjectFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_pdf, container, false);
         isBarem = getArguments() != null && getArguments().getBoolean(BAREM_KEY);
-        viewModel = ViewModelProviders.of(Objects.requireNonNull(getActivity())).get(SubjectsViewModel.class);
-        scrollView = new NestedScrollView(getActivity());
-        scrollView.setLayoutParams(new CoordinatorLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        CoordinatorLayout.LayoutParams params =
-                (CoordinatorLayout.LayoutParams) scrollView.getLayoutParams();
-        params.setBehavior(new AppBarLayout.ScrollingViewBehavior());
-        scrollView.requestLayout();
-        scrollView.setScrollContainer(false);
-
-        container_pdf = new SubsamplingScaleImageView(getActivity());
-        container_pdf.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        scrollView.addView(container_pdf);
-        container_pdf.post(() -> viewModel.getCurrentFilePath().observe(this, this::updatePdfContainer));
-        return scrollView;
+        SubjectsViewModel viewModel = ViewModelProviders.of(Objects.requireNonNull(getActivity())).get(SubjectsViewModel.class);
+        binding.containerPdf.post(() -> viewModel.getCurrentFilePath().observe(this, this::updatePdfContainer));
+        return binding.getRoot();
     }
 
     private void updatePdfContainer(String filePath) {
@@ -71,9 +58,9 @@ public class PdfSubjectFragment extends Fragment {
         if (getActivity() != null && ((BaseActivity) getActivity()).getCurrentTheme().equals("Dark Theme")) {
             concatenatedBitmap = createInvertedBitmap(concatenatedBitmap);
         }
-        container_pdf.setImage(ImageSource.bitmap(concatenatedBitmap));
+        binding.containerPdf.setImage(ImageSource.bitmap(concatenatedBitmap));
 
-        scrollView.fullScroll(ScrollView.FOCUS_UP);
+        binding.scrollView.fullScroll(ScrollView.FOCUS_UP);
     }
 
     private ArrayList<Bitmap> readFromPDF(String filePath) {
@@ -81,7 +68,7 @@ public class PdfSubjectFragment extends Fragment {
         try {
             File temp = new File(Objects.requireNonNull(getActivity()).getCacheDir(), "tempPdf.pdf");
             FileOutputStream out = new FileOutputStream(temp);
-            InputStream is = getActivity().getAssets().open(filePath + ".pdf");
+            InputStream is = getActivity().getApplicationContext().getAssets().open(filePath + ".pdf");
 
             byte[] buffer = new byte[1024];
             int readBytes;
@@ -90,7 +77,6 @@ public class PdfSubjectFragment extends Fragment {
 
             out.close();
             is.close();
-
             ParcelFileDescriptor parcelFileDescriptor = ParcelFileDescriptor.open(temp, ParcelFileDescriptor.MODE_READ_ONLY);
             PdfRenderer renderer = new PdfRenderer(parcelFileDescriptor);
 
@@ -107,12 +93,11 @@ public class PdfSubjectFragment extends Fragment {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return bitmaps;
     }
 
     private Bitmap combineImageIntoOne(ArrayList<Bitmap> bitmap) {
-        int w = 0, h = 0;
+        int w = 1, h = 1;
         for (int i = 0; i < bitmap.size(); i++) {
             if (i < bitmap.size() - 1) {
                 w = bitmap.get(i).getWidth() > bitmap.get(i + 1).getWidth() ? bitmap.get(i).getWidth() : bitmap.get(i + 1).getWidth();

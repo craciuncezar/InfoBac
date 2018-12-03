@@ -37,7 +37,7 @@ public class PreferencesManager {
     }
 
     public String getCurrentTheme() {
-        return preferences.getString("theme", "LightTheme");
+        return preferences.getString("theme", "Light Theme");
     }
 
     public void setCurrentTheme(String currentTheme) {

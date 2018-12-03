@@ -54,7 +54,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         loadFragment(new HomeFragment());
         binding.navigationView.setNavigationItemSelectedListener(this);
 
-
         initToolbar();
     }
 
@@ -101,7 +100,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         binding.themeText.setText(getCurrentTheme());
     }
 
-    private void loadFragment(Fragment fragment) {
+    public void loadFragment(Fragment fragment) {
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
@@ -152,7 +151,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             case R.id.report_bug:
                 Intent emailIntent;
                 emailIntent = new Intent(Intent.ACTION_SENDTO);
-                emailIntent.setData(Uri.parse("mailto:craciuncezar1996@gmail.com"));
+                emailIntent.setData(Uri.parse("mailto:cmcezar.development@gmail.com"));
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Bug report info");
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Bugul gasit: ");
                 if (emailIntent.resolveActivity(getPackageManager()) != null) {
